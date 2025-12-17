@@ -56,12 +56,14 @@ export default function tona(options: TonaPluginOptions = {}): Plugin {
               entry: existingLib.entry || resolvedEntryPath,
               name: existingLib.name || themeName,
               fileName: existingLib.fileName || (() => `${themeName}.min.js`),
+              cssFileName: existingLib.cssFileName || `${themeName}.min`, // 不能包含 .css  后缀，会自动生成，否则变成 .css.css
             }
           : {
               formats: ['iife'] as LibraryFormats[],
               entry: resolvedEntryPath,
               name: themeName,
               fileName: () => `${themeName}.min.js`,
+              cssFileName: `${themeName}.min`, // 不能包含 .css  后缀，会自动生成，否则变成 .css.css
             }
 
       return {
