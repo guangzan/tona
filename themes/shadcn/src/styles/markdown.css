@@ -138,6 +138,9 @@
     text-left
     font-bold
     !border-none
+    !bg-muted/50
+    dark:!bg-muted
+    dark:text-foreground
     [&[align=center]]:text-center
     [&[align=right]]:text-right;
 }
