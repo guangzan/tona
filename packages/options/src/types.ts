@@ -167,6 +167,7 @@ interface CodeTrafficLightOptions {
 interface AboutOptions {
   enable: boolean
   bio: string
+  tags: string[]
 }
 interface ItemGroupItem {
   title: string

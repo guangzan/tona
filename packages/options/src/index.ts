@@ -284,6 +284,7 @@ export const getWebsiteTagOptions: GetWebsiteTagOptions = defineOptions(
 export const getAboutOptions: GetAboutOptions = defineOptions('about', {
   enable: false,
   bio: '',
+  tags: [],
 })
 export const getItemGroupsOptions: GetItemGroupsOptions = defineOptions(
   'itemGroups',
