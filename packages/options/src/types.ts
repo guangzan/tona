@@ -164,6 +164,10 @@ interface WebsiteTagOptions {
 interface CodeTrafficLightOptions {
   enable: boolean
 }
+interface AboutOptions {
+  enable: boolean
+  bio: string
+}
 type GenericGetFn<T> = (arg?: Partial<T>) => T
 /**
  * 皮肤基本配置
@@ -289,3 +293,7 @@ export type GetWebsiteTagOptions = GenericGetFn<WebsiteTagOptions>
  * 代码块红绿灯
  */
 export type GetCodeTrafficLightOptions = GenericGetFn<CodeTrafficLightOptions>
+/**
+ * 关于我配置
+ */
+export type GetAboutOptions = GenericGetFn<AboutOptions>

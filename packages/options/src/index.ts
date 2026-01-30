@@ -1,5 +1,6 @@
 import { defineOptions } from 'tona'
 import type {
+  GetAboutOptions,
   GetBackgroundOptions,
   GetBarragesOptions,
   GetCatalogOptions,
@@ -272,10 +273,14 @@ export const getPostListImageOptions: GetPostListImageOptions = defineOptions(
   },
 )
 export const getWebsiteTagOptions: GetWebsiteTagOptions = defineOptions(
-  'webTag',
+  ['webTag', 'tab'],
   {
     enable: false,
     title: '',
     favicon: '',
   },
 )
+export const getAboutOptions: GetAboutOptions = defineOptions('about', {
+  enable: false,
+  bio: '',
+})
