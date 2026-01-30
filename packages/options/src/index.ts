@@ -17,6 +17,7 @@ import type {
   GetGiteeOptions,
   GetGithubOptions,
   GetImagePreviewOptions,
+  GetItemGroupsOptions,
   GetLicenseOptions,
   GetLinksOptions,
   GetLive2dOptions,
@@ -284,3 +285,10 @@ export const getAboutOptions: GetAboutOptions = defineOptions('about', {
   enable: false,
   bio: '',
 })
+export const getItemGroupsOptions: GetItemGroupsOptions = defineOptions(
+  'itemGroups',
+  {
+    enable: false,
+    groups: [],
+  },
+)

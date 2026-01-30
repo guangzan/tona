@@ -1,9 +1,20 @@
 import { memo } from 'preact/compat'
+import { getItemGroupsOptions } from 'tona-options'
 import { BasicTooltip } from '../../basic-tooltip'
 import { Panel, PanelContent, PanelHeader, PanelTitle } from '../../panel'
 import { Separator } from '../../separator'
-import { ITEM_GROUPS } from './constants'
-import type { ItemGroupItem } from './types'
+
+interface ItemGroupItem {
+  title: string
+  href: string
+  lightIcon: string
+  darkIcon?: string
+}
+
+interface ItemGroup {
+  group: string
+  items: ItemGroupItem[]
+}
 
 interface ItemIconProps {
   title: string
@@ -36,16 +47,16 @@ const ItemIcon = memo(({ title, lightIcon, darkIcon }: ItemIconProps) => {
   )
 })
 
-interface ItemGroupsProps {
-  groups?: typeof ITEM_GROUPS
-}
+export function ItemGroups() {
+  const { enable, groups } = getItemGroupsOptions()
 
-export function ItemGroups({ groups = ITEM_GROUPS }: ItemGroupsProps) {
+  if (!enable || groups.length === 0) return null
+
   return (
     <>
-      {groups.map((group, index) => (
+      {groups.map((group: ItemGroup, index: number) => (
         <div key={group.group}>
-          <Panel id={group.group === '技术栈' ? 'stack' : 'tools'}>
+          <Panel id={group.group}>
             <PanelHeader>
               <PanelTitle>{group.group}</PanelTitle>
             </PanelHeader>

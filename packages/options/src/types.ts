@@ -168,6 +168,20 @@ interface AboutOptions {
   enable: boolean
   bio: string
 }
+interface ItemGroupItem {
+  title: string
+  href: string
+  lightIcon: string
+  darkIcon?: string
+}
+interface ItemGroup {
+  group: string
+  items: ItemGroupItem[]
+}
+interface ItemGroupsOptions {
+  enable: boolean
+  groups: ItemGroup[]
+}
 type GenericGetFn<T> = (arg?: Partial<T>) => T
 /**
  * 皮肤基本配置
@@ -297,3 +311,7 @@ export type GetCodeTrafficLightOptions = GenericGetFn<CodeTrafficLightOptions>
  * 关于我配置
  */
 export type GetAboutOptions = GenericGetFn<AboutOptions>
+/**
+ * 图标分组配置
+ */
+export type GetItemGroupsOptions = GenericGetFn<ItemGroupsOptions>
