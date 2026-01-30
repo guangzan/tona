@@ -3,11 +3,10 @@ import { Footer } from '../footer'
 import { Separator } from '../separator'
 import { TopNavBar } from '../top-nav-bar'
 import { About } from './about'
+import { ItemGroups } from './item-groups'
 import { PostList } from './post-list'
 import { ProfileCover } from './profile-cover'
 import { ProfileHeader } from './profile-header'
-import { TechStack } from './tech-stack'
-import { Tools } from './tools'
 
 export function HomePage() {
   return (
@@ -23,10 +22,7 @@ export function HomePage() {
           <About />
           <Separator />
 
-          <TechStack />
-          <Separator />
-
-          <Tools />
+          <ItemGroups />
           <Separator />
 
           <PostList />
