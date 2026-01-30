@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-cn">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
@@ -132,28 +132,56 @@
         <div id="navigator">
           <ul id="navList">
             <li>
-              <a id="blog_nav_sitehome" class="menu" href="#">博客园</a>
+              <a
+                id="blog_nav_sitehome"
+                class="menu"
+                href="https://www.cnblogs.com/"
+              >
+                博客园</a
+              >
             </li>
             <li>
-              <a id="blog_nav_myhome" class="menu" href="#">首页</a>
+              <a
+                id="blog_nav_myhome"
+                class="menu"
+                href="https://www.cnblogs.com/guangzan/"
+              >
+                首页</a
+              >
             </li>
             <li>
-              <a id="blog_nav_newpost" class="menu" href="#">新随笔</a>
+              <a
+                id="blog_nav_newpost"
+                class="menu"
+                href="https://i.cnblogs.com/EditPosts.aspx?opt=1"
+              >
+                新随笔</a
+              >
             </li>
             <li>
-              <a id="blog_nav_contact" class="menu" href="#">联系</a>
+              <a
+                id="blog_nav_contact"
+                class="menu"
+                href="https://msg.cnblogs.com/send/guangzan"
+              >
+                联系</a
+              >
             </li>
             <li>
               <a
                 id="blog_nav_rss"
                 class="menu"
-                href="#"
-                data-rss="https://www.cnblogs.com/mzq123/rss/"
-                >订阅</a
+                href="javascript:void(0)"
+                data-rss="https://www.cnblogs.com/guangzan/rss/"
               >
+                订阅</a
+              >
+              <!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>-->
             </li>
             <li>
-              <a id="blog_nav_admin" class="menu" href="#">管理</a>
+              <a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+                管理</a
+              >
             </li>
           </ul>
           <div class="blogStats">
@@ -318,18 +346,26 @@
                           <a
                             href="#"
                             id="green_channel_digg"
-                            onclick="DiggIt(14978632,cb_blogId,1);green_channel_success(this,'谢谢推荐！');"
+                            onclick="
+                              DiggIt(14978632, cb_blogId, 1)
+                              green_channel_success(this, '谢谢推荐！')
+                            "
                             >好文要顶</a
                           >
                           <a
                             id="green_channel_follow"
-                            onclick="follow('adce83c6-a022-414e-4369-08d6259d0de2');"
+                            onclick="
+                              follow('adce83c6-a022-414e-4369-08d6259d0de2')
+                            "
                             href="#"
                             >关注我</a
                           >
                           <a
                             id="green_channel_favorite"
-                            onclick="AddToWz(cb_entryId);return false;"
+                            onclick="
+                              AddToWz(cb_entryId)
+                              return false
+                            "
                             href="#"
                             >收藏该文</a
                           >
@@ -375,13 +411,13 @@
                         <div id="div_digg">
                           <div
                             class="diggit"
-                            onclick="votePost(14978632,'Digg')"
+                            onclick="votePost(14978632, 'Digg')"
                           >
                             <span class="diggnum" id="digg_count">0</span>
                           </div>
                           <div
                             class="buryit"
-                            onclick="votePost(14978632,'Bury')"
+                            onclick="votePost(14978632, 'Bury')"
                           >
                             <span class="burynum" id="bury_count">0</span>
                           </div>
@@ -412,7 +448,12 @@
                     >)&nbsp; 评论(<span id="post_comment_count">0</span>)&nbsp;
                     <a href="#" target="_blank">MD</a>&nbsp;
                     <a href="#" rel="nofollow">编辑</a>&nbsp;
-                    <a href="#" onclick="AddToWz(12549775);return false;"
+                    <a
+                      href="#"
+                      onclick="
+                        AddToWz(12549775)
+                        return false
+                      "
                       >收藏</a
                     >
                   </div>
@@ -473,13 +514,23 @@
                     <span class="comment_actions">
                       <a
                         href="#"
-                        onclick="return ReplyComment(4532254, 'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==')"
+                        onclick="
+                          return ReplyComment(
+                            4532254,
+                            'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==',
+                          )
+                        "
                       >
                         回复
                       </a>
                       <a
                         href="#"
-                        onclick="return QuoteComment(4532254, 'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==')"
+                        onclick="
+                          return QuoteComment(
+                            4532254,
+                            'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==',
+                          )
+                        "
                       >
                         引用
                       </a>
@@ -501,14 +552,28 @@
                     <a
                       href="#"
                       class="comment_digg"
-                      onclick="return voteComment(4532254, 'Digg', this.parentElement, false);"
+                      onclick="
+                        return voteComment(
+                          4532254,
+                          'Digg',
+                          this.parentElement,
+                          false,
+                        )
+                      "
                     >
                       支持(0)
                     </a>
                     <a
                       href="#"
                       class="comment_burry"
-                      onclick="return voteComment(4532254, 'Bury', this.parentElement, false);"
+                      onclick="
+                        return voteComment(
+                          4532254,
+                          'Bury',
+                          this.parentElement,
+                          false,
+                        )
+                      "
                     >
                       反对(0)
                     </a>
@@ -524,7 +589,7 @@
                       <a
                         href="#"
                         title="查看所回复的评论"
-                        onclick="commentManager.renderComments(0,50,4532247);"
+                        onclick="commentManager.renderComments(0, 50, 4532247)"
                         >@</a
                       >xx 谢谢支持
                     </p>
@@ -543,13 +608,23 @@
                     <span class="comment_actions">
                       <a
                         href="#"
-                        onclick="return ReplyComment(4539378, 'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==')"
+                        onclick="
+                          return ReplyComment(
+                            4539378,
+                            'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==',
+                          )
+                        "
                       >
                         回复
                       </a>
                       <a
                         href="#"
-                        onclick="return QuoteComment(4539378, 'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==')"
+                        onclick="
+                          return QuoteComment(
+                            4539378,
+                            'xTaYK2hVE0rO0OLryR6v3tJ57oNjsXUyAGNEPSn5jqoK93N3kSawlQ==',
+                          )
+                        "
                       >
                         引用
                       </a>
@@ -575,14 +650,28 @@
                     <a
                       href="#"
                       class="comment_digg"
-                      onclick="return voteComment(4539378, 'Digg', this.parentElement, false);"
+                      onclick="
+                        return voteComment(
+                          4539378,
+                          'Digg',
+                          this.parentElement,
+                          false,
+                        )
+                      "
                     >
                       支持(0)
                     </a>
                     <a
                       href="#"
                       class="comment_burry"
-                      onclick="return voteComment(4539378, 'Bury', this.parentElement, false);"
+                      onclick="
+                        return voteComment(
+                          4539378,
+                          'Bury',
+                          this.parentElement,
+                          false,
+                        )
+                      "
                     >
                       反对(0)
                     </a>
@@ -607,7 +696,10 @@
                   <!-- 上一页 -->
                   <a
                     href="#"
-                    onclick="commentManager.renderComments(1, 50); return false;"
+                    onclick="
+                      commentManager.renderComments(1, 50)
+                      return false
+                    "
                   >
                     &lt; Prev
                   </a>
@@ -615,7 +707,10 @@
                   <!-- 第一页 -->
                   <a
                     href="#"
-                    onclick="commentManager.renderComments(1, 50); return false;"
+                    onclick="
+                      commentManager.renderComments(1, 50)
+                      return false
+                    "
                   >
                     1
                   </a>
@@ -630,7 +725,10 @@
                   <!-- 末尾页 -->
                   <a
                     href="#"
-                    onclick="commentManager.renderComments(3, 50); return false;"
+                    onclick="
+                      commentManager.renderComments(3, 50)
+                      return false
+                    "
                   >
                     3
                   </a>
@@ -638,7 +736,10 @@
                   <!-- 下一页 -->
                   <a
                     href="#"
-                    onclick="commentManager.renderComments(3, 50); return false;"
+                    onclick="
+                      commentManager.renderComments(3, 50)
+                      return false
+                    "
                   >
                     Next &gt;
                   </a>
@@ -653,12 +754,12 @@
                 <span id="span_refresh_tips"></span
                 ><a
                   href="#"
-                  onclick="return RefreshCommentList();"
+                  onclick="return RefreshCommentList()"
                   id="lnk_RefreshComments"
                   runat="server"
                   clientidmode="Static"
                   >刷新评论</a
-                ><a href="#" onclick="return RefreshPage();">刷新页面</a
+                ><a href="#" onclick="return RefreshPage()">刷新页面</a
                 ><a href="#">返回顶部</a>
               </div>
               <div id="comment_form_container" style="visibility: visible">
@@ -890,7 +991,7 @@
                       >不改了</a
                     ></span
                   >
-                  <a href="#" onclick="return logout();">退出</a>
+                  <a href="#" onclick="return logout()">退出</a>
                   <a
                     id="commentbox_opt_sub"
                     href="#"
@@ -906,42 +1007,90 @@
                     <li>
                       <a
                         href="#"
-                        onclick="ga('send', 'event', 'Link', 'click', 'under-comment-nav-sitehome')"
+                        onclick="
+                          ga(
+                            'send',
+                            'event',
+                            'Link',
+                            'click',
+                            'under-comment-nav-sitehome',
+                          )
+                        "
                         >首页</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        onclick="ga('send', 'event', 'Link', 'click', 'under-comment-nav-news')"
+                        onclick="
+                          ga(
+                            'send',
+                            'event',
+                            'Link',
+                            'click',
+                            'under-comment-nav-news',
+                          )
+                        "
                         >新闻</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        onclick="ga('send', 'event', 'Link', 'click', 'under-comment-nav-q')"
+                        onclick="
+                          ga(
+                            'send',
+                            'event',
+                            'Link',
+                            'click',
+                            'under-comment-nav-q',
+                          )
+                        "
                         >博问</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        onclick="ga('send', 'event', 'Link', 'click', 'under-comment-nav-brands')"
+                        onclick="
+                          ga(
+                            'send',
+                            'event',
+                            'Link',
+                            'click',
+                            'under-comment-nav-brands',
+                          )
+                        "
                         >专区</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        onclick="ga('send', 'event', 'Link', 'click', 'under-comment-nav-ing')"
+                        onclick="
+                          ga(
+                            'send',
+                            'event',
+                            'Link',
+                            'click',
+                            'under-comment-nav-ing',
+                          )
+                        "
                         >闪存</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        onclick="ga('send', 'event', 'Link', 'click', 'under-comment-nav-edu')"
+                        onclick="
+                          ga(
+                            'send',
+                            'event',
+                            'Link',
+                            'click',
+                            'under-comment-nav-edu',
+                          )
+                        "
                         >班级</a
                       >
                     </li>
@@ -1108,7 +1257,10 @@
                             <td class="CalNextPrev">
                               <a
                                 href="#"
-                                onclick="loadBlogCalendar('2021/04/23'); return false;"
+                                onclick="
+                                  loadBlogCalendar('2021/04/23')
+                                  return false
+                                "
                                 >&lt;</a
                               >
                             </td>
@@ -1116,7 +1268,10 @@
                             <td align="right" class="CalNextPrev">
                               <a
                                 href="#"
-                                onclick="loadBlogCalendar('2021/06/23'); return false;"
+                                onclick="
+                                  loadBlogCalendar('2021/06/23')
+                                  return false
+                                "
                                 >&gt;</a
                               >
                             </td>
@@ -1259,7 +1414,7 @@
                         <input
                           type="text"
                           id="q"
-                          onkeydown="return zzk_go_enter(event);"
+                          onkeydown="return zzk_go_enter(event)"
                           class="input_my_zzk"
                         />&nbsp;<input
                           onclick="zzk_go()"
@@ -1274,7 +1429,7 @@
                           type="text"
                           name="google_q"
                           id="google_q"
-                          onkeydown="return google_go_enter(event);"
+                          onkeydown="return google_go_enter(event)"
                           class="input_my_zzk"
                         />&nbsp;<input
                           onclick="google_go()"

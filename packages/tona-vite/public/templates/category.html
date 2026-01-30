@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-cn">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -136,28 +136,56 @@
         <div id="navigator">
           <ul id="navList">
             <li>
-              <a id="blog_nav_sitehome" class="menu" href="#">博客园</a>
+              <a
+                id="blog_nav_sitehome"
+                class="menu"
+                href="https://www.cnblogs.com/"
+              >
+                博客园</a
+              >
             </li>
             <li>
-              <a id="blog_nav_myhome" class="menu" href="#">首页</a>
+              <a
+                id="blog_nav_myhome"
+                class="menu"
+                href="https://www.cnblogs.com/guangzan/"
+              >
+                首页</a
+              >
             </li>
             <li>
-              <a id="blog_nav_newpost" class="menu" href="#">新随笔</a>
+              <a
+                id="blog_nav_newpost"
+                class="menu"
+                href="https://i.cnblogs.com/EditPosts.aspx?opt=1"
+              >
+                新随笔</a
+              >
             </li>
             <li>
-              <a id="blog_nav_contact" class="menu" href="#">联系</a>
+              <a
+                id="blog_nav_contact"
+                class="menu"
+                href="https://msg.cnblogs.com/send/guangzan"
+              >
+                联系</a
+              >
             </li>
             <li>
               <a
                 id="blog_nav_rss"
                 class="menu"
-                href="#"
-                data-rss="https://www.cnblogs.com/mzq123/rss/"
-                >订阅</a
+                href="javascript:void(0)"
+                data-rss="https://www.cnblogs.com/guangzan/rss/"
               >
+                订阅</a
+              >
+              <!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>-->
             </li>
             <li>
-              <a id="blog_nav_admin" class="menu" href="#">管理</a>
+              <a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+                管理</a
+              >
             </li>
           </ul>
           <div class="blogStats">
@@ -344,7 +372,10 @@
                             <td class="CalNextPrev">
                               <a
                                 href="#"
-                                onclick="loadBlogCalendar('2021/04/23'); return false;"
+                                onclick="
+                                  loadBlogCalendar('2021/04/23')
+                                  return false
+                                "
                                 >&lt;</a
                               >
                             </td>
@@ -352,7 +383,10 @@
                             <td align="right" class="CalNextPrev">
                               <a
                                 href="#"
-                                onclick="loadBlogCalendar('2021/06/23'); return false;"
+                                onclick="
+                                  loadBlogCalendar('2021/06/23')
+                                  return false
+                                "
                                 >&gt;</a
                               >
                             </td>
@@ -495,7 +529,7 @@
                         <input
                           type="text"
                           id="q"
-                          onkeydown="return zzk_go_enter(event);"
+                          onkeydown="return zzk_go_enter(event)"
                           class="input_my_zzk"
                         />&nbsp;<input
                           onclick="zzk_go()"
@@ -510,7 +544,7 @@
                           type="text"
                           name="google_q"
                           id="google_q"
-                          onkeydown="return google_go_enter(event);"
+                          onkeydown="return google_go_enter(event)"
                           class="input_my_zzk"
                         />&nbsp;<input
                           onclick="google_go()"
