@@ -13,9 +13,9 @@
 
 .custom-comment-input {
       @apply  screen-line-after
-      border-x
-      border-edge
-      pb-4;
+        border-x
+        border-edge
+        pb-4;
 }
 
 .commentbox_main.comment_textarea {
