@@ -1,3 +1,4 @@
+import { useNickname } from '@/plugins/app/hooks/use-nickname'
 import { Avatar } from './avatar'
 import { FollowButton } from './follow-button'
 import { Followers } from './followers'
@@ -5,6 +6,8 @@ import { Tags } from './tags'
 import { VerifiedIcon } from './verified-icon'
 
 export function ProfileHeader() {
+  const nickName = useNickname()
+
   return (
     <div className='screen-line-after relative flex border-edge border-x'>
       <div className='shrink-0 border-edge border-r'>
@@ -23,7 +26,7 @@ export function ProfileHeader() {
         </div>
         <div className='border-edge border-t'>
           <h1 className='flex items-center pl-4 font-semibold text-3xl'>
-            Zane &nbsp;
+            {nickName} &nbsp;
             <VerifiedIcon className='size-[0.6em] translate-y-px select-none text-info' />
           </h1>
           <div className='h-12 border-edge border-t py-1 pl-4 sm:h-auto'>

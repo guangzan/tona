@@ -1,8 +1,11 @@
 import { cn } from '@/lib/utils'
 import { FlickeringGrid } from '../../../../../components/ui/flickering-grid'
 import { HyperText } from '../../../../../components/ui/hyper-text'
+import { useNickname } from '../../../hooks/use-nickname'
 
 export function ProfileCover() {
+  const nickName = useNickname()
+
   return (
     <div
       className={cn(
@@ -23,7 +26,7 @@ export function ProfileCover() {
           width={800}
         />
         <HyperText className='flex h-full w-full items-center justify-center text-7xl'>
-          ZANE
+          {nickName}
         </HyperText>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useContext } from 'preact/hooks'
 import { AvatarContext } from '../../context/avatar-context'
+import { useNickname } from '../../hooks/use-nickname'
 import { useHeroImage, usePostInfo, usePostTitle } from './hooks'
 
 export function PostHero2() {
@@ -7,6 +8,7 @@ export function PostHero2() {
   const title = usePostTitle()
   const postInfo = usePostInfo()
   const heroImage = useHeroImage()
+  const nickName = useNickname()
 
   return (
     <div className='screen-line-after border-edge border-x px-4 py-12'>
@@ -28,7 +30,7 @@ export function PostHero2() {
             alt='avatar'
             fetchPriority='high'
           />
-          <h4 className='font-bold text-md'>Zane</h4>
+          <h4 className='font-bold text-md'>{nickName}</h4>
         </div>
       </div>
     </div>

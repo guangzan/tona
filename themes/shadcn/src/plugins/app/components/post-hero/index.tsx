@@ -1,12 +1,14 @@
 import { useContext } from 'preact/hooks'
 import { BubbleBackground } from '../../../../components/ui/bubble-background'
 import { AvatarContext } from '../../context/avatar-context'
+import { useNickname } from '../../hooks/use-nickname'
 import { usePostInfo, usePostTitle } from './hooks'
 
 export function PostHero() {
   const avatar = useContext(AvatarContext)
   const title = usePostTitle()
   const postInfo = usePostInfo()
+  const nickName = useNickname()
 
   return (
     <div className='screen-line-after border-edge border-x px-4 py-8 md:py-20'>
@@ -41,7 +43,7 @@ export function PostHero() {
                 height={40}
               />
               <h4 className='font-semibold text-base text-white/90 md:text-lg'>
-                Zane
+                {nickName}
               </h4>
             </div>
           </div>
