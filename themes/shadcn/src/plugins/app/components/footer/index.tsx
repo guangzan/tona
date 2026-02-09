@@ -1,4 +1,5 @@
 import { RssIcon } from 'lucide-preact'
+import { getRssUrl } from 'tona-utils'
 import { cn } from '@/lib/utils'
 import { ThemeToggle } from '../theme-toggle'
 
@@ -7,6 +8,8 @@ interface Props extends React.ComponentProps<'footer'> {
 }
 
 export function Footer({ containerClassName, ...props }: Props) {
+  const rssUrl = getRssUrl()
+
   return (
     <footer className='max-w-screen overflow-x-hidden px-2' {...props}>
       <div
@@ -56,7 +59,7 @@ export function Footer({ containerClassName, ...props }: Props) {
           <div className='flex h-11 w-px bg-edge' />
           <a
             className='flex items-center text-muted-foreground transition-colors hover:text-foreground'
-            href={`https://feed.cnblogs.com/blog/u/466832/rss/`}
+            href={rssUrl}
             target='_blank'
             rel='noopener noreferrer'
           >
