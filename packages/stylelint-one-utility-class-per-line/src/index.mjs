@@ -21,38 +21,61 @@ const meta = {
   fixable: true,
 }
 
+/** Minimum indent (spaces) for continuation lines in @apply. */
+const MIN_CONTINUATION_INDENT = 2
+
+/**
+ * @param {string} params - @apply params string
+ * @returns {{ indent: number, classes: string[] }[]} - Per-line indent and class names
+ */
+function parseApplyLines(params) {
+  const lines = params.split(/\r?\n/)
+  return lines.map((line) => {
+    const leading = line.match(/^\s*/)?.[0] ?? ''
+    const content = line.trim()
+    const classes = content ? content.split(/\s+/).filter(Boolean) : []
+    return { indent: leading.length, classes }
+  })
+}
+
 /** @type {import('stylelint').Rule} */
 function rule() {
   return (root, result) => {
-    root.walkAtRules('apply', (rule) => {
-      if (!rule.params.includes(' ')) {
-        // If there are no spaces in the params, we don't need to check anything
+    root.walkAtRules('apply', (atRule) => {
+      if (!atRule.params.includes(' ')) {
         return
       }
 
-      // Since we use 2 spaces for indentation, each line in the apply rule
-      // should be indented with two extra whitespaces.
-      const classes = rule.params.split(`${rule.raws.before}  `)
-      const classNames = classes.join('')
+      const parsed = parseApplyLines(atRule.params)
+      const hasMultipleLines = parsed.length > 1
+      const multipleClassesOnLine = parsed.some((p) => p.classes.length > 1)
 
-      // Check if the params contain any spaces
-      if (classNames.includes(' ')) {
-        if (classNames.includes('\n')) {
-          return report({
-            ruleName: name,
-            result,
-            message: messages.spacing(JSON.stringify(rule.params)),
-            node: rule,
-            fix: indentClassNames(rule),
-          })
-        }
-
+      if (multipleClassesOnLine) {
         return report({
           ruleName: name,
           result,
-          message: messages.className(rule.params),
-          node: rule,
-          fix: indentClassNames(rule),
+          message: messages.className(atRule.params),
+          node: atRule,
+          fix: indentClassNames(atRule),
+        })
+      }
+
+      const continuationIndentTooSmall =
+        hasMultipleLines &&
+        parsed.some(
+          (p, i) =>
+            i > 0 &&
+            p.classes.length > 0 &&
+            p.indent < MIN_CONTINUATION_INDENT
+        )
+
+      if (continuationIndentTooSmall) {
+        return report({
+          ruleName: name,
+          result,
+          message: messages.spacing(JSON.stringify(atRule.params)),
+          node: atRule,
+          fix: indentClassNames(atRule),
         })
       }
     })
