@@ -1,6 +1,18 @@
 import { useQueryDOM } from 'tona-hooks'
 import type { PostItem } from './types'
 
+function findNextElement(
+  start: Element | null,
+  selector: string,
+): Element | null {
+  let current = start?.nextElementSibling ?? null
+  while (current) {
+    if (current.matches(selector)) return current
+    current = current.nextElementSibling
+  }
+  return null
+}
+
 export function usePostList() {
   return useQueryDOM({
     selector: '.forFlow',
@@ -13,16 +25,23 @@ export function usePostList() {
 
       dayElements.forEach((dayEl) => {
         const dayTitleEl = dayEl.querySelector('.dayTitle a')
-        const postTitleEl = dayEl.querySelector('.postTitle a.postTitle2')
-        const postConEl = dayEl.querySelector('.postCon .c_b_p_desc')
-        const postDescEl = dayEl.querySelector('.postDesc')
+        const postTitleEls = dayEl.querySelectorAll(
+          '.postTitle a.postTitle2',
+        )
 
-        if (postTitleEl) {
+        postTitleEls.forEach((postTitleEl) => {
+          const postTitleWrap = postTitleEl.closest('.postTitle')
+          const postConEl = findNextElement(postTitleWrap, '.postCon')
+          const postDescEl = findNextElement(postTitleWrap, '.postDesc')
+
           const date = dayTitleEl?.textContent?.trim() || ''
           const title = postTitleEl.textContent?.trim() || ''
           const href = postTitleEl.getAttribute('href') || '#'
           const description =
-            postConEl?.textContent?.replace(/阅读全文$/, '').trim() || ''
+            postConEl
+              ?.querySelector('.c_b_p_desc')
+              ?.textContent?.replace(/阅读全文$/, '')
+              .trim() || ''
 
           const postDescText = postDescEl?.textContent || ''
           const authorMatch = postDescText.match(/posted @ [^ ]+ [^ ]+ ([^ ]+)/)
@@ -31,8 +50,8 @@ export function usePostList() {
           const commentCountMatch = postDescText.match(/评论\((\d+)\)/)
           const diggCountMatch = postDescText.match(/推荐\((\d+)\)/)
 
-          const editLinkEl = dayEl.querySelector(
-            '.postDesc a[href*="EditPosts"]',
+          const editLinkEl = postDescEl?.querySelector(
+            'a[href*="EditPosts"]',
           )
           const editHref = editLinkEl?.getAttribute('href') || '#'
 
@@ -48,7 +67,7 @@ export function usePostList() {
             diggCount: diggCountMatch?.[1] || '0',
             editHref,
           })
-        }
+        })
       })
 
       return items

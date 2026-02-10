@@ -78,8 +78,19 @@ async function buildTheme(themeName: string): Promise<void> {
   s.start(pc.blue(`正在构建皮肤: ${themeName}`))
 
   try {
-    // 使用 pnpm 构建选定皮肤的 build 脚本
-    const child = exec(`pnpm --dir themes/${themeName} build`, {
+    await execCommand('pnpm build:pkg')
+    await execCommand(`pnpm --dir themes/${themeName} build`)
+    s.stop(pc.green(`皮肤 ${themeName} 构建成功!`))
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    s.stop(pc.red(`构建皮肤时出错: ${errorMessage}`))
+    process.exit(1)
+  }
+}
+
+async function execCommand(command: string): Promise<void> {
+  await new Promise<void>((resolve, reject) => {
+    const child = exec(command, {
       cwd: process.cwd(),
       env: process.env,
     })
@@ -89,21 +100,16 @@ async function buildTheme(themeName: string): Promise<void> {
     })
 
     child.stderr?.on('data', (data: string) => {
-      // 始终显示 stderr 内容（错误信息）
       process.stderr.write(data)
     })
 
     child.on('close', (code: number | null) => {
       if (code === 0) {
-        s.stop(pc.green(`皮肤 ${themeName} 构建成功!`))
-      } else {
-        s.stop(pc.red(`构建皮肤时出错，退出码: ${code}`))
-        process.exit(1)
+        resolve()
+        return
       }
+
+      reject(new Error(`命令执行失败，退出码: ${code ?? 'unknown'}`))
     })
-  } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error)
-    s.stop(pc.red(`构建皮肤时出错: ${errorMessage}`))
-    process.exit(1)
-  }
+  })
 }
