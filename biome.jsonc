@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -12,6 +12,8 @@
       "packages/**/*.{js,ts,tsx}",
       "scripts/**/*.{js,ts,tsx}",
       "themes/**/*.{js,ts,tsx}",
+      "docs/**/*.{js,ts,tsx,json,mdx,css}",
+      "!docs/src/routeTree.gen.ts",
       ".vscode/**/*.{js,ts,tsx,json}",
       "!**/*.min.js",
       "!**/dist"
