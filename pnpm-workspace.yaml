@@ -1,6 +1,7 @@
 packages:
   - packages/*
   - themes/*
+  - docs
 
 catalog:
   '@biomejs/biome': ^2.3.11

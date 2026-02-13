@@ -21,6 +21,7 @@
     "./*.ts",
     "./scripts/**/*.ts",
     "./docs/**/*.ts",
+    "./docs/**/*.tsx",
     "./packages/**/*.ts",
     "./themes/**/*.ts",
     "./test/**/*.ts",
