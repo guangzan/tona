@@ -8,10 +8,11 @@
     "email": "guangzan1999@outlook.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/guangzan/tona",
+  "homepage": "https://github.com/guangzan/tona/tree/main/packages/sonner#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guangzan/tona.git"
+    "url": "git+https://github.com/guangzan/tona.git",
+    "directory": "packages/sonner"
   },
   "bugs": {
     "url": "https://github.com/guangzan/tona/issues"

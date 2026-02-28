@@ -8,13 +8,14 @@
     "email": "guangzan1999@outlook.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/guangzan",
+  "homepage": "https://github.com/guangzan/tona/tree/main/packages/options#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guangzan/options.git"
+    "url": "git+https://github.com/guangzan/tona.git",
+    "directory": "packages/options"
   },
   "bugs": {
-    "url": "https://github.com/guangzan/options/issues"
+    "url": "https://github.com/guangzan/tona/issues"
   },
   "keywords": [
     "博客园"

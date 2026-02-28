@@ -32,5 +32,10 @@
   "devDependencies": {
     "stylelint": "catalog:",
     "tsdown": "catalog:"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guangzan/tona.git",
+    "directory": "packages/stylelint-one-utility-class-per-line"
   }
 }

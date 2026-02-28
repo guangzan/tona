@@ -7,7 +7,8 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://hub.fastgit.org/guangzan/loader.git"
+    "url": "git+https://github.com/guangzan/tona.git",
+    "directory": "packages/loader"
   },
   "keywords": [
     "博客园",
