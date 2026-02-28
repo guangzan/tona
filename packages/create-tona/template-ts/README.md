@@ -36,7 +36,7 @@ pnpm build
 ├── src/
 │   ├── main.ts      # 主题入口文件
 │   └── style.css    # 样式文件
-├── vite.config.mts  # Vite 配置文件
+├── vite.config.ts   # Vite 配置文件
 ├── tsconfig.json    # TypeScript 配置文件
 └── package.json     # 项目配置
 ```

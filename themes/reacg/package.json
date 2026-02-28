@@ -14,7 +14,7 @@
     "url": "https://github.com/acnblogs/tona/issues"
   },
   "keywords": [],
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

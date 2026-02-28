@@ -5,6 +5,7 @@
     "dev": "vite --force",
     "build": "vite build"
   },
+  "type": "module",
   "dependencies": {
     "tona": "workspace:*",
     "tona-options": "workspace:*",

@@ -25,7 +25,7 @@
     "./packages/**/*.ts",
     "./themes/**/*.ts",
     "./test/**/*.ts",
-    "packages/plugins/vite.config.mts",
+    "packages/plugins/vite.config.ts",
     "packages/stylelint-one-utility-class-per-line/src/utils.mjs",
     "packages/stylelint-one-utility-class-per-line/src/index.mts",
     "themes/shadcn/src/modules/demo/index.tsx",

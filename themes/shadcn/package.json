@@ -12,6 +12,7 @@
     "clean",
     "responsive"
   ],
+  "type": "module",
   "scripts": {
     "dev": "vite --force",
     "build": "vite build"

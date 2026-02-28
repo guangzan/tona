@@ -1,8 +1,8 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import tona from 'tona-vite'
 import preact from '@preact/preset-vite'
 import tailwindcss from '@tailwindcss/vite'
+import tona from 'tona-vite'
 import { defineConfig } from 'vite'
 import { analyzer } from 'vite-bundle-analyzer'
 import svgr from 'vite-plugin-svgr'
@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 export default defineConfig(({ mode }) => ({
   define: {
     'process.env.NODE_ENV': JSON.stringify(
-      mode === 'production' ? 'production' : 'development'
+      mode === 'production' ? 'production' : 'development',
     ),
   },
   resolve: {
