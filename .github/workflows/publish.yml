@@ -11,11 +11,9 @@ permissions:
 
 jobs:
   publish:
+    if: github.repository == 'guangzan/tona'
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-
+    environment: Release
     steps:
       - name: Checkout
         uses: actions/checkout@v4
