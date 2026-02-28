@@ -44,9 +44,10 @@ export function getBlogName() {
  * @returns {number} 粉丝数
  */
 export function getFollowers() {
-  return openNews()
-    ? $('#profile_block a:nth-of-type(3)').text().trim()
-    : '未知'
+  if (!openNews()) return '0'
+  const text = $('#profile_block').text()
+  const match = text.match(/粉丝：\s*([0-9]+)/)
+  return match ? match[1].trim() : '0'
 }
 
 /**
@@ -54,9 +55,10 @@ export function getFollowers() {
  * @returns {number} 关注的人数
  */
 export function getFollowing() {
-  return openNews()
-    ? $('#profile_block a:nth-of-type(4)').text().trim()
-    : '未知'
+  if (!openNews()) return '0'
+  const text = $('#profile_block').text()
+  const match = text.match(/关注：\s*([0-9]+)/)
+  return match ? match[1].trim() : '0'
 }
 
 /**
@@ -72,9 +74,10 @@ export function getFollowState() {
  * @returns {string} 园龄
  */
 export function getBlogAge() {
-  return openNews()
-    ? $('#profile_block a:nth-of-type(2)').text().trim()
-    : '未知'
+  if (!openNews()) return '未知'
+  const text = $('#profile_block').text()
+  const match = text.match(/园龄：\s*([^ \n]+)/)
+  return match ? match[1].trim() : '未知'
 }
 
 /**
