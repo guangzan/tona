@@ -36,5 +36,17 @@ jobs:
       - name: Build packages
         run: pnpm build:pkg
 
+      - name: Debug OIDC and npm auth
+        run: |
+          echo "=== OIDC Environment ==="
+          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-not set}"
+          echo "ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:-not set}"
+          echo "=== npm whoami (should succeed if OIDC works) ==="
+          npm whoami
+          echo "=== npm config list ==="
+          npm config list
+        env:
+          NODE_AUTH_TOKEN: ""   # 显式置空，防止意外继承令牌
+
       - name: Publish to npm
         run: pnpm run publish-ci ${{ github.ref_name }}
