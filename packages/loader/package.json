@@ -1,7 +1,7 @@
 {
   "name": "tona-loader",
   "type": "module",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Loading theme js file",
   "author": "",
   "license": "ISC",
