@@ -29,11 +29,12 @@ jobs:
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
+        working-directory: ${{ github.workspace }}
 
       - name: Build
-        run: pnpm build
+        run: pnpm build:pkg
 
       - name: Publish
-        run: pnpm run publish ${{ github.ref_name }}
+        run: pnpm run publish-ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
