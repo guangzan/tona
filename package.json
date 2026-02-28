@@ -14,6 +14,7 @@
     "docs:build": "pnpm -C docs run build",
     "typecheck": "vue-tsc --noEmit",
     "release": "tsx scripts/release.ts",
+    "publish": "tsx scripts/publish-ci.ts",
     "test": "vitest test",
     "lint": "pnpm exec biome check --write",
     "prepare": "lefthook install"
