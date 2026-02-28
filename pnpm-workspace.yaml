@@ -57,6 +57,8 @@ catalog:
   vue: ^3.5.26
   ogl: ^1.0.11
   motion: ^12.25.0
+  '@tailwindcss/typography': ^0.5.19
+  zx: ^8.8.5
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
