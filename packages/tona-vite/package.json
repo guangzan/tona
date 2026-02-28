@@ -1,7 +1,7 @@
 {
   "name": "tona-vite",
   "type": "module",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Vite plugin for Tona themes - combines dynamic script extension and shared assets serving",
   "author": {
     "name": "guangzan",
