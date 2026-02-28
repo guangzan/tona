@@ -1,3 +1,4 @@
+import { EditButton } from './edit-button'
 import { FavoriteButton } from './favorite-button'
 import { FollowButton } from './follow-button'
 import { VoteButton } from './vote-button'
@@ -8,6 +9,7 @@ export function PostActions() {
       <VoteButton></VoteButton>
       <FollowButton></FollowButton>
       <FavoriteButton></FavoriteButton>
+      <EditButton></EditButton>
     </div>
   )
 }

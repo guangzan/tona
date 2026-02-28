@@ -552,5 +552,9 @@ export function getAppGroupUrl(): string {
 
 /* 草稿箱 */
 export function getDraftBoxUrl(): string {
-  return 'https://i.cnblogs.com/posts'
+  return `${iCnblog}/posts`
+}
+
+export function getEditPostUrl(): string {
+  return `${iCnblog}/EditPosts.aspx?postid=${getCurrentPostId()}`
 }

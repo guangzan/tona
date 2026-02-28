@@ -34,3 +34,21 @@ export function useFavoriteStatus() {
     },
   })
 }
+
+export function usePostEditLink() {
+  return useQueryDOM({
+    selector: '.postDesc',
+    observe: false,
+    queryFn: (el) => {
+      const editLinkEl =
+        el?.querySelector('a[href*="EditPosts"]') ??
+        Array.from(el?.querySelectorAll('a') ?? []).find(
+          (anchor) => anchor.textContent?.trim() === '编辑',
+        )
+
+      return {
+        editHref: editLinkEl?.getAttribute('href') || '',
+      }
+    },
+  })
+}
