@@ -1,6 +1,6 @@
 {
   "name": "tona-sonner",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Preact toast notification component based on sonner",
   "author": {
     "name": "guangzan",
