@@ -132,6 +132,9 @@ catalogs:
     vitest:
       specifier: ^4.0.16
       version: 4.0.16
+    zx:
+      specifier: ^8.8.5
+      version: 8.8.5
 
 importers:
 
@@ -171,7 +174,7 @@ importers:
         specifier: 'catalog:'
         version: 4.0.16(@types/node@25.0.3)(@vitest/ui@4.0.16)(happy-dom@20.1.0)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1)
       zx:
-        specifier: ^8.8.5
+        specifier: 'catalog:'
         version: 8.8.5
 
   docs:
@@ -8084,6 +8087,14 @@ snapshots:
     optionalDependencies:
       vite: 7.3.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1)
 
+  '@vitest/mocker@4.0.16(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1))':
+    dependencies:
+      '@vitest/spy': 4.0.16
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+    optionalDependencies:
+      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1)
+
   '@vitest/pretty-format@4.0.16':
     dependencies:
       tinyrainbow: 3.0.3
@@ -8110,7 +8121,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.16(@types/node@25.0.3)(@vitest/ui@4.0.16)(happy-dom@20.1.0)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1)
+      vitest: 4.0.16(@types/node@25.2.3)(@vitest/ui@4.0.16)(happy-dom@20.1.0)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1)
 
   '@vitest/utils@4.0.16':
     dependencies:
@@ -11299,7 +11310,7 @@ snapshots:
   vitest@4.0.16(@types/node@25.2.3)(@vitest/ui@4.0.16)(happy-dom@20.1.0)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.16
-      '@vitest/mocker': 4.0.16(vite@7.3.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1))
+      '@vitest/mocker': 4.0.16(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)(terser@5.44.1)(tsx@4.20.5)(yaml@2.8.1))
       '@vitest/pretty-format': 4.0.16
       '@vitest/runner': 4.0.16
       '@vitest/snapshot': 4.0.16
