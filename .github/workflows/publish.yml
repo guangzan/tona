@@ -33,17 +33,5 @@ jobs:
       - name: Build packages
         run: pnpm build:pkg
 
-      - name: Debug OIDC and npm auth
-        run: |
-          echo "=== OIDC Environment ==="
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-not set}"
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:-not set}"
-          echo "=== npm version ==="
-          npm --version
-          echo "=== npm whoami ==="
-          npm whoami
-          echo "=== npm config list ==="
-          npm config list
-
       - name: Publish to npm
         run: npm i -g npm@^11.5.2 && pnpm run publish-ci ${{ github.ref_name }}
