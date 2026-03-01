@@ -4,6 +4,7 @@
   "description": "A modern, clean theme for cnblogs with shadcn ui style design, featuring card-based layout, responsive design, and elegant typography.",
   "author": "guangzan",
   "license": "MIT",
+  "private": true,
   "keywords": [
     "cnblogs",
     "theme",
