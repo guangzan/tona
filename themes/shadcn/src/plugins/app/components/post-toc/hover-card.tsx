@@ -25,10 +25,10 @@ export function HoverCard({
   return (
     <ul
       className={cn(
-        '-mt-1 fixed top-24 right-0 z-1000 rounded-xl border',
-        'px-3 py-1 text-xs',
+        'fixed top-24 right-0 z-1000 -mt-1 rounded-2xl border',
+        'px-4 py-2 text-xs',
         'bg-background shadow-context-menu backdrop-blur-background',
-        'scrollbar-none max-h-[calc(100svh-4rem)] overflow-auto',
+        'scrollbar-none max-h-[calc(100svh-4rem)] max-w-xs overflow-auto',
         'transition-all duration-200 ease-in-out',
         show
           ? 'pointer-events-auto translate-x-0 opacity-100'
@@ -46,7 +46,7 @@ export function HoverCard({
         >
           <button
             className={cn(
-              'group flex w-full cursor-pointer justify-between py-1 text-muted-foreground',
+              'group flex w-full justify-between py-1 text-muted-foreground',
               index === currentScrollRange[0] ? 'text-foreground' : '',
             )}
             type='button'

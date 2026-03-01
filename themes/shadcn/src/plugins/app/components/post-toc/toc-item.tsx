@@ -41,33 +41,31 @@ export const TocItem = memo((props: Props) => {
   const $ref = useRef<HTMLButtonElement>(null)
   const isTitleLine = variant === 'title-line'
 
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault()
+      onClick?.(index, $heading, anchorId)
+    },
+    [anchorId, onClick, index, $heading],
+  )
+
   return (
     <button
       type='button'
       ref={$ref}
       data-index={index}
-      className={cn(
-        'cursor-pointer',
-        isTitleLine && 'relative flex w-full flex-col',
-      )}
+      className={cn(isTitleLine && 'relative flex w-full flex-col')}
       style={
         isTitleLine
           ? {
               paddingLeft: `${(depth - rootDepth) * 12}px`,
             }
           : {
-              lineHeight: '24px',
+              lineHeight: '1',
             }
       }
       data-depth={depth}
-      onClick={useCallback(
-        (e: React.MouseEvent<HTMLButtonElement>) => {
-          e.preventDefault()
-
-          onClick?.(index, $heading, anchorId)
-        },
-        [anchorId, onClick, index, $heading],
-      )}
+      onClick={handleClick}
       title={title}
     >
       {isTitleLine && (
@@ -88,26 +86,22 @@ export const TocItem = memo((props: Props) => {
         }}
         data-active={!!range}
         className={cn(
-          'relative inline-block rounded-full',
+          'relative inline-block',
           'bg-zinc-100 duration-200',
           isScrollOut && 'bg-zinc-400/80',
-
           'dark:bg-zinc-800/80',
           isScrollOut && 'dark:bg-zinc-700',
           !!range && '!bg-zinc-400/50 dark:!bg-zinc-600',
           'overflow-hidden',
-
           isTitleLine
-            ? `my-1 h-1 duration-200 ${
-                range ? 'mb-3' : 'mb-0.5'
-              } bg-transparent dark:bg-transparent`
-            : 'hover:!bg-zinc-400 dark:hover:!bg-zinc-600 h-1.5',
+            ? `my-1 h-1 duration-200 ${range ? 'mb-3' : 'mb-0.5'} bg-transparent dark:bg-transparent`
+            : 'hover:!bg-zinc-400 dark:hover:!bg-zinc-600 h-1',
         )}
       >
         <span
           className={cn(
-            'absolute inset-y-0 left-0 z-[1] ml-[-12px] rounded-full bg-zinc-600 dark:bg-zinc-400',
-            range > 0 && 'duration-75 ease-linear',
+            'absolute inset-y-0 left-0 z-[1] ml-[-12px] bg-zinc-800 dark:bg-zinc-400',
+            range > 0 && 'duration-100 ease-linear',
           )}
           style={{
             width: `calc(${range * 100}% + 12px)`,
