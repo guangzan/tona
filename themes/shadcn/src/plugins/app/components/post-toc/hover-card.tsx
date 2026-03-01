@@ -1,10 +1,11 @@
 import { Pin, PinOff } from 'lucide-preact'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { BackTopIndicator } from './back-top-indicator'
 import type { TocDataItem } from './toc-item'
 
 interface Props {
-  open: boolean
+  className?: string
   pinned: boolean
   toc: TocDataItem[]
   rootDepth: number
@@ -19,7 +20,7 @@ interface Props {
 }
 
 export function HoverCard({
-  open,
+  className,
   pinned,
   toc,
   rootDepth,
@@ -31,13 +32,10 @@ export function HoverCard({
   return (
     <div
       className={cn(
-        'fixed top-24 right-0 z-1000 -mt-1 flex max-h-[calc(100svh-4rem)] max-w-72 flex-col text-xs',
-        'bg-background',
+        'fixed top-12 right-0 z-1000 -mt-1 flex w-72 flex-col text-xs',
         'scrollbar-none overflow-hidden',
         'transition-transform duration-200 ease-in-out',
-        open
-          ? 'pointer-events-auto translate-x-0 opacity-100'
-          : 'pointer-events-none translate-x-2 opacity-0',
+        className,
       )}
       onMouseLeave={onMouseLeave}
     >
@@ -51,7 +49,7 @@ export function HoverCard({
           {pinned ? <PinOff /> : <Pin />}
         </Button>
       </div>
-      <ul className='scrollbar-none overflow-auto rounded-2xl border px-4 py-2'>
+      <ul className='scrollbar-none max-h-[calc(100vh-200px)] overflow-auto rounded-2xl border bg-background px-4 py-2'>
         {toc.map((heading, index) => (
           <li
             key={heading.anchorId}
@@ -80,6 +78,7 @@ export function HoverCard({
           </li>
         ))}
       </ul>
+      <BackTopIndicator />
     </div>
   )
 }

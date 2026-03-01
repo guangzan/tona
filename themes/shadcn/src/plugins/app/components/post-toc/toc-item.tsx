@@ -15,7 +15,7 @@ interface Props {
   rootDepth: number
   isScrollOut: boolean
   range: number
-  variant?: 'line' | 'title-line'
+  variant: 'line' | 'title-line'
   onClick?: (i: number, $el: HTMLElement | null, anchorId: string) => void
 }
 
@@ -29,14 +29,7 @@ const widthMap: Record<number, number> = {
 }
 
 export const TocItem = memo((props: Props) => {
-  const {
-    onClick,
-    heading,
-    isScrollOut,
-    range,
-    variant = 'line',
-    rootDepth,
-  } = props
+  const { onClick, heading, isScrollOut, range, variant, rootDepth } = props
   const { $heading, anchorId, depth, index, title } = heading
   const $ref = useRef<HTMLButtonElement>(null)
   const isTitleLine = variant === 'title-line'
@@ -61,7 +54,7 @@ export const TocItem = memo((props: Props) => {
               paddingLeft: `${(depth - rootDepth) * 12}px`,
             }
           : {
-              lineHeight: '1',
+              lineHeight: '14px',
             }
       }
       data-depth={depth}
