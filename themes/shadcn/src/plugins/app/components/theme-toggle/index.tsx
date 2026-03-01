@@ -4,7 +4,7 @@ import { useEffect, useState } from 'preact/hooks'
 import { setCodeTheme } from 'tona-utils'
 
 const themeToggleVariants = cva(
-  'cursor-pointer rounded-full p-1.5 transition-all duration-200 *:size-4',
+  'rounded-full p-1.5 transition-all duration-200 *:size-4',
   {
     variants: {
       active: {

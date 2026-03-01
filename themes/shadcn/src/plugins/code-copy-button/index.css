@@ -25,7 +25,6 @@
     outline-none
     bg-code
     text-muted-foreground
-    cursor-pointer
     focus-visible:border-ring
     focus-visible:ring-ring/50
     focus-visible:ring-[3px]

@@ -4,12 +4,12 @@ import { useEffect, useState } from 'preact/hooks'
 import { getCurrentPage } from 'tona-utils'
 
 const backToTopVariants = cva(
-  'fixed right-8 bottom-8 z-50 cursor-pointer rounded-full border-none bg-transparent p-3 transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground',
+  'fixed right-8 bottom-8 z-50 rounded-full border-none bg-transparent p-3 transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground',
   {
     variants: {
       visible: {
-        true: 'pointer-events-auto translate-y-0 opacity-100',
-        false: 'pointer-events-none translate-y-4 opacity-0',
+        true: 'translate-y-0 opacity-100',
+        false: 'translate-y-4 opacity-0',
       },
     },
     defaultVariants: {

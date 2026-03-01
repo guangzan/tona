@@ -10,7 +10,7 @@ const commentPaginationItemVariants = cva(
       variant: {
         link: 'border-transparent border-none text-foreground hover:border-primary/30 hover:bg-muted',
         current:
-          'size-7 shrink-0 cursor-pointer select-none whitespace-nowrap border bg-background text-foreground shadow-xs outline-none hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 sm:size-9 dark:border-input dark:bg-input/30 dark:aria-invalid:ring-destructive/40 dark:hover:bg-input/50',
+          'size-7 shrink-0 select-none whitespace-nowrap border bg-background text-foreground shadow-xs outline-none hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 sm:size-9 dark:border-input dark:bg-input/30 dark:aria-invalid:ring-destructive/40 dark:hover:bg-input/50',
         text: '',
       },
       isArrow: {
