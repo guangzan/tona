@@ -3,7 +3,7 @@ name: Publish Package
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 permissions:
   contents: write
@@ -13,7 +13,6 @@ jobs:
   publish:
     if: github.repository == 'guangzan/tona'
     runs-on: ubuntu-latest
-    environment: Release
     steps:
       - name: Checkout
         uses: actions/checkout@v4
