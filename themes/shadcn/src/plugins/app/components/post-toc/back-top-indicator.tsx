@@ -24,8 +24,8 @@ export const BackTopIndicator = memo(() => {
         }}
       >
         <ArrowUp className='h-4 w-4' />
-        <span>返回顶部</span>
-        <span className='ml-1'>{readPercent}%</span>
+        <span className='ml-1'>返回顶部</span>
+        <span className='w-10 text-center'>{readPercent}%</span>
       </button>
     </div>
   )
