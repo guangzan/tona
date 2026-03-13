@@ -1,8 +1,8 @@
 import { render } from 'preact'
-import { App } from './app'
+import { AppRoot } from './components/app-root'
 
-export function app() {
+export function spa() {
   const frag = document.createDocumentFragment()
-  render(<App />, frag)
+  render(<AppRoot />, frag)
   document.body.prepend(frag)
 }

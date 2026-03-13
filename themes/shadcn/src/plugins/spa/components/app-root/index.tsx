@@ -1,9 +1,9 @@
-import { Toaster } from '../../components/ui/sonner'
-import { Page } from './components/page'
-import { AvatarContext } from './context/avatar-context'
+import { Toaster } from '../../../../components/ui/sonner'
+import { AvatarContext } from '../../context/avatar-context'
+import { Page } from '../page'
 import 'tona-sonner/dist/index.css'
 import { TooltipProvider } from '@/components/ui/tooltip'
-import { useAvatar } from './hooks/use-avatar'
+import { useAvatar } from '../../hooks/use-avatar'
 
 function PageWrapper() {
   const avatar = useAvatar()
@@ -17,7 +17,7 @@ function PageWrapper() {
   )
 }
 
-export function App() {
+export function AppRoot() {
   return (
     <>
       <PageWrapper />

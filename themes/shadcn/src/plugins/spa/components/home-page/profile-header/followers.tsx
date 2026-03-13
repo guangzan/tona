@@ -1,5 +1,5 @@
 import { getFollowersUrl } from 'tona-utils'
-import { useFollowers } from '@/plugins/app/hooks/use-followers'
+import { useFollowers } from '@/plugins/spa/hooks/use-followers'
 
 export function Followers() {
   const { data: followerCount } = useFollowers()

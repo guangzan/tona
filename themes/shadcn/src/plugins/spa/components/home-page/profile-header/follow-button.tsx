@@ -1,6 +1,6 @@
-import { Heart, Loader2 } from 'lucide-preact'
+import { Loader2, PlusIcon } from 'lucide-preact'
 import { Button } from '@/components/ui/button'
-import { useFollow } from '@/plugins/app/hooks/use-follow'
+import { useFollow } from '@/plugins/spa/hooks/use-follow'
 
 export function FollowButton() {
   const { onToggleFollow, isPending, isFollowed } = useFollow()
@@ -13,16 +13,18 @@ export function FollowButton() {
 
   const icon = (() => {
     if (isPending) return <Loader2 size={18} className='animate-spin' />
-    return (
-      <Heart
-        size={18}
-        className={isFollowed ? 'fill-red-500 text-red-500' : ''}
-      />
-    )
+    if (isFollowed) return null
+    return <PlusIcon size={18} />
   })()
 
   return (
-    <Button onClick={onToggleFollow} disabled={isPending} variant='outline'>
+    <Button
+      onClick={onToggleFollow}
+      disabled={isPending}
+      className='absolute top-1 right-1 rounded-full shadow-none md:top-2 md:right-2'
+      size='sm'
+      variant={isFollowed ? 'outline' : 'default'}
+    >
       {icon}
       <span>{buttonText}</span>
     </Button>

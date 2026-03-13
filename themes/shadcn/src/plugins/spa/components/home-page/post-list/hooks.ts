@@ -25,9 +25,7 @@ export function usePostList() {
 
       dayElements.forEach((dayEl) => {
         const dayTitleEl = dayEl.querySelector('.dayTitle a')
-        const postTitleEls = dayEl.querySelectorAll(
-          '.postTitle a.postTitle2',
-        )
+        const postTitleEls = dayEl.querySelectorAll('.postTitle a.postTitle2')
 
         postTitleEls.forEach((postTitleEl) => {
           const postTitleWrap = postTitleEl.closest('.postTitle')
@@ -50,9 +48,7 @@ export function usePostList() {
           const commentCountMatch = postDescText.match(/评论\((\d+)\)/)
           const diggCountMatch = postDescText.match(/推荐\((\d+)\)/)
 
-          const editLinkEl = postDescEl?.querySelector(
-            'a[href*="EditPosts"]',
-          )
+          const editLinkEl = postDescEl?.querySelector('a[href*="EditPosts"]')
           const editHref = editLinkEl?.getAttribute('href') || '#'
 
           items.push({

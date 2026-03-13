@@ -1,5 +1,5 @@
 import { useContext } from 'preact/hooks'
-import { AvatarContext } from '@/plugins/app/context/avatar-context'
+import { AvatarContext } from '@/plugins/spa/context/avatar-context'
 
 export function Avatar() {
   const avatar = useContext(AvatarContext)

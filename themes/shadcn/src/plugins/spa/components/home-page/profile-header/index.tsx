@@ -1,4 +1,4 @@
-import { useNickname } from '@/plugins/app/hooks/use-nickname'
+import { useNickname } from '@/plugins/spa/hooks/use-nickname'
 import { Avatar } from './avatar'
 import { FollowButton } from './follow-button'
 import { Followers } from './followers'
