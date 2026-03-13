@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  A modern theme development framework for CNBlogs (博客园).
+  专为博客园（CNBlogs）设计的现代化主题开发框架。
 </p>
 
 <p align="center">
@@ -14,17 +14,17 @@
   <a href="https://www.cnblogs.com"><img src="https://img.shields.io/badge/CNBlogs-博客园-green?style=flat-square" alt="CNBlogs"></a>
 </p>
 
-**English** | [中文](./README.zh-CN.md)
+[English](./README.md) | **中文**
 
-## Features
+## 特性
 
-- **Plugin System** - Extensible plugin architecture for building modular themes
-- **Configuration API** - Type-safe configuration management with `defineOptions`
-- **Theme Context** - Shared theme state and utilities via `createTheme`
-- **TypeScript Support** - Full TypeScript definitions included
-- **Lightweight** - Minimal runtime overhead
+- **插件系统** - 可扩展的插件架构，用于构建模块化主题
+- **配置 API** - 使用 `defineOptions` 实现类型安全的配置管理
+- **主题上下文** - 通过 `createTheme` 共享主题状态和工具
+- **TypeScript 支持** - 包含完整的 TypeScript 定义
+- **轻量级** - 极小的运行时开销
 
-## Installation
+## 安装
 
 ```bash
 npm install tona
@@ -38,20 +38,20 @@ pnpm add tona
 yarn add tona
 ```
 
-## Usage
+## 使用
 
-### Creating a Theme
+### 创建主题
 
 ```typescript
 import { createTheme } from 'tona'
 
 const theme = createTheme()
 
-// Use plugins
+// 使用插件
 theme.use(myPlugin)
 ```
 
-### Defining Options
+### 定义配置选项
 
 ```typescript
 import { defineOptions } from 'tona'
@@ -63,11 +63,11 @@ const getBackgroundOptions = defineOptions('bodyBackground', {
   repeat: false,
 })
 
-// Use in your theme
+// 在主题中使用
 const options = getBackgroundOptions(userConfig)
 ```
 
-### Creating a Plugin
+### 创建插件
 
 ```typescript
 import { defineOptions } from 'tona'
@@ -87,7 +87,7 @@ export function backgroundPlugin(theme, devOptions, pluginOptions) {
   const { opacitySelector } = Object.assign(
     {},
     { opacitySelector: '#main,#navigator' },
-    pluginOptions,
+    pluginOptions
   )
 
   setBackground(value, repeat)
@@ -95,7 +95,7 @@ export function backgroundPlugin(theme, devOptions, pluginOptions) {
 }
 ```
 
-### Using Plugins
+### 使用插件
 
 ```typescript
 import { createTheme } from 'tona'
@@ -106,44 +106,43 @@ const theme = createTheme()
 theme.use(
   backgroundPlugin,
   {
-    // Theme default configuration
+    // 主题默认配置
     enable: true,
     value: '#ffb3cc',
     opacity: 0.85,
   },
   {
-    // Plugin configuration
+    // 插件配置
     opacitySelector: '#main',
-  },
+  }
 )
 ```
 
-## API Reference
+## API 参考
 
 ### `createTheme()`
 
-Creates a new theme instance with context management.
+创建具有上下文管理功能的新主题实例。
 
-**Returns:** `ThemeInstance`
+**返回：** `ThemeInstance`
 
 ### `defineOptions(key, defaults)`
 
-Creates a type-safe configuration getter.
+创建类型安全的配置获取器。
 
-**Parameters:**
+**参数：**
+- `key` - 配置键或键数组（用于别名）
+- `defaults` - 默认配置对象
 
-- `key` - Configuration key or array of keys (for aliases)
-- `defaults` - Default configuration object
+**返回：** `(options: any) => Config`
 
-**Returns:** `(options: any) => Config`
+## 相关包
 
-## Related Packages
+- [tona-plugins](https://github.com/guangzan/tona/tree/main/packages/plugins) - 官方插件集合
+- [tona-hooks](https://github.com/guangzan/tona/tree/main/packages/hooks) - 主题开发用的 React Hooks
+- [tona-utils](https://github.com/guangzan/tona/tree/main/packages/utils) - 工具函数
+- [tona-vite](https://github.com/guangzan/tona/tree/main/packages/tona-vite) - 主题开发的 Vite 插件
 
-- [tona-plugins](https://github.com/guangzan/tona/tree/main/packages/plugins) - Official plugin collection
-- [tona-hooks](https://github.com/guangzan/tona/tree/main/packages/hooks) - React hooks for theme development
-- [tona-utils](https://github.com/guangzan/tona/tree/main/packages/utils) - Utility functions
-- [tona-vite](https://github.com/guangzan/tona/tree/main/packages/tona-vite) - Vite plugin for theme development
+## 文档
 
-## Documentation
-
-For detailed documentation and examples, visit the [Tona documentation](https://github.com/guangzan/tona).
+详细的文档和示例，请访问 [Tona 文档](https://github.com/guangzan/tona)。

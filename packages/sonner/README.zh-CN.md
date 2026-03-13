@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Preact toast notification component inspired by sonner.
+  受 sonner 启发的 Preact Toast 通知组件。
 </p>
 
 <p align="center">
@@ -14,18 +14,18 @@
   <a href="https://preactjs.com"><img src="https://img.shields.io/badge/Preact->=10.0.0-673AB8?style=flat-square&logo=preact" alt="Preact"></a>
 </p>
 
-**English** | [中文](./README.zh-CN.md)
+[English](./README.md) | **中文**
 
-## Features
+## 特性
 
-- **Beautiful Design** - Clean and modern toast notifications
-- **Multiple Types** - Success, error, warning, info toasts
-- **Customizable** - Highly configurable appearance and behavior
-- **Dark Mode** - Built-in dark theme support
-- **Animations** - Smooth enter/exit animations
-- **TypeScript** - Full type definitions included
+- **精美设计** - 简洁现代的 Toast 通知
+- **多种类型** - 成功、错误、警告、信息 Toast
+- **高度可定制** - 外观和行为高度可配置
+- **暗黑模式** - 内置暗黑主题支持
+- **动画效果** - 平滑的进入/退出动画
+- **TypeScript** - 包含完整的类型定义
 
-## Installation
+## 安装
 
 ```bash
 npm install tona-sonner
@@ -39,7 +39,7 @@ pnpm add tona-sonner
 yarn add tona-sonner
 ```
 
-## Usage
+## 使用
 
 ```tsx
 import { Toaster, toast } from 'tona-sonner'
@@ -56,10 +56,10 @@ function App() {
 }
 ```
 
-## Toast Types
+## Toast 类型
 
 ```tsx
-// Different toast types
+// 不同的 Toast 类型
 toast.success('Success!')
 toast.error('Error!')
 toast.warning('Warning!')
@@ -67,15 +67,15 @@ toast.info('Info!')
 toast.default('Default message')
 ```
 
-## Toast with Options
+## 带选项的 Toast
 
 ```tsx
-// With description
+// 带描述
 toast.success('Success!', {
   description: 'Your action was completed successfully.'
 })
 
-// With action
+// 带操作
 toast.error('Error occurred', {
   description: 'Something went wrong',
   action: {
@@ -84,67 +84,67 @@ toast.error('Error occurred', {
   }
 })
 
-// Custom duration
+// 自定义持续时间
 toast.info('This will close in 5 seconds', {
   duration: 5000
 })
 ```
 
-## Toaster Component
+## Toaster 组件
 
 ```tsx
 <Toaster
-  position="bottom-right"  // Toast position
-  gap={14}                 // Gap between toasts
-  visibleToasts={3}        // Max visible toasts
+  position="bottom-right"  // Toast 位置
+  gap={14}                 // Toast 之间的间距
+  visibleToasts={3}        // 最大可见 Toast 数量
 />
 ```
 
-### Default Configuration
+### 默认配置
 
-- Position: `bottom-right`
-- Gap: `14px`
-- Visible toasts: `3`
-- Duration: `3000ms`
-- Close button: Always visible
-- Stacked by default, expands on hover
+- 位置: `bottom-right`
+- 间距: `14px`
+- 可见 Toast 数: `3`
+- 持续时间: `3000ms`
+- 关闭按钮: 始终可见
+- 默认堆叠，悬停时展开
 
-## Dismissing Toasts
+## 关闭 Toast
 
 ```tsx
 const toastId = toast.success('Hello!')
 
-// Dismiss specific toast
+// 关闭特定 Toast
 toast.dismiss(toastId)
 
-// Dismiss all toasts
+// 关闭所有 Toast
 toast.dismiss()
 ```
 
-## Auto-mounting
+## 自动挂载
 
-The Toaster automatically mounts to document body when imported. You can also manually mount it:
+Toaster 在导入时会自动挂载到 document body。您也可以手动挂载：
 
 ```tsx
 import { mountToaster } from 'tona-sonner'
 
-// Mount to document body
+// 挂载到 document body
 mountToaster()
 
-// Mount to custom container
+// 挂载到自定义容器
 const container = document.getElementById('toast-container')
 mountToaster(container)
 ```
 
-## Styling
+## 样式
 
-Import the CSS file:
+导入 CSS 文件：
 
 ```tsx
 import 'tona-sonner/dist/index.css'
 ```
 
-Or customize with CSS variables:
+或使用 CSS 变量自定义：
 
 ```css
 :root {
@@ -154,7 +154,7 @@ Or customize with CSS variables:
 }
 ```
 
-## Peer Dependencies
+## 对等依赖
 
 ```json
 {
@@ -162,8 +162,8 @@ Or customize with CSS variables:
 }
 ```
 
-## Related
+## 相关
 
-- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - Core framework
-- [tona-ui](https://github.com/guangzan/tona/tree/main/packages/ui) - UI components
-- [sonner](https://sonner.emilkowal.ski/) - Original React version
+- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - 核心框架
+- [tona-ui](https://github.com/guangzan/tona/tree/main/packages/ui) - UI 组件
+- [sonner](https://sonner.emilkowal.ski/) - 原版 React 版本

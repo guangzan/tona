@@ -1,48 +1,160 @@
-# plugins
+# tona-plugins
 
-Plugins for Tona theme.
+<p align="center">
+  <img src="../../assets/tona.png" alt="Tona" width="100" />
+</p>
+
+<p align="center">
+  Official plugin collection for Tona themes.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/tona-plugins"><img src="https://img.shields.io/npm/v/tona-plugins?style=flat-square" alt="npm version"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/npm/l/tona-plugins?style=flat-square" alt="license"></a>
+</p>
+
+**English** | [中文](./README.zh-CN.md)
+
+## Features
+
+- **30+ Plugins** - Comprehensive plugin collection
+- **Easy Integration** - Simple `theme.use()` API
+- **Configurable** - Each plugin has customizable options
+- **Official Support** - Maintained by the Tona team
+
+## Installation
+
+```bash
+npm install tona-plugins
+```
+
+```bash
+pnpm add tona-plugins
+```
+
+```bash
+yarn add tona-plugins
+```
 
 ## Usage
 
-```bash
-npm i tona
+```typescript
+import { createTheme } from 'tona'
+import { background, darkMode, codeHighlight } from 'tona-plugins'
+
+const theme = createTheme()
+
+theme.use(background)
+theme.use(darkMode)
+theme.use(codeHighlight)
 ```
 
-```bash
-npm i tona-plugins
-```
+## Available Plugins
 
-```js
+### UI Enhancements
+
+| Plugin | Description |
+|--------|-------------|
+| `background` | Custom background image/color |
+| `darkMode` | Dark mode toggle |
+| `colorMode` | Color theme switching |
+| `clickEffects` | Click animation effects |
+| `live2d` | Live2D model widget |
+
+### Content
+
+| Plugin | Description |
+|--------|-------------|
+| `codeHighlight` | Syntax highlighting |
+| `codeCopy` | Copy code button |
+| `codeLang` | Show code language |
+| `codeLinenumbers` | Line numbers for code |
+| `codeTrafficLight` | Mac-style window buttons |
+| `imagePreview` | Image lightbox |
+| `notation` | Text annotations |
+
+### Navigation
+
+| Plugin | Description |
+|--------|-------------|
+| `catalog` | Table of contents |
+| `tools` | Quick navigation tools |
+| `footer` | Custom footer |
+| `qrcode` | QR code generator |
+
+### Social
+
+| Plugin | Description |
+|--------|-------------|
+| `commentsAvatars` | Comment user avatars |
+| `emoji` | Emoji support |
+| `signature` | Post signature |
+
+### Media
+
+| Plugin | Description |
+|--------|-------------|
+| `musicPlayer` | Background music player |
+| `barrage` | Danmu/barrage comments |
+| `charts` | Data visualization charts |
+
+### Utilities
+
+| Plugin | Description |
+|--------|-------------|
+| `notice` | Announcement notices |
+| `toast` | Toast notifications |
+| `lock` | Content protection |
+| `donation` | Donation button |
+| `license` | License display |
+| `webTag` | Website tags |
+
+## Plugin Configuration
+
+Each plugin accepts configuration options:
+
+```typescript
 import { createTheme } from 'tona'
 import { background } from 'tona-plugins'
 
-createTheme().use(background)
-```
+const theme = createTheme()
 
-Configure the default behavior of the plugin in your Theme
-
-```js
-import { createTheme } from 'tona'
-import { background } from 'tona-plugins'
-
-createTheme().use(background, {
-  // The default configuration of the Theme
-  enable: true,
-})
-```
-
-Configure background plugin
-
-```js
-import { createTheme } from 'tona'
-import { background } from 'tona-plugins'
-
-createTheme().use(
+theme.use(
   background,
-  {},
   {
-    // The configuration of the plugin
-    opacitySelector: '#sideBar,#mainContent,#footer',
+    // Theme-level defaults
+    enable: true,
+    value: '#f5f5f5',
+  },
+  {
+    // Plugin-specific options
+    opacitySelector: '#main',
   }
 )
 ```
+
+## Creating Custom Plugins
+
+```typescript
+import { defineOptions } from 'tona'
+
+export function myPlugin(theme, devOptions, pluginOptions) {
+  const getOptions = defineOptions('myPlugin', {
+    enable: false,
+    color: '#000',
+  })
+
+  const options = getOptions(devOptions)
+  
+  if (!options.enable) return
+
+  // Plugin logic here
+  document.body.style.color = options.color
+}
+```
+
+## Related
+
+- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - Core framework
+- [tona-options](https://github.com/guangzan/tona/tree/main/packages/options) - Pre-defined options
+- [create-tona](https://github.com/guangzan/tona/tree/main/packages/create-tona) - Create themes

@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  React hooks collection for CNBlogs theme development.
+  用于博客园主题开发的 React Hooks 集合。
 </p>
 
 <p align="center">
@@ -14,16 +14,16 @@
   <a href="https://preactjs.com"><img src="https://img.shields.io/badge/Preact->=10.0.0-673AB8?style=flat-square&logo=preact" alt="Preact"></a>
 </p>
 
-**English** | [中文](./README.zh-CN.md)
+[English](./README.md) | **中文**
 
-## Features
+## 特性
 
-- **Preact Compatible** - Built for Preact, works with React
-- **CNBlogs Optimized** - Hooks designed specifically for CNBlogs environment
-- **TypeScript Support** - Full type definitions included
-- **Lightweight** - Tree-shakeable and minimal footprint
+- **Preact 兼容** - 为 Preact 构建，兼容 React
+- **博客园优化** - 专为博客园环境设计的 Hooks
+- **TypeScript 支持** - 包含完整的类型定义
+- **轻量级** - 可摇树优化，占用空间小
 
-## Installation
+## 安装
 
 ```bash
 npm install tona-hooks
@@ -37,17 +37,17 @@ pnpm add tona-hooks
 yarn add tona-hooks
 ```
 
-## Usage
+## 使用
 
 ```typescript
 import { useQueryDOM, useLocalStorage, useScroll } from 'tona-hooks'
 ```
 
-## Available Hooks
+## 可用的 Hooks
 
 ### `useAjaxComplete`
 
-Listen for AJAX requests completion.
+监听 AJAX 请求完成。
 
 ```typescript
 import { useAjaxComplete } from 'tona-hooks'
@@ -59,7 +59,7 @@ useAjaxComplete((event, xhr, settings) => {
 
 ### `useEffectOnce`
 
-Run effect only once on mount.
+仅在挂载时运行一次 effect。
 
 ```typescript
 import { useEffectOnce } from 'tona-hooks'
@@ -71,7 +71,7 @@ useEffectOnce(() => {
 
 ### `useEventCallback`
 
-Create a stable callback reference.
+创建稳定的回调引用。
 
 ```typescript
 import { useEventCallback } from 'tona-hooks'
@@ -83,19 +83,19 @@ const handleClick = useEventCallback(() => {
 
 ### `useIsomorphicLayoutEffect`
 
-Safe layout effect for SSR and browser.
+适用于 SSR 和浏览器的安全 layout effect。
 
 ```typescript
 import { useIsomorphicLayoutEffect } from 'tona-hooks'
 
 useIsomorphicLayoutEffect(() => {
-  // DOM measurements
+  // DOM 测量
 }, [])
 ```
 
 ### `useLocalStorage`
 
-Persist state to localStorage.
+将状态持久化到 localStorage。
 
 ```typescript
 import { useLocalStorage } from 'tona-hooks'
@@ -105,7 +105,7 @@ const [value, setValue] = useLocalStorage('key', 'defaultValue')
 
 ### `useQueryDOM`
 
-Query and observe DOM elements.
+查询和观察 DOM 元素。
 
 ```typescript
 import { useQueryDOM } from 'tona-hooks'
@@ -115,7 +115,7 @@ const element = useQueryDOM('#my-element')
 
 ### `useRafState`
 
-State updates synced with requestAnimationFrame.
+与 requestAnimationFrame 同步的状态更新。
 
 ```typescript
 import { useRafState } from 'tona-hooks'
@@ -125,7 +125,7 @@ const [position, setPosition] = useRafState({ x: 0, y: 0 })
 
 ### `useScroll`
 
-Track scroll position of an element.
+跟踪元素的滚动位置。
 
 ```typescript
 import { useScroll } from 'tona-hooks'
@@ -135,7 +135,7 @@ const [x, y] = useScroll(ref)
 
 ### `useUnmount`
 
-Run cleanup on component unmount.
+在组件卸载时运行清理。
 
 ```typescript
 import { useUnmount } from 'tona-hooks'
@@ -147,7 +147,7 @@ useUnmount(() => {
 
 ### `useWindowScroll`
 
-Track window scroll position.
+跟踪窗口滚动位置。
 
 ```typescript
 import { useWindowScroll } from 'tona-hooks'
@@ -155,7 +155,7 @@ import { useWindowScroll } from 'tona-hooks'
 const [x, y] = useWindowScroll()
 ```
 
-## Peer Dependencies
+## 对等依赖
 
 ```json
 {
@@ -163,7 +163,7 @@ const [x, y] = useWindowScroll()
 }
 ```
 
-## Related
+## 相关
 
-- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - Core framework
-- [tona-ui](https://github.com/guangzan/tona/tree/main/packages/ui) - UI components
+- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - 核心框架
+- [tona-ui](https://github.com/guangzan/tona/tree/main/packages/ui) - UI 组件

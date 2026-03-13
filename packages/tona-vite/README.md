@@ -1,38 +1,68 @@
-# vite-plugin-tona
+# tona-vite
 
-Vite plugin for Tona themes - combines dynamic script extension and shared assets serving.
+<p align="center">
+  <img src="../../assets/tona.png" alt="Tona" width="100" />
+</p>
+
+<p align="center">
+  Vite plugin for Tona theme development.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/tona-vite"><img src="https://img.shields.io/npm/v/tona-vite?style=flat-square" alt="npm version"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/npm/l/tona-vite?style=flat-square" alt="license"></a>
+  <a href="https://vitejs.dev"><img src="https://img.shields.io/badge/Vite-^5.0.0-646CFF?style=flat-square&logo=vite" alt="Vite"></a>
+</p>
+
+**English** | [中文](./README.zh-CN.md)
+
+## Features
+
+- **Dynamic Script Injection** - Automatically detects and injects theme scripts
+- **Shared Assets Serving** - Serves shared assets during development
+- **IIFE Build Output** - Configures library format for theme distribution
+- **Dev Server Support** - Full development server with hot reload
+- **Multiple Asset Paths** - Supports `/public/`, `/templates/`, `/js/`, `/css/`, `/images/`
 
 ## Installation
 
 ```bash
-npm install tona-vite
+npm install -D tona-vite
+```
+
+```bash
+pnpm add -D tona-vite
 ```
 
 ## Usage
 
-```ts
+```typescript
+import tona from 'tona-vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [tona()]
+})
+```
+
+### With Options
+
+```typescript
 import tona from 'tona-vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
-    tona()
+    tona({
+      themeName: 'my-theme'
+    })
   ]
 })
 ```
 
-## Features
-
-- Automatically detects `main.ts` or `main.js` files and replaces script src in HTML
-- Configures Vite build as IIFE library format for theme distribution
-- Serves shared assets from public directory during development
-- Supports multiple asset paths: `/public/`, `/templates/`, `/js/`, `/css/`, `/images/`
-- Automatically sets correct MIME types for served files
-- Works in both development and build modes
-
 ## Options
 
-```ts
+```typescript
 interface TonaPluginOptions {
   /**
    * Theme name for build output filename
@@ -44,12 +74,14 @@ interface TonaPluginOptions {
 
 ## Build Configuration
 
-The plugin automatically configures Vite's build mode:
+The plugin automatically configures Vite for theme development:
 
-- **Library format**: IIFE (Immediately Invoked Function Expression)
-- **Entry point**: Automatically detects `src/main.ts` or `src/main.js`
-- **Output filename**: `{themeName}.min.js` (default: `theme.min.js`)
-- **CSS code splitting**: Disabled (all styles bundled together)
+| Setting | Value | Description |
+|---------|-------|-------------|
+| Library Format | IIFE | Immediately Invoked Function Expression |
+| Entry Point | `src/main.ts` or `src/main.js` | Auto-detected |
+| Output Filename | `{themeName}.min.js` | Default: `theme.min.js` |
+| CSS Code Splitting | Disabled | All styles bundled together |
 
 ## Development Server
 
@@ -61,3 +93,31 @@ During development, the plugin serves static assets from the plugin's public dir
 - `/css/*` - CSS files
 - `/images/*` - Image files
 - `/` or `/index.html` - Navigation index page
+
+## Example Project Structure
+
+```
+my-theme/
+├── src/
+│   ├── main.ts          # Theme entry
+│   └── style.css        # Theme styles
+├── vite.config.ts       # Vite + Tona plugin config
+└── package.json
+```
+
+## vite.config.ts Example
+
+```typescript
+import tona from 'tona-vite'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [tona()],
+  // Additional Vite config if needed
+})
+```
+
+## Related
+
+- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - Core framework
+- [create-tona](https://github.com/guangzan/tona/tree/main/packages/create-tona) - Project scaffolding

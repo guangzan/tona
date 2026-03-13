@@ -1,69 +1,120 @@
-# Tona TypeScript 主题模板
+# create-tona
 
-这是一个使用 TypeScript 编写的 Tona 博客主题模板。
+<p align="center">
+  <img src="../../assets/tona.png" alt="Tona" width="100" />
+</p>
 
-## 特性
+<p align="center">
+  Interactive CLI tool to scaffold Tona theme projects.
+</p>
 
-- 🚀 使用 Vite 作为构建工具，提供快速的开发体验
-- 📦 TypeScript 支持，提供完整的类型提示
-- 🎨 基于 Tona 框架，轻松开发博客主题
-- 🔧 开箱即用的配置，快速开始开发
+<p align="center">
+  <a href="https://www.npmjs.com/package/create-tona"><img src="https://img.shields.io/npm/v/create-tona?style=flat-square" alt="npm version"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/npm/l/create-tona?style=flat-square" alt="license"></a>
+</p>
 
-## 快速开始
+**English** | [中文](./README.zh-CN.md)
 
-### 安装依赖
+## Features
+
+- **Interactive Setup** - Guided prompts for project configuration
+- **Multiple Templates** - Choose from minimal, Preact, and more templates
+- **Package Manager Support** - Auto-detects npm, yarn, pnpm
+- **TypeScript Ready** - All templates include TypeScript support
+- **Best Practices** - Pre-configured with Vite and modern tooling
+
+## Usage
+
+### Create a New Project
 
 ```bash
-pnpm install
+npm create tona@latest
 ```
 
-### 开发模式
+```bash
+pnpm create tona
+```
 
 ```bash
+yarn create tona
+```
+
+### Command Line Options
+
+```bash
+create-tona [project-name] [options]
+```
+
+**Options:**
+- `-t, --template <template>` - Specify template (minimal, preact)
+- `-p, --package-manager <pm>` - Specify package manager (npm, yarn, pnpm)
+- `-h, --help` - Show help
+
+## Templates
+
+### minimal
+
+A minimal TypeScript starter template with basic Tona setup.
+
+**Features:**
+- TypeScript support
+- Vite build tool
+- Basic plugin example
+
+### preact
+
+A Preact-based template for building modern reactive themes.
+
+**Features:**
+- Preact for UI components
+- SPA routing support
+- UI component library
+- Tailwind CSS ready
+
+## Project Structure
+
+```
+my-theme/
+├── src/
+│   ├── main.ts          # Theme entry point
+│   └── style.css        # Theme styles
+├── vite.config.ts       # Vite configuration
+├── tsconfig.json        # TypeScript configuration
+└── package.json         # Project configuration
+```
+
+## Development
+
+After creating your project:
+
+```bash
+cd my-theme
+pnpm install
 pnpm dev
 ```
 
-### 构建
+Build for production:
 
 ```bash
 pnpm build
 ```
 
-## 项目结构
-
-```
-.
-├── src/
-│   ├── main.ts      # 主题入口文件
-│   └── style.css    # 样式文件
-├── vite.config.ts   # Vite 配置文件
-├── tsconfig.json    # TypeScript 配置文件
-└── package.json     # 项目配置
-```
-
-## 开发指南
-
-### 创建插件
-
-在 `src/main.ts` 中，你可以通过 `createTheme().use()` 来注册插件：
+## Creating a Plugin
 
 ```typescript
+// src/main.ts
 import { createTheme } from 'tona'
 import './style.css'
 
-function myPlugin() {
-  // 你的插件逻辑
+function myPlugin(theme) {
+  // Your plugin logic
+  console.log('Plugin initialized!')
 }
 
 createTheme().use(myPlugin)
 ```
 
-### 样式编写
+## Related
 
-在 `src/style.css` 中编写你的主题样式。
-
-## 了解更多
-
-- [Tona 文档](https://github.com/guangzan/tona)
-- [Vite 文档](https://vitejs.dev/)
-
+- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - Core framework
+- [tona-vite](https://github.com/guangzan/tona/tree/main/packages/tona-vite) - Vite plugin

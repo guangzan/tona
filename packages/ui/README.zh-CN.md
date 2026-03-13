@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  UI component library for Tona themes, built with Preact.
+  用于 Tona 主题的 UI 组件库，基于 Preact 构建。
 </p>
 
 <p align="center">
@@ -14,17 +14,17 @@
   <a href="https://preactjs.com"><img src="https://img.shields.io/badge/Preact->=10.0.0-673AB8?style=flat-square&logo=preact" alt="Preact"></a>
 </p>
 
-**English** | [中文](./README.zh-CN.md)
+[English](./README.md) | **中文**
 
-## Features
+## 特性
 
-- **Preact Based** - Lightweight components for Preact
-- **Slot Component** - Radix UI-inspired Slot for prop forwarding
-- **Utility Functions** - `cn()` for class name merging
-- **TypeScript Support** - Full type definitions
-- **Tree-shakeable** - Import only what you need
+- **基于 Preact** - 为 Preact 设计的轻量级组件
+- **Slot 组件** - 受 Radix UI 启发的 Slot，用于属性转发
+- **工具函数** - 用于合并类名的 `cn()`
+- **TypeScript 支持** - 完整的类型定义
+- **可摇树优化** - 只导入你需要的
 
-## Installation
+## 安装
 
 ```bash
 npm install tona-ui
@@ -38,33 +38,33 @@ pnpm add tona-ui
 yarn add tona-ui
 ```
 
-## Usage
+## 使用
 
 ```typescript
 import { Slot, cn } from 'tona-ui'
 ```
 
-## Components
+## 组件
 
 ### Slot
 
-The Slot component forwards props to its child element, similar to Radix UI's Slot.
+Slot 组件将属性转发给其子元素，类似于 Radix UI 的 Slot。
 
 ```tsx
 import { Slot } from 'tona-ui'
 
-// Basic usage
+// 基础用法
 <Slot className="custom-class">
-  <button>Click me</button>
+  <button>点击我</button>
 </Slot>
-// Renders: <button class="custom-class">Click me</button>
+// 渲染: <button class="custom-class">点击我</button>
 
-// Event handling
+// 事件处理
 <Slot onClick={() => console.log('clicked')}>
-  <div>Clickable div</div>
+  <div>可点击的 div</div>
 </Slot>
 
-// Multiple children - props forwarded to all
+// 多个子元素 - 属性转发给所有子元素
 <Slot className="item">
   <span>Item 1</span>
   <span>Item 2</span>
@@ -73,23 +73,23 @@ import { Slot } from 'tona-ui'
 
 ### cn
 
-Utility function for merging CSS class names.
+用于合并 CSS 类名的工具函数。
 
 ```tsx
 import { cn } from 'tona-ui'
 
-// Basic usage
+// 基础用法
 const className = cn('base-class', 'conditional-class')
-// Result: "base-class conditional-class"
+// 结果: "base-class conditional-class"
 
-// With conditions
+// 带条件
 const className = cn('base-class', {
   'active-class': isActive,
   'disabled-class': isDisabled,
 })
-// Result when isActive=true, isDisabled=false: "base-class active-class"
+// 当 isActive=true, isDisabled=false 时的结果: "base-class active-class"
 
-// Multiple arguments
+// 多个参数
 const className = cn(
   'flex',
   'items-center',
@@ -98,7 +98,7 @@ const className = cn(
 )
 ```
 
-## Peer Dependencies
+## 对等依赖
 
 ```json
 {
@@ -106,18 +106,18 @@ const className = cn(
 }
 ```
 
-## Development
+## 开发
 
 ```bash
-# Development mode
+# 开发模式
 pnpm dev
 
-# Build
+# 构建
 pnpm build
 ```
 
-## Related
+## 相关
 
-- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - Core framework
+- [tona](https://github.com/guangzan/tona/tree/main/packages/core) - 核心框架
 - [tona-hooks](https://github.com/guangzan/tona/tree/main/packages/hooks) - React hooks
-- [tona-sonner](https://github.com/guangzan/tona/tree/main/packages/sonner) - Toast notifications
+- [tona-sonner](https://github.com/guangzan/tona/tree/main/packages/sonner) - Toast 通知
