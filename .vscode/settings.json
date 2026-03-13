@@ -65,5 +65,8 @@
     "vitest",
     "Wechat",
     "Weibo"
-  ]
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
