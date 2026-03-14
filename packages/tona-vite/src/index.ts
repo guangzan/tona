@@ -56,27 +56,29 @@ export default function tona(options: TonaPluginOptions = {}): Plugin {
       const libConfig =
         existingLib && typeof existingLib === 'object'
           ? {
-              ...existingLib,
-              formats: existingLib.formats || (['iife'] as LibraryFormats[]),
-              entry: existingLib.entry || resolvedEntryPath,
-              name: existingLib.name || themeName,
-              fileName: existingLib.fileName || (() => `${themeName}.min.js`),
-              cssFileName: existingLib.cssFileName || `${themeName}.min`,
-            }
+            ...existingLib,
+            formats: existingLib.formats || (['iife'] as LibraryFormats[]),
+            entry: existingLib.entry || resolvedEntryPath,
+            name: existingLib.name || themeName,
+            fileName: existingLib.fileName || (() => `${themeName}.min.js`),
+            cssFileName: existingLib.cssFileName || `${themeName}.min`,
+          }
           : {
-              formats: ['iife'] as LibraryFormats[],
-              entry: resolvedEntryPath,
-              name: themeName,
-              fileName: () => `${themeName}.min.js`,
-              cssFileName: `${themeName}.min`,
-            }
+            formats: ['iife'] as LibraryFormats[],
+            entry: resolvedEntryPath,
+            name: themeName,
+            fileName: () => `${themeName}.min.js`,
+            cssFileName: `${themeName}.min`,
+          }
+
+      const buildConfig = config.build ?? {}
+      const bundlerOptions = buildConfig.rolldownOptions ?? buildConfig.rollupOptions
 
       return {
-        ...config,
         build: {
-          ...config.build,
-          cssCodeSplit: config.build?.cssCodeSplit ?? false,
+          cssCodeSplit: buildConfig.cssCodeSplit ?? false,
           lib: libConfig,
+          ...(bundlerOptions ? { rolldownOptions: bundlerOptions } : {}),
         },
       }
     },
