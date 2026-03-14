@@ -11,12 +11,12 @@ export function PostList() {
   }
 
   return (
-    <Panel id='posts'>
+    <Panel id="posts">
       <PanelHeader>
         <PanelTitle>最新博文</PanelTitle>
       </PanelHeader>
-      <PanelContent className='p-0'>
-        <div className='flex flex-col'>
+      <PanelContent className="p-0">
+        <div className="flex flex-col">
           {items.map((item) => (
             <PostListItem key={`${item.href}-${item.title}`} item={item} />
           ))}

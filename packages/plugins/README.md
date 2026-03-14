@@ -53,61 +53,61 @@ theme.use(codeHighlight)
 
 ### UI Enhancements
 
-| Plugin | Description |
-|--------|-------------|
-| `background` | Custom background image/color |
-| `darkMode` | Dark mode toggle |
-| `colorMode` | Color theme switching |
-| `clickEffects` | Click animation effects |
-| `live2d` | Live2D model widget |
+| Plugin         | Description                   |
+| -------------- | ----------------------------- |
+| `background`   | Custom background image/color |
+| `darkMode`     | Dark mode toggle              |
+| `colorMode`    | Color theme switching         |
+| `clickEffects` | Click animation effects       |
+| `live2d`       | Live2D model widget           |
 
 ### Content
 
-| Plugin | Description |
-|--------|-------------|
-| `codeHighlight` | Syntax highlighting |
-| `codeCopy` | Copy code button |
-| `codeLang` | Show code language |
-| `codeLinenumbers` | Line numbers for code |
+| Plugin             | Description              |
+| ------------------ | ------------------------ |
+| `codeHighlight`    | Syntax highlighting      |
+| `codeCopy`         | Copy code button         |
+| `codeLang`         | Show code language       |
+| `codeLinenumbers`  | Line numbers for code    |
 | `codeTrafficLight` | Mac-style window buttons |
-| `imagePreview` | Image lightbox |
-| `notation` | Text annotations |
+| `imagePreview`     | Image lightbox           |
+| `notation`         | Text annotations         |
 
 ### Navigation
 
-| Plugin | Description |
-|--------|-------------|
-| `catalog` | Table of contents |
-| `tools` | Quick navigation tools |
-| `footer` | Custom footer |
-| `qrcode` | QR code generator |
+| Plugin    | Description            |
+| --------- | ---------------------- |
+| `catalog` | Table of contents      |
+| `tools`   | Quick navigation tools |
+| `footer`  | Custom footer          |
+| `qrcode`  | QR code generator      |
 
 ### Social
 
-| Plugin | Description |
-|--------|-------------|
+| Plugin            | Description          |
+| ----------------- | -------------------- |
 | `commentsAvatars` | Comment user avatars |
-| `emoji` | Emoji support |
-| `signature` | Post signature |
+| `emoji`           | Emoji support        |
+| `signature`       | Post signature       |
 
 ### Media
 
-| Plugin | Description |
-|--------|-------------|
-| `musicPlayer` | Background music player |
-| `barrage` | Danmu/barrage comments |
-| `charts` | Data visualization charts |
+| Plugin        | Description               |
+| ------------- | ------------------------- |
+| `musicPlayer` | Background music player   |
+| `barrage`     | Danmu/barrage comments    |
+| `charts`      | Data visualization charts |
 
 ### Utilities
 
-| Plugin | Description |
-|--------|-------------|
-| `notice` | Announcement notices |
-| `toast` | Toast notifications |
-| `lock` | Content protection |
-| `donation` | Donation button |
-| `license` | License display |
-| `webTag` | Website tags |
+| Plugin     | Description          |
+| ---------- | -------------------- |
+| `notice`   | Announcement notices |
+| `toast`    | Toast notifications  |
+| `lock`     | Content protection   |
+| `donation` | Donation button      |
+| `license`  | License display      |
+| `webTag`   | Website tags         |
 
 ## Plugin Configuration
 
@@ -129,7 +129,7 @@ theme.use(
   {
     // Plugin-specific options
     opacitySelector: '#main',
-  }
+  },
 )
 ```
 
@@ -145,7 +145,7 @@ export function myPlugin(theme, devOptions, pluginOptions) {
   })
 
   const options = getOptions(devOptions)
-  
+
   if (!options.enable) return
 
   // Plugin logic here

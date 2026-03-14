@@ -32,7 +32,7 @@ export function CommentPagination() {
     if (item.text === '&lt; Prev' || item.text === '上一页') {
       return (
         <>
-          <ChevronLeft className='size-4' />
+          <ChevronLeft className="size-4" />
           <span>上一页</span>
         </>
       )
@@ -42,7 +42,7 @@ export function CommentPagination() {
       return (
         <>
           <span>下一页</span>
-          <ChevronRight className='size-4' />
+          <ChevronRight className="size-4" />
         </>
       )
     }
@@ -62,15 +62,15 @@ export function CommentPagination() {
 
   return (
     <nav
-      aria-label='评论分页'
-      className='screen-line-after mx-auto flex w-full justify-center border-x'
+      aria-label="评论分页"
+      className="screen-line-after mx-auto flex w-full justify-center border-x"
     >
-      <ul className='mt-4 mb-4 flex items-center justify-center space-x-2'>
+      <ul className="mt-4 mb-4 flex items-center justify-center space-x-2">
         {items.map((item) => (
           <li key={item.text}>
             {item.type === 'link' ? (
               <button
-                type='button'
+                type="button"
                 onClick={() => handlePageClick(item)}
                 className={commentPaginationItemVariants({
                   variant: item.type,

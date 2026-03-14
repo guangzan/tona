@@ -90,12 +90,7 @@ const className = cn('base-class', {
 // Result when isActive=true, isDisabled=false: "base-class active-class"
 
 // Multiple arguments
-const className = cn(
-  'flex',
-  'items-center',
-  isLarge && 'p-4',
-  isSmall && 'p-2'
-)
+const className = cn('flex', 'items-center', isLarge && 'p-4', isSmall && 'p-2')
 ```
 
 ## Peer Dependencies

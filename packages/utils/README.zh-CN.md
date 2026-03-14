@@ -40,12 +40,12 @@ yarn add tona-utils
 ## 使用
 
 ```typescript
-import { 
-  isOwner, 
-  getLoginState, 
+import {
+  isOwner,
+  getLoginState,
   getCurrentPage,
   getFollowers,
-  likePost 
+  likePost,
 } from 'tona-utils'
 ```
 
@@ -99,12 +99,12 @@ const page = getCurrentPage()
 ### 页面类型检查
 
 ```typescript
-import { 
-  isHomePage, 
-  isPostDetailsPage, 
+import {
+  isHomePage,
+  isPostDetailsPage,
   isTagListPage,
   isCategoryPage,
-  isAlbumPage 
+  isAlbumPage,
 } from 'tona-utils'
 
 if (isHomePage()) {
@@ -119,20 +119,20 @@ if (isPostDetailsPage()) {
 ## 博客统计
 
 ```typescript
-import { 
+import {
   getFollowers,
   getFollowing,
   getBlogAge,
   getPostCount,
   getArticleCount,
   getCommentCount,
-  getViewCount
+  getViewCount,
 } from 'tona-utils'
 
-const followers = getFollowers()     // "123"
-const following = getFollowing()     // "45"
-const age = getBlogAge()             // "3年"
-const posts = getPostCount()         // "100"
+const followers = getFollowers() // "123"
+const following = getFollowing() // "45"
+const age = getBlogAge() // "3年"
+const posts = getPostCount() // "100"
 ```
 
 ## 用户操作
@@ -144,8 +144,8 @@ const posts = getPostCount()         // "100"
 ```typescript
 import { follow, unfollow } from 'tona-utils'
 
-follow()    // 关注此博客
-unfollow()  // 取消关注此博客
+follow() // 关注此博客
+unfollow() // 取消关注此博客
 ```
 
 ### `likePost()` / `unLikePost()`
@@ -155,52 +155,52 @@ unfollow()  // 取消关注此博客
 ```typescript
 import { likePost, unLikePost } from 'tona-utils'
 
-likePost()    // 推荐此文章
-unLikePost()  // 取消推荐此文章
+likePost() // 推荐此文章
+unLikePost() // 取消推荐此文章
 ```
 
 ## URL 助手
 
 ```typescript
-import { 
+import {
   getIndexUrl,
   getFollowersUrl,
   getFolloweesUrl,
   getRssUrl,
   getNewPostUrl,
-  getAdminUrl
+  getAdminUrl,
 } from 'tona-utils'
 
-const blogHome = getIndexUrl()           // "https://www.cnblogs.com/username"
-const followers = getFollowersUrl()      // "https://home.cnblogs.com/u/username/followers"
-const rss = getRssUrl()                  // "https://www.cnblogs.com/username/rss"
+const blogHome = getIndexUrl() // "https://www.cnblogs.com/username"
+const followers = getFollowersUrl() // "https://home.cnblogs.com/u/username/followers"
+const rss = getRssUrl() // "https://www.cnblogs.com/username/rss"
 ```
 
 ## 博客信息
 
 ```typescript
-import { 
+import {
   getCurrentBlogId,
   getCurrentBlogApp,
   getNickname,
   getBlogUserGuid,
-  getSkinName
+  getSkinName,
 } from 'tona-utils'
 
-const blogId = getCurrentBlogId()        // "123456"
-const blogApp = getCurrentBlogApp()      // "username"
-const nickname = getNickname()           // "博主昵称"
-const guid = getBlogUserGuid()           // 用户 GUID
+const blogId = getCurrentBlogId() // "123456"
+const blogApp = getCurrentBlogApp() // "username"
+const nickname = getNickname() // "博主昵称"
+const guid = getBlogUserGuid() // 用户 GUID
 ```
 
 ## 代码高亮
 
 ```typescript
-import { 
+import {
   setCodeTheme,
   getCodeHighlightTheme,
   getDarkModeCodeHighlightTheme,
-  checkEnableCodeLineNumber
+  checkEnableCodeLineNumber,
 } from 'tona-utils'
 
 // 设置代码主题

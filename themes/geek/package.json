@@ -1,12 +1,12 @@
 {
-  "author": "guangzan",
-  "license": "MIT",
   "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
+  "license": "MIT",
+  "author": "guangzan",
   "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "vp build"
+  },
   "dependencies": {
     "tona": "workspace:*",
     "tona-options": "workspace:*",

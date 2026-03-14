@@ -45,7 +45,7 @@ function HexagonBackground({
 
   return (
     <div
-      data-slot='hexagon-background'
+      data-slot="hexagon-background"
       className={cn(
         'relative size-full overflow-hidden bg-neutral-100 dark:bg-neutral-900',
         className,
@@ -53,7 +53,7 @@ function HexagonBackground({
       {...props}
     >
       <style>{`:root { --hexagon-margin: ${hexagonMargin}px; }`}</style>
-      <div className='-left-0 absolute top-0 size-full overflow-hidden'>
+      <div className="-left-0 absolute top-0 size-full overflow-hidden">
         {Array.from({ length: gridDimensions.rows }).map((_, rowIndex) => (
           <div
             key={`row-${rowIndex}`}
@@ -64,7 +64,7 @@ function HexagonBackground({
                   ? evenRowMarginLeft
                   : oddRowMarginLeft) - 10,
             }}
-            className='inline-flex'
+            className="inline-flex"
           >
             {Array.from({ length: gridDimensions.columns }).map(
               (_, colIndex) => (

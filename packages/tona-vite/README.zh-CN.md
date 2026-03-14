@@ -38,10 +38,10 @@ pnpm add -D tona-vite
 
 ```typescript
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
-  plugins: [tona()]
+  plugins: [tona()],
 })
 ```
 
@@ -49,14 +49,14 @@ export default defineConfig({
 
 ```typescript
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   plugins: [
     tona({
-      themeName: 'my-theme'
-    })
-  ]
+      themeName: 'my-theme',
+    }),
+  ],
 })
 ```
 
@@ -76,12 +76,12 @@ interface TonaPluginOptions {
 
 该插件自动配置 Vite 用于主题开发：
 
-| 设置 | 值 | 描述 |
-|---------|-------|-------------|
-| 库格式 | IIFE | 立即执行函数表达式 |
-| 入口点 | `src/main.ts` 或 `src/main.js` | 自动检测 |
-| 输出文件名 | `{themeName}.min.js` | 默认：`theme.min.js` |
-| CSS 代码分割 | 禁用 | 所有样式打包在一起 |
+| 设置         | 值                             | 描述                 |
+| ------------ | ------------------------------ | -------------------- |
+| 库格式       | IIFE                           | 立即执行函数表达式   |
+| 入口点       | `src/main.ts` 或 `src/main.js` | 自动检测             |
+| 输出文件名   | `{themeName}.min.js`           | 默认：`theme.min.js` |
+| CSS 代码分割 | 禁用                           | 所有样式打包在一起   |
 
 ## 开发服务器
 
@@ -109,7 +109,7 @@ my-theme/
 
 ```typescript
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   plugins: [tona()],

@@ -46,6 +46,7 @@ create-tona [project-name] [options]
 ```
 
 **Options:**
+
 - `-t, --template <template>` - Specify template (minimal, preact)
 - `-p, --package-manager <pm>` - Specify package manager (npm, yarn, pnpm)
 - `-h, --help` - Show help
@@ -57,6 +58,7 @@ create-tona [project-name] [options]
 A minimal TypeScript starter template with basic Tona setup.
 
 **Features:**
+
 - TypeScript support
 - Vite build tool
 - Basic plugin example
@@ -66,6 +68,7 @@ A minimal TypeScript starter template with basic Tona setup.
 A Preact-based template for building modern reactive themes.
 
 **Features:**
+
 - Preact for UI components
 - SPA routing support
 - UI component library

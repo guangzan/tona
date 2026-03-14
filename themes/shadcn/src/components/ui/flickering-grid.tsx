@@ -183,7 +183,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     >
       <canvas
         ref={canvasRef}
-        className='pointer-events-none'
+        className="pointer-events-none"
         style={{
           width: canvasSize.width,
           height: canvasSize.height,

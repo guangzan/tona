@@ -3,7 +3,7 @@ declare global {
     GetCommentBody: (commentId: number) => void
     ReplyComment: (commentId: number, replyTo: string) => void
     QuoteComment: (commentId: number, replyTo: string) => void
-    DelComment: (commentId: number, this: any, parentId: number) => void
+    DelComment: (commentId: number, _this: any, parentId: number) => void
     voteComment(
       commentId: number,
       voteType: 'Digg' | 'Bury',

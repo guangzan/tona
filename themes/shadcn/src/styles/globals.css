@@ -1,6 +1,6 @@
-@import "tailwindcss" source("../../src");
-@import "tw-animate-css";
-@import "./shadcn/index.css";
-@import "./markdown.css";
-@import "./theme.css";
-@import "./reset.css";
+@import 'tailwindcss' source('../../src');
+@import 'tw-animate-css';
+@import './shadcn/index.css';
+@import './markdown.css';
+@import './theme.css';
+@import './reset.css';

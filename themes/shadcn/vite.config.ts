@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 import preact from '@preact/preset-vite'
 import tailwindcss from '@tailwindcss/vite'
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 import { analyzer } from 'vite-bundle-analyzer'
 import svgr from 'vite-plugin-svgr'
 
@@ -22,8 +22,12 @@ export default defineConfig(({ mode }) => ({
     dedupe: ['preact', 'preact/hooks', 'preact/compat'],
   },
   plugins: [
-    preact(),
-    tona(),
+    preact({
+      devToolsInProd: false,
+    }),
+    tona({
+      themeName: 'shadcn',
+    }),
     tailwindcss(),
     analyzer({
       enabled: false,
@@ -62,10 +66,6 @@ export default defineConfig(({ mode }) => ({
       fileName: () => 'shadcn.js',
     },
     outDir: './dist',
-    rollupOptions: {
-      output: {
-        assetFileNames: 'shadcn.[ext]',
-      },
-    },
   },
+  logLevel: 'warn',
 }))

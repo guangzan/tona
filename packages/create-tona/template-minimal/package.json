@@ -1,8 +1,8 @@
 {
   "name": "tona-typescript-starter",
-  "description": "A modern, clean Tona theme with TypeScript starter template.",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "A modern, clean Tona theme with TypeScript starter template.",
   "type": "module",
   "scripts": {
     "dev": "vite",

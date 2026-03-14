@@ -14,7 +14,7 @@ function Prose({
 
   return (
     <Comp
-      data-slot='prose'
+      data-slot="prose"
       className={cn(
         'prose prose-zinc dark:prose-invert max-w-none',
         'prose-headings:text-balance',
@@ -79,13 +79,13 @@ function Heading<T extends HeadingTypes = 'h1'>({
       className={cn('flex flex-row items-center gap-2', className)}
       {...props}
     >
-      <a href={`#${props.id}`} className='peer not-prose'>
+      <a href={`#${props.id}`} className="peer not-prose">
         {props.children}
       </a>
 
       <LinkIcon
-        className='size-4 shrink-0 text-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100'
-        aria-label='Link to section'
+        className="size-4 shrink-0 text-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100"
+        aria-label="Link to section"
       />
     </Comp>
   )

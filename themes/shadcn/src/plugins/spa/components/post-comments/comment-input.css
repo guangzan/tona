@@ -1,25 +1,25 @@
 @reference "../../../../styles/globals.css";
 
 .under-comment-nav.under-comment-box-nav,
-.custom-comment-input>p:last-of-type,
-#commentform_title ,
-#commentbox_opt>:nth-child(3),
-#comment_form_container>p:last-of-type,
+.custom-comment-input > p:last-of-type,
+#commentform_title,
+#commentbox_opt > :nth-child(3),
+#comment_form_container > p:last-of-type,
 #tip_comment,
 #tip_comment2,
 .commentbox_footer {
-    @apply !hidden;
+  @apply !hidden;
 }
 
 .custom-comment-input {
-      @apply  screen-line-after
+  @apply screen-line-after
         border-x
         border-edge
         pb-4;
 }
 
 .commentbox_main.comment_textarea {
-    @apply rounded-none
+  @apply rounded-none
       transition-none
       bg-background
       w-full
@@ -30,34 +30,34 @@
 }
 
 .commentbox_tab {
-    @apply text-sm
+  @apply text-sm
       text-muted-foreground;
 }
 
 .commentbox_tab.active {
-    @apply border-none
+  @apply border-none
       text-inherit;
 }
 
 .commentbox_tab:hover {
-    @apply border-none
+  @apply border-none
       text-inherit;
 }
 
 .comment_svg {
-        @apply fill-muted-foreground;
+  @apply fill-muted-foreground;
 }
 
 .comment_svg:hover {
-    @apply fill-inherit;
+  @apply fill-inherit;
 }
 
 .commentbox_title {
-    @apply border-none
+  @apply border-none;
 }
 
 #tbCommentBody {
-    @apply border-input
+  @apply border-input
       mt-2
       mb-2
       h-36
@@ -86,17 +86,17 @@
 }
 
 #commentbox_opt {
-    @apply flex
+  @apply flex
       flex-row-reverse
       pr-3;
 }
 
 #commentbox_opt a {
-    @apply pl-0;
+  @apply pl-0;
 }
 
-#commentbox_opt>:nth-child(1){
-     @apply inline-flex
+#commentbox_opt > :nth-child(1) {
+  @apply inline-flex
        w-auto
        items-center
        justify-center
@@ -128,10 +128,10 @@
        has-[>svg]:px-3;
 }
 
-#commentbox_opt>:nth-child(2), 
-#commentbox_opt>:nth-child(3), 
-#commentbox_opt>:nth-child(4) {
-     @apply inline-flex
+#commentbox_opt > :nth-child(2),
+#commentbox_opt > :nth-child(3),
+#commentbox_opt > :nth-child(4) {
+  @apply inline-flex
        items-center
        justify-center
        gap-2
@@ -171,20 +171,21 @@
   @apply !hidden;
 }
 
-#commentbox_opt>:not(:last-child) {
-    @apply ml-2;
+#commentbox_opt > :not(:last-child) {
+  @apply ml-2;
 }
 
-.commentbox_title_right, .commentbox_title_left {
-    @apply !justify-start
+.commentbox_title_right,
+.commentbox_title_left {
+  @apply !justify-start
       w-auto;
 }
 
 .comment_icon {
-    @apply ml-0
-      space-x-2; 
+  @apply ml-0
+      space-x-2;
 }
 
 .commentbox_title_right {
-    @apply gap-4; 
+  @apply gap-4;
 }

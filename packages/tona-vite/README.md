@@ -38,10 +38,10 @@ pnpm add -D tona-vite
 
 ```typescript
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
-  plugins: [tona()]
+  plugins: [tona()],
 })
 ```
 
@@ -49,14 +49,14 @@ export default defineConfig({
 
 ```typescript
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   plugins: [
     tona({
-      themeName: 'my-theme'
-    })
-  ]
+      themeName: 'my-theme',
+    }),
+  ],
 })
 ```
 
@@ -76,12 +76,12 @@ interface TonaPluginOptions {
 
 The plugin automatically configures Vite for theme development:
 
-| Setting | Value | Description |
-|---------|-------|-------------|
-| Library Format | IIFE | Immediately Invoked Function Expression |
-| Entry Point | `src/main.ts` or `src/main.js` | Auto-detected |
-| Output Filename | `{themeName}.min.js` | Default: `theme.min.js` |
-| CSS Code Splitting | Disabled | All styles bundled together |
+| Setting            | Value                          | Description                             |
+| ------------------ | ------------------------------ | --------------------------------------- |
+| Library Format     | IIFE                           | Immediately Invoked Function Expression |
+| Entry Point        | `src/main.ts` or `src/main.js` | Auto-detected                           |
+| Output Filename    | `{themeName}.min.js`           | Default: `theme.min.js`                 |
+| CSS Code Splitting | Disabled                       | All styles bundled together             |
 
 ## Development Server
 
@@ -109,7 +109,7 @@ my-theme/
 
 ```typescript
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   plugins: [tona()],

@@ -38,11 +38,11 @@ function Component() {
   return (
     <button
       onClick={scrollToTop}
-      aria-label='回到顶部'
+      aria-label="回到顶部"
       className={`${backToTopVariants({ visible: isVisible })}`}
-      type='button'
+      type="button"
     >
-      <ChevronUp className='h-5 w-5' />
+      <ChevronUp className="h-5 w-5" />
     </button>
   )
 }

@@ -18,14 +18,14 @@ export const BackTopIndicator = memo(() => {
           'mt-1 flex flex-nowrap items-center whitespace-nowrap opacity-50 transition-all duration-500 hover:opacity-100',
           readPercent! > 10 ? '' : 'pointer-events-none opacity-0',
         )}
-        type='button'
+        type="button"
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'instant' })
         }}
       >
-        <ArrowUp className='h-4 w-4' />
-        <span className='ml-1'>返回顶部</span>
-        <span className='w-10 text-center'>{readPercent}%</span>
+        <ArrowUp className="h-4 w-4" />
+        <span className="ml-1">返回顶部</span>
+        <span className="w-10 text-center">{readPercent}%</span>
       </button>
     </div>
   )

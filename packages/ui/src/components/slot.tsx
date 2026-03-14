@@ -86,7 +86,7 @@ function composeRefs<T>(...refs: (Ref<T> | undefined)[]): Ref<T> {
       if (typeof ref === 'function') {
         ref(node)
       } else if (ref != null) {
-        ; (ref as any).current = node
+        ;(ref as any).current = node
       }
     })
   }

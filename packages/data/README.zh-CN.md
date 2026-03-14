@@ -24,11 +24,11 @@
 
 ## 可用主题
 
-| 主题 | 描述 | 预览 |
-|-------|-------------|---------|
-| `geek` | 现代极简主题 | [预览](https://www.cnblogs.com/guangzan) |
-| `reacg` | 动漫风格主题 | [预览](https://www.cnblogs.com) |
-| `shadcn` | 现代 shadcn/ui 风格 | [预览](https://www.cnblogs.com) |
+| 主题     | 描述                | 预览                                     |
+| -------- | ------------------- | ---------------------------------------- |
+| `geek`   | 现代极简主题        | [预览](https://www.cnblogs.com/guangzan) |
+| `reacg`  | 动漫风格主题        | [预览](https://www.cnblogs.com)          |
+| `shadcn` | 现代 shadcn/ui 风格 | [预览](https://www.cnblogs.com)          |
 
 ## 使用
 
@@ -39,10 +39,10 @@
 <script>
   const opts = {
     theme: {
-      name: "geek",  // 注册表中的主题名称
+      name: 'geek', // 注册表中的主题名称
     },
-  };
-  $.tona(opts);
+  }
+  $.tona(opts)
 </script>
 ```
 
@@ -75,8 +75,8 @@ export const themes = [
     description: 'My awesome theme',
     author: 'your-name',
     url: 'https://your-cdn-link.com/theme.js',
-    tags: ['minimal', 'dark']
-  }
+    tags: ['minimal', 'dark'],
+  },
 ]
 ```
 

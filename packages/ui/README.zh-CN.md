@@ -90,12 +90,7 @@ const className = cn('base-class', {
 // 当 isActive=true, isDisabled=false 时的结果: "base-class active-class"
 
 // 多个参数
-const className = cn(
-  'flex',
-  'items-center',
-  isLarge && 'p-4',
-  isSmall && 'p-2'
-)
+const className = cn('flex', 'items-center', isLarge && 'p-4', isSmall && 'p-2')
 ```
 
 ## 对等依赖

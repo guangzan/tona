@@ -5,7 +5,7 @@ export function Tags() {
   const { tags } = getAboutOptions()
 
   return (
-    <FlipSentences className='text-balance font-mono text-muted-foreground text-sm'>
+    <FlipSentences className="text-balance font-mono text-muted-foreground text-sm">
       {tags}
     </FlipSentences>
   )

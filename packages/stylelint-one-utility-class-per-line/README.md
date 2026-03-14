@@ -42,8 +42,8 @@ Add the plugin to your Stylelint configuration:
 export default {
   plugins: ['tona-stylelint-one-utility-class-per-line'],
   rules: {
-    'tona/one-utility-class-per-line': true
-  }
+    'tona/one-utility-class-per-line': true,
+  },
 }
 ```
 
@@ -72,7 +72,9 @@ This rule enforces that HTML class attributes contain only one utility class per
 
 ```html
 <!-- Multiple classes on one long line -->
-<div class="flex items-center justify-between p-4 m-4 bg-blue-500 text-white"></div>
+<div
+  class="flex items-center justify-between p-4 m-4 bg-blue-500 text-white"
+></div>
 ```
 
 ## Configuration Options

@@ -24,11 +24,11 @@
 
 ## Available Themes
 
-| Theme | Description | Preview |
-|-------|-------------|---------|
-| `geek` | Modern minimalist theme | [Preview](https://www.cnblogs.com/guangzan) |
-| `reacg` | Anime-style theme | [Preview](https://www.cnblogs.com) |
-| `shadcn` | Modern shadcn/ui inspired | [Preview](https://www.cnblogs.com) |
+| Theme    | Description               | Preview                                     |
+| -------- | ------------------------- | ------------------------------------------- |
+| `geek`   | Modern minimalist theme   | [Preview](https://www.cnblogs.com/guangzan) |
+| `reacg`  | Anime-style theme         | [Preview](https://www.cnblogs.com)          |
+| `shadcn` | Modern shadcn/ui inspired | [Preview](https://www.cnblogs.com)          |
 
 ## Usage
 
@@ -39,10 +39,10 @@
 <script>
   const opts = {
     theme: {
-      name: "geek",  // Theme name from registry
+      name: 'geek', // Theme name from registry
     },
-  };
-  $.tona(opts);
+  }
+  $.tona(opts)
 </script>
 ```
 
@@ -75,8 +75,8 @@ export const themes = [
     description: 'My awesome theme',
     author: 'your-name',
     url: 'https://your-cdn-link.com/theme.js',
-    tags: ['minimal', 'dark']
-  }
+    tags: ['minimal', 'dark'],
+  },
 ]
 ```
 

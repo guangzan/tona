@@ -1,8 +1,8 @@
 {
   "name": "tona-preact-starter",
-  "description": "A modern Preact + TypeScript starter template for Tona themes.",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "A modern Preact + TypeScript starter template for Tona themes.",
   "type": "module",
   "scripts": {
     "dev": "vite",

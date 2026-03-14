@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 import preact from '@preact/preset-vite'
 import tailwindcss from '@tailwindcss/vite'
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 

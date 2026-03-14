@@ -71,9 +71,7 @@ ColorBall.prototype.fly = function (x, y, playCount, loopTimer = 300) {
       ball.style.opacity = 1
     }
     ball.style.transform = 'translate3d(0px, 0px, 0px) scale(1)'
-    ball.style.transition = `transform 0.7s ${
-      (curLoop * loopTimer) / 1000
-    }s ease-out`
+    ball.style.transition = `transform 0.7s ${(curLoop * loopTimer) / 1000}s ease-out`
     ball.style.backgroundColor = getOneRandom(this.params.colors)
     fragment.appendChild(ball)
     ballElements.push(ball)

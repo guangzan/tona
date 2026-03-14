@@ -42,7 +42,7 @@ export const LineToc = ({
   }
 
   return (
-    <div className='flex grow flex-col px-2'>
+    <div className="flex grow flex-col px-2">
       {shouldHoverCardVisible ? (
         <HoverCard
           pinned={!!pinned}

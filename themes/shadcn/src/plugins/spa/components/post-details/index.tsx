@@ -26,10 +26,10 @@ export const PostDetails = memo(({ onReady }: PostDetailsProps) => {
   }, [])
 
   return (
-    <div className='w-full border-edge border-x px-2 md:px-4'>
+    <div className="w-full border-edge border-x px-2 md:px-4">
       <div
         ref={containerRef}
-        className='custom-markdown mx-auto pt-8 md:max-w-4xl'
+        className="custom-markdown mx-auto pt-8 md:max-w-4xl"
       ></div>
     </div>
   )

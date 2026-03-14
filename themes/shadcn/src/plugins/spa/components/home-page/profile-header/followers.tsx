@@ -11,8 +11,8 @@ export function Followers() {
   return (
     <a
       href={getFollowersUrl()}
-      target='_blank'
-      className='absolute top-9 right-1 cursor-default text-muted-foreground text-xs md:top-11'
+      target="_blank"
+      className="absolute top-9 right-1 cursor-default text-muted-foreground text-xs md:top-11"
     >
       {followerCount} followers
     </a>

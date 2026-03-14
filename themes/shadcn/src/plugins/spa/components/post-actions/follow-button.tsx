@@ -12,7 +12,7 @@ export function FollowButton() {
   })()
 
   const icon = (() => {
-    if (isPending) return <Loader2 size={18} className='animate-spin' />
+    if (isPending) return <Loader2 size={18} className="animate-spin" />
     return (
       <Heart
         size={18}
@@ -22,7 +22,7 @@ export function FollowButton() {
   })()
 
   return (
-    <Button onClick={onToggleFollow} disabled={isPending} variant='outline'>
+    <Button onClick={onToggleFollow} disabled={isPending} variant="outline">
       {icon}
       <span>{buttonText}</span>
     </Button>

@@ -1,22 +1,22 @@
 {
   "name": "tona-theme-shadcn",
   "version": "1.0.0",
-  "description": "A modern, clean theme for cnblogs with shadcn ui style design, featuring card-based layout, responsive design, and elegant typography.",
-  "author": "guangzan",
-  "license": "MIT",
   "private": true,
+  "description": "A modern, clean theme for cnblogs with shadcn ui style design, featuring card-based layout, responsive design, and elegant typography.",
   "keywords": [
-    "cnblogs",
-    "theme",
-    "shadcn",
-    "modern",
     "clean",
-    "responsive"
+    "cnblogs",
+    "modern",
+    "responsive",
+    "shadcn",
+    "theme"
   ],
+  "license": "MIT",
+  "author": "guangzan",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "vp dev",
+    "build": "vp build"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -53,6 +53,7 @@
     "tw-animate-css": "catalog:",
     "vite": "catalog:",
     "vite-bundle-analyzer": "catalog:",
-    "vite-plugin-svgr": "catalog:"
+    "vite-plugin-svgr": "catalog:",
+    "vite-plus": "catalog:"
   }
 }

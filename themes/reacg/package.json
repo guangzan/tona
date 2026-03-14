@@ -3,21 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "author": "guangzan",
-  "license": "MIT",
+  "keywords": [],
   "homepage": "https://github.com/acnblogs/tona#readme",
+  "bugs": {
+    "url": "https://github.com/acnblogs/tona/issues"
+  },
+  "license": "MIT",
+  "author": "guangzan",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acnblogs/tona.git"
   },
-  "bugs": {
-    "url": "https://github.com/acnblogs/tona/issues"
-  },
-  "keywords": [],
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "vp dev",
+    "build": "vp build"
   },
   "dependencies": {
     "tona": "workspace:*",
@@ -30,6 +30,7 @@
     "sass": "catalog:",
     "terser": "catalog:",
     "tona-vite": "workspace:*",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
   }
 }

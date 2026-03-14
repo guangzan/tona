@@ -46,16 +46,16 @@ export function CommentList() {
   }
 
   return (
-    <Panel id='comments'>
+    <Panel id="comments">
       <PanelHeader>
         <PanelTitle>评论</PanelTitle>
       </PanelHeader>
-      <PanelContent className='p-0'>
+      <PanelContent className="p-0">
         {comments.map((comment, index) => (
           <>
             <CommentItemComponent key={comment.id} comment={comment} />
             {index < comments.length - 1 && (
-              <Separator className='screen-line-after h-4 border-none' plain />
+              <Separator className="screen-line-after h-4 border-none" plain />
             )}
           </>
         ))}

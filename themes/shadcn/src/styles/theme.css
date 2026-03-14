@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @plugin "@tailwindcss/typography";
 
@@ -528,25 +528,25 @@
 @property --top-mask-height {
   inherits: true;
   initial-value: 0;
-  syntax: "<length>";
+  syntax: '<length>';
 }
 
 @property --bottom-mask-height {
   inherits: true;
   initial-value: 80px;
-  syntax: "<length>";
+  syntax: '<length>';
 }
 
 @property --left-mask-width {
   inherits: true;
   initial-value: 0;
-  syntax: "<length>";
+  syntax: '<length>';
 }
 
 @property --right-mask-width {
   inherits: true;
   initial-value: 80px;
-  syntax: "<length>";
+  syntax: '<length>';
 }
 
 @utility scroll-fade-y {

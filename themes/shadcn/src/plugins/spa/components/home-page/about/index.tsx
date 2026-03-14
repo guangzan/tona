@@ -9,7 +9,7 @@ export function About() {
   if (!enable) return null
 
   return (
-    <Panel id='about'>
+    <Panel id="about">
       <PanelHeader>
         <PanelTitle>关于我</PanelTitle>
       </PanelHeader>

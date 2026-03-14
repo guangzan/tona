@@ -1,41 +1,41 @@
 {
   "name": "tona-stylelint-one-utility-class-per-line",
-  "type": "module",
   "version": "1.0.21",
   "description": "Stylelint plugin for AWES CNB themes",
-  "author": "AWES CNB Team",
-  "license": "MIT",
   "keywords": [
-    "stylelint",
     "plugin",
+    "stylelint",
     "tailwindcss",
     "tona"
   ],
+  "license": "MIT",
+  "author": "AWES CNB Team",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guangzan/tona.git",
+    "directory": "packages/stylelint-one-utility-class-per-line"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "tsdown",
+    "build": "vp pack",
     "test": "node --test __tests__/index.test.mjs"
-  },
-  "peerDependencies": {
-    "stylelint": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "stylelint": "catalog:",
-    "tsdown": "catalog:"
+    "vite-plus": "catalog:"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guangzan/tona.git",
-    "directory": "packages/stylelint-one-utility-class-per-line"
+  "peerDependencies": {
+    "stylelint": "^15.0.0 || ^16.0.0"
   }
 }

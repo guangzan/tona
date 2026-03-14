@@ -30,15 +30,15 @@ function PostContent() {
 
 export function PostPage() {
   return (
-    <div className='flex min-h-screen flex-col'>
-      <TopNavBar containerClassName='md:max-w-5xl h-16'></TopNavBar>
-      <main className='max-w-screen overflow-x-hidden px-2'>
-        <div className='mx-auto flex flex-col items-stretch text-[1.05rem] text-neutral-800 sm:text-[15px] md:max-w-5xl xl:w-full dark:text-neutral-300'>
+    <div className="flex min-h-screen flex-col">
+      <TopNavBar containerClassName="md:max-w-5xl h-16"></TopNavBar>
+      <main className="max-w-screen overflow-x-hidden px-2">
+        <div className="mx-auto flex flex-col items-stretch text-[1.05rem] text-neutral-800 sm:text-[15px] md:max-w-5xl xl:w-full dark:text-neutral-300">
           <PostHero></PostHero>
           <PostContent></PostContent>
         </div>
       </main>
-      <Footer containerClassName='md:max-w-5xl py-8'></Footer>
+      <Footer containerClassName="md:max-w-5xl py-8"></Footer>
       <PostToc></PostToc>
     </div>
   )

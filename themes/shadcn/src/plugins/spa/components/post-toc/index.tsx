@@ -16,7 +16,7 @@ export const PostToc = memo(() => {
   }
 
   return (
-    <div className='fixed top-24 right-0 z-1000 hidden md:block'>
+    <div className="fixed top-24 right-0 z-1000 hidden md:block">
       <LineToc
         toc={toc}
         rootDepth={rootDepth}

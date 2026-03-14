@@ -47,9 +47,7 @@ import { Toaster, toast } from 'tona-sonner'
 function App() {
   return (
     <div>
-      <button onClick={() => toast.success('Hello World!')}>
-        Show Toast
-      </button>
+      <button onClick={() => toast.success('Hello World!')}>Show Toast</button>
       <Toaster />
     </div>
   )
@@ -72,7 +70,7 @@ toast.default('Default message')
 ```tsx
 // 带描述
 toast.success('Success!', {
-  description: 'Your action was completed successfully.'
+  description: 'Your action was completed successfully.',
 })
 
 // 带操作
@@ -80,13 +78,13 @@ toast.error('Error occurred', {
   description: 'Something went wrong',
   action: {
     label: 'Retry',
-    onClick: () => console.log('Retrying...')
-  }
+    onClick: () => console.log('Retrying...'),
+  },
 })
 
 // 自定义持续时间
 toast.info('This will close in 5 seconds', {
-  duration: 5000
+  duration: 5000,
 })
 ```
 
@@ -94,9 +92,9 @@ toast.info('This will close in 5 seconds', {
 
 ```tsx
 <Toaster
-  position="bottom-right"  // Toast 位置
-  gap={14}                 // Toast 之间的间距
-  visibleToasts={3}        // 最大可见 Toast 数量
+  position="bottom-right" // Toast 位置
+  gap={14} // Toast 之间的间距
+  visibleToasts={3} // 最大可见 Toast 数量
 />
 ```
 

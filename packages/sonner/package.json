@@ -2,37 +2,33 @@
   "name": "tona-sonner",
   "version": "1.0.21",
   "description": "Preact toast notification component based on sonner",
-  "author": {
-    "name": "guangzan",
-    "url": "https://www.cnblogs.com/guangzan",
-    "email": "guangzan1999@outlook.com"
+  "keywords": [
+    "notification",
+    "preact",
+    "sonner",
+    "toast",
+    "ui",
+    "博客园"
+  ],
+  "homepage": "https://github.com/guangzan/tona/tree/main/packages/sonner#readme",
+  "bugs": {
+    "url": "https://github.com/guangzan/tona/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/guangzan/tona/tree/main/packages/sonner#readme",
+  "author": {
+    "name": "guangzan",
+    "email": "guangzan1999@outlook.com",
+    "url": "https://www.cnblogs.com/guangzan"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guangzan/tona.git",
     "directory": "packages/sonner"
   },
-  "bugs": {
-    "url": "https://github.com/guangzan/tona/issues"
-  },
-  "keywords": [
-    "preact",
-    "toast",
-    "notification",
-    "sonner",
-    "ui",
-    "博客园"
+  "files": [
+    "dist"
   ],
   "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
-    },
-    "./dist/index.css": "./dist/index.css"
-  },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
@@ -44,16 +40,20 @@
       ]
     }
   },
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "scripts": {
-    "dev": "tsdown --watch",
-    "build": "tsdown"
+    "dev": "vp pack --watch",
+    "build": "vp pack"
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "tsdown": "catalog:",
+    "vite-plus": "catalog:",
     "vitest": "catalog:"
   },
   "peerDependencies": {

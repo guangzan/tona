@@ -10,10 +10,10 @@ export function FavoriteButton() {
     <Button
       onClick={triggerFavorite}
       disabled={data?.isFavorite || isPending}
-      variant='outline'
+      variant="outline"
     >
       {isPending ? (
-        <Loader2 size={18} className='animate-spin' />
+        <Loader2 size={18} className="animate-spin" />
       ) : (
         <Star
           size={18}

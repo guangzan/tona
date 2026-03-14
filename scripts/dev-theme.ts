@@ -77,24 +77,26 @@ async function startTheme(themeName: string): Promise<void> {
   s.start(pc.blue(`正在启动皮肤: ${themeName}`))
 
   try {
-    // 使用 pnpm 启动选定皮肤的 dev 脚本
-    const child = exec(`pnpm --dir themes/${themeName} dev`, {
-      cwd: process.cwd(),
+    // 使用 vp 启动选定皮肤的 dev 脚本
+    const child = exec(`vp dev`, {
+      cwd: path.join(process.cwd(), 'themes', themeName),
       env: process.env,
     })
 
     let isReady = false
 
     child.stdout?.on('data', (data: string) => {
-      if (data.includes('ready in')) {
+      // 检测 Vite+ 启动成功的标志
+      if (
+        !isReady &&
+        (data.includes('ready in') || data.includes('Local:'))
+      ) {
         isReady = true
         s.stop(pc.green(`皮肤 ${themeName} 启动成功!`))
       }
 
-      // 始终显示 stdout 内容，但服务器启动后不再显示启动信息
-      if (!isReady || !data.includes('ready in')) {
-        process.stdout.write(data)
-      }
+      // 始终显示 stdout 内容
+      process.stdout.write(data)
     })
 
     child.stderr?.on('data', (data: string) => {

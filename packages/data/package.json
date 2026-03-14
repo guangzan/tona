@@ -1,27 +1,27 @@
 {
   "name": "tona-themes",
-  "type": "module",
   "version": "1.0.21",
   "description": "tona theme list.",
-  "author": "guangzan",
+  "keywords": [
+    "cnblog",
+    "theme",
+    "博客园",
+    "皮肤"
+  ],
   "license": "ISC",
+  "author": "guangzan",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guangzan/tona.git",
     "directory": "packages/data"
   },
-  "keywords": [
-    "博客园",
-    "皮肤",
-    "cnblog",
-    "theme"
-  ],
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsdown && node convert.js",
-    "dev": "tsdown --watch"
+    "build": "vp pack && node convert.js",
+    "dev": "vp pack --watch"
   },
   "devDependencies": {
-    "tsdown": "catalog:"
+    "vite-plus": "catalog:"
   }
 }

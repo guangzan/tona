@@ -2,40 +2,40 @@
   "name": "tona-plugins",
   "version": "1.0.21",
   "description": "",
-  "author": {
-    "name": "guangzan",
-    "url": "https://www.cnblogs.com/guangzan",
-    "email": "guangzan1999@outlook.com"
+  "keywords": [
+    "博客园"
+  ],
+  "homepage": "https://github.com/guangzan/tona/tree/main/packages/plugins#readme",
+  "bugs": {
+    "url": "https://github.com/guangzan/tona/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/guangzan/tona/tree/main/packages/plugins#readme",
+  "author": {
+    "name": "guangzan",
+    "email": "guangzan1999@outlook.com",
+    "url": "https://www.cnblogs.com/guangzan"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guangzan/tona.git",
     "directory": "packages/plugins"
   },
-  "bugs": {
-    "url": "https://github.com/guangzan/tona/issues"
-  },
-  "keywords": [
-    "博客园"
+  "files": [
+    "index.d.ts",
+    "src"
   ],
   "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "types": "./index.d.ts",
       "import": "./src/index.js"
     }
   },
-  "main": "./src/index.js",
-  "module": "./src/index.js",
-  "types": "./index.d.ts",
-  "files": [
-    "index.d.ts",
-    "src"
-  ],
   "scripts": {
-    "dev": "vite"
+    "dev": "vp dev"
   },
   "dependencies": {
     "notyf": "catalog:",
@@ -48,6 +48,7 @@
     "tona-vite": "workspace:*",
     "vite": "catalog:",
     "vite-plugin-html": "catalog:",
-    "vite-plugin-singlefile": "catalog:"
+    "vite-plugin-singlefile": "catalog:",
+    "vite-plus": "catalog:"
   }
 }

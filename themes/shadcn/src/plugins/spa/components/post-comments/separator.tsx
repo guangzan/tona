@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 
 export function Separator() {
   return (
-    <div className='screen-line-before screen-line-after'>
+    <div className="screen-line-before screen-line-after">
       <div
         className={cn(
           'h-8',

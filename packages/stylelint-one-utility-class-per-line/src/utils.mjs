@@ -47,7 +47,7 @@ export function cleanClassNames(params) {
 export function applyIndentation(classes, indent) {
   return classes
     .split(' ') // Split into an array of class names
-    .map(className => indent + className) // Add indentation to each class
+    .map((className) => indent + className) // Add indentation to each class
     .join('\n') // Join with new lines
     .trim() // Remove extra space at the end
 }

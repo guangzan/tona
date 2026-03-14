@@ -79,10 +79,10 @@ console.log(options)
 import { getBackgroundOptions } from 'tona-options'
 
 const options = getBackgroundOptions({
-  enable: true,           // 启用背景
-  value: '#f5f5f5',       // 背景颜色或图片 URL
-  opacity: 0.85,          // 背景透明度
-  repeat: false,          // 重复背景图片
+  enable: true, // 启用背景
+  value: '#f5f5f5', // 背景颜色或图片 URL
+  opacity: 0.85, // 背景透明度
+  repeat: false, // 重复背景图片
 })
 ```
 

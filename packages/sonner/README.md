@@ -47,9 +47,7 @@ import { Toaster, toast } from 'tona-sonner'
 function App() {
   return (
     <div>
-      <button onClick={() => toast.success('Hello World!')}>
-        Show Toast
-      </button>
+      <button onClick={() => toast.success('Hello World!')}>Show Toast</button>
       <Toaster />
     </div>
   )
@@ -72,7 +70,7 @@ toast.default('Default message')
 ```tsx
 // With description
 toast.success('Success!', {
-  description: 'Your action was completed successfully.'
+  description: 'Your action was completed successfully.',
 })
 
 // With action
@@ -80,13 +78,13 @@ toast.error('Error occurred', {
   description: 'Something went wrong',
   action: {
     label: 'Retry',
-    onClick: () => console.log('Retrying...')
-  }
+    onClick: () => console.log('Retrying...'),
+  },
 })
 
 // Custom duration
 toast.info('This will close in 5 seconds', {
-  duration: 5000
+  duration: 5000,
 })
 ```
 
@@ -94,9 +92,9 @@ toast.info('This will close in 5 seconds', {
 
 ```tsx
 <Toaster
-  position="bottom-right"  // Toast position
-  gap={14}                 // Gap between toasts
-  visibleToasts={3}        // Max visible toasts
+  position="bottom-right" // Toast position
+  gap={14} // Gap between toasts
+  visibleToasts={3} // Max visible toasts
 />
 ```
 

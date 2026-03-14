@@ -2,7 +2,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
-import type { LibraryFormats, Plugin, UserConfig, ViteDevServer } from 'vite'
+import type {
+  LibraryFormats,
+  Plugin,
+  UserConfig,
+  ViteDevServer,
+} from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -56,14 +61,14 @@ export default function tona(options: TonaPluginOptions = {}): Plugin {
               entry: existingLib.entry || resolvedEntryPath,
               name: existingLib.name || themeName,
               fileName: existingLib.fileName || (() => `${themeName}.min.js`),
-              cssFileName: existingLib.cssFileName || `${themeName}.min`, // 不能包含 .css  后缀，会自动生成，否则变成 .css.css
+              cssFileName: existingLib.cssFileName || `${themeName}.min`,
             }
           : {
               formats: ['iife'] as LibraryFormats[],
               entry: resolvedEntryPath,
               name: themeName,
               fileName: () => `${themeName}.min.js`,
-              cssFileName: `${themeName}.min`, // 不能包含 .css  后缀，会自动生成，否则变成 .css.css
+              cssFileName: `${themeName}.min`,
             }
 
       return {

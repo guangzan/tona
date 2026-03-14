@@ -11,7 +11,7 @@ export function EditButton() {
   }
 
   return (
-    <Button variant='link' asChild size='sm'>
+    <Button variant="link" asChild size="sm">
       <a href={editHref}>编辑</a>
     </Button>
   )

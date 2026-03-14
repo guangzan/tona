@@ -10,10 +10,10 @@ import { ProfileHeader } from './profile-header'
 
 export function HomePage() {
   return (
-    <div className='flex min-h-screen flex-col'>
+    <div className="flex min-h-screen flex-col">
       <TopNavBar sticky></TopNavBar>
-      <main className='max-w-screen overflow-x-hidden px-2'>
-        <div className='mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22'>
+      <main className="max-w-screen overflow-x-hidden px-2">
+        <div className="mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22">
           <ProfileCover />
 
           <ProfileHeader />

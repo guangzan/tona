@@ -87,7 +87,7 @@ export function backgroundPlugin(theme, devOptions, pluginOptions) {
   const { opacitySelector } = Object.assign(
     {},
     { opacitySelector: '#main,#navigator' },
-    pluginOptions
+    pluginOptions,
   )
 
   setBackground(value, repeat)
@@ -114,7 +114,7 @@ theme.use(
   {
     // 插件配置
     opacitySelector: '#main',
-  }
+  },
 )
 ```
 
@@ -131,6 +131,7 @@ theme.use(
 创建类型安全的配置获取器。
 
 **参数：**
+
 - `key` - 配置键或键数组（用于别名）
 - `defaults` - 默认配置对象
 

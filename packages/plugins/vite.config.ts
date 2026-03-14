@@ -1,5 +1,5 @@
 import tona from 'tona-vite'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
   server: {

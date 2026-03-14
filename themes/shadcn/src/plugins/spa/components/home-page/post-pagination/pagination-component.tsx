@@ -32,7 +32,7 @@ export function PaginationComponent() {
     if (item.text === '上一页') {
       return (
         <>
-          <ChevronLeft className='size-4' />
+          <ChevronLeft className="size-4" />
           <span>上一页</span>
         </>
       )
@@ -42,7 +42,7 @@ export function PaginationComponent() {
       return (
         <>
           <span>下一页</span>
-          <ChevronRight className='size-4' />
+          <ChevronRight className="size-4" />
         </>
       )
     }
@@ -56,12 +56,12 @@ export function PaginationComponent() {
 
   return (
     <nav
-      aria-label='pagination'
-      className='mx-auto flex w-full justify-center border-edge border-t'
+      aria-label="pagination"
+      className="mx-auto flex w-full justify-center border-edge border-t"
     >
-      <ul className='flex items-center justify-center space-x-2 py-4'>
+      <ul className="flex items-center justify-center space-x-2 py-4">
         {items.map((item) => (
-          <li key={item.text} className=''>
+          <li key={item.text} className="">
             <a
               href={item.href}
               className={paginationItemVariants({

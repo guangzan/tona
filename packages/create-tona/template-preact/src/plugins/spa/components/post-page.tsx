@@ -13,7 +13,7 @@ export function PostPage() {
   const { data: postTitle } = usePostTitle()
 
   return (
-    <h1 class='py-8 text-center font-semibold text-2xl tracking-tight'>
+    <h1 class="py-8 text-center font-semibold text-2xl tracking-tight">
       {postTitle}
     </h1>
   )

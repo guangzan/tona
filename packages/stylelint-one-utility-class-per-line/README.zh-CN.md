@@ -42,8 +42,8 @@ pnpm add -D tona-stylelint-one-utility-class-per-line
 export default {
   plugins: ['tona-stylelint-one-utility-class-per-line'],
   rules: {
-    'tona/one-utility-class-per-line': true
-  }
+    'tona/one-utility-class-per-line': true,
+  },
 }
 ```
 
@@ -72,7 +72,9 @@ export default {
 
 ```html
 <!-- 一长行多个类 -->
-<div class="flex items-center justify-between p-4 m-4 bg-blue-500 text-white"></div>
+<div
+  class="flex items-center justify-between p-4 m-4 bg-blue-500 text-white"
+></div>
 ```
 
 ## 配置选项

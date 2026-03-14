@@ -53,61 +53,61 @@ theme.use(codeHighlight)
 
 ### UI 增强
 
-| 插件 | 描述 |
-|--------|-------------|
-| `background` | 自定义背景图片/颜色 |
-| `darkMode` | 暗黑模式切换 |
-| `colorMode` | 颜色主题切换 |
-| `clickEffects` | 点击动画效果 |
-| `live2d` | Live2D 模型挂件 |
+| 插件           | 描述                |
+| -------------- | ------------------- |
+| `background`   | 自定义背景图片/颜色 |
+| `darkMode`     | 暗黑模式切换        |
+| `colorMode`    | 颜色主题切换        |
+| `clickEffects` | 点击动画效果        |
+| `live2d`       | Live2D 模型挂件     |
 
 ### 内容
 
-| 插件 | 描述 |
-|--------|-------------|
-| `codeHighlight` | 语法高亮 |
-| `codeCopy` | 复制代码按钮 |
-| `codeLang` | 显示代码语言 |
-| `codeLinenumbers` | 代码行号 |
+| 插件               | 描述             |
+| ------------------ | ---------------- |
+| `codeHighlight`    | 语法高亮         |
+| `codeCopy`         | 复制代码按钮     |
+| `codeLang`         | 显示代码语言     |
+| `codeLinenumbers`  | 代码行号         |
 | `codeTrafficLight` | Mac 风格窗口按钮 |
-| `imagePreview` | 图片灯箱 |
-| `notation` | 文本注释 |
+| `imagePreview`     | 图片灯箱         |
+| `notation`         | 文本注释         |
 
 ### 导航
 
-| 插件 | 描述 |
-|--------|-------------|
-| `catalog` | 目录 |
-| `tools` | 快速导航工具 |
-| `footer` | 自定义页脚 |
-| `qrcode` | 二维码生成器 |
+| 插件      | 描述         |
+| --------- | ------------ |
+| `catalog` | 目录         |
+| `tools`   | 快速导航工具 |
+| `footer`  | 自定义页脚   |
+| `qrcode`  | 二维码生成器 |
 
 ### 社交
 
-| 插件 | 描述 |
-|--------|-------------|
+| 插件              | 描述         |
+| ----------------- | ------------ |
 | `commentsAvatars` | 评论用户头像 |
-| `emoji` | Emoji 支持 |
-| `signature` | 文章签名 |
+| `emoji`           | Emoji 支持   |
+| `signature`       | 文章签名     |
 
 ### 媒体
 
-| 插件 | 描述 |
-|--------|-------------|
+| 插件          | 描述           |
+| ------------- | -------------- |
 | `musicPlayer` | 背景音乐播放器 |
-| `barrage` | 弹幕 |
-| `charts` | 数据可视化图表 |
+| `barrage`     | 弹幕           |
+| `charts`      | 数据可视化图表 |
 
 ### 工具
 
-| 插件 | 描述 |
-|--------|-------------|
-| `notice` | 公告通知 |
-| `toast` | Toast 通知 |
-| `lock` | 内容保护 |
-| `donation` | 捐赠按钮 |
-| `license` | 许可证显示 |
-| `webTag` | 网站标签 |
+| 插件       | 描述       |
+| ---------- | ---------- |
+| `notice`   | 公告通知   |
+| `toast`    | Toast 通知 |
+| `lock`     | 内容保护   |
+| `donation` | 捐赠按钮   |
+| `license`  | 许可证显示 |
+| `webTag`   | 网站标签   |
 
 ## 插件配置
 
@@ -129,7 +129,7 @@ theme.use(
   {
     // 插件特定选项
     opacitySelector: '#main',
-  }
+  },
 )
 ```
 
@@ -145,7 +145,7 @@ export function myPlugin(theme, devOptions, pluginOptions) {
   })
 
   const options = getOptions(devOptions)
-  
+
   if (!options.enable) return
 
   // 插件逻辑

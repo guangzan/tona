@@ -40,12 +40,12 @@ yarn add tona-utils
 ## Usage
 
 ```typescript
-import { 
-  isOwner, 
-  getLoginState, 
+import {
+  isOwner,
+  getLoginState,
   getCurrentPage,
   getFollowers,
-  likePost 
+  likePost,
 } from 'tona-utils'
 ```
 
@@ -99,12 +99,12 @@ const page = getCurrentPage()
 ### Page Type Checks
 
 ```typescript
-import { 
-  isHomePage, 
-  isPostDetailsPage, 
+import {
+  isHomePage,
+  isPostDetailsPage,
   isTagListPage,
   isCategoryPage,
-  isAlbumPage 
+  isAlbumPage,
 } from 'tona-utils'
 
 if (isHomePage()) {
@@ -119,20 +119,20 @@ if (isPostDetailsPage()) {
 ## Blog Statistics
 
 ```typescript
-import { 
+import {
   getFollowers,
   getFollowing,
   getBlogAge,
   getPostCount,
   getArticleCount,
   getCommentCount,
-  getViewCount
+  getViewCount,
 } from 'tona-utils'
 
-const followers = getFollowers()     // "123"
-const following = getFollowing()     // "45"
-const age = getBlogAge()             // "3年"
-const posts = getPostCount()         // "100"
+const followers = getFollowers() // "123"
+const following = getFollowing() // "45"
+const age = getBlogAge() // "3年"
+const posts = getPostCount() // "100"
 ```
 
 ## User Actions
@@ -144,8 +144,8 @@ Follow or unfollow the blog author.
 ```typescript
 import { follow, unfollow } from 'tona-utils'
 
-follow()    // Follow this blog
-unfollow()  // Unfollow this blog
+follow() // Follow this blog
+unfollow() // Unfollow this blog
 ```
 
 ### `likePost()` / `unLikePost()`
@@ -155,52 +155,52 @@ Recommend or unrecommend a blog post.
 ```typescript
 import { likePost, unLikePost } from 'tona-utils'
 
-likePost()    // Recommend this post
-unLikePost()  // Unrecommend this post
+likePost() // Recommend this post
+unLikePost() // Unrecommend this post
 ```
 
 ## URL Helpers
 
 ```typescript
-import { 
+import {
   getIndexUrl,
   getFollowersUrl,
   getFolloweesUrl,
   getRssUrl,
   getNewPostUrl,
-  getAdminUrl
+  getAdminUrl,
 } from 'tona-utils'
 
-const blogHome = getIndexUrl()           // "https://www.cnblogs.com/username"
-const followers = getFollowersUrl()      // "https://home.cnblogs.com/u/username/followers"
-const rss = getRssUrl()                  // "https://www.cnblogs.com/username/rss"
+const blogHome = getIndexUrl() // "https://www.cnblogs.com/username"
+const followers = getFollowersUrl() // "https://home.cnblogs.com/u/username/followers"
+const rss = getRssUrl() // "https://www.cnblogs.com/username/rss"
 ```
 
 ## Blog Info
 
 ```typescript
-import { 
+import {
   getCurrentBlogId,
   getCurrentBlogApp,
   getNickname,
   getBlogUserGuid,
-  getSkinName
+  getSkinName,
 } from 'tona-utils'
 
-const blogId = getCurrentBlogId()        // "123456"
-const blogApp = getCurrentBlogApp()      // "username"
-const nickname = getNickname()           // "博主昵称"
-const guid = getBlogUserGuid()           // User GUID
+const blogId = getCurrentBlogId() // "123456"
+const blogApp = getCurrentBlogApp() // "username"
+const nickname = getNickname() // "博主昵称"
+const guid = getBlogUserGuid() // User GUID
 ```
 
 ## Code Highlighting
 
 ```typescript
-import { 
+import {
   setCodeTheme,
   getCodeHighlightTheme,
   getDarkModeCodeHighlightTheme,
-  checkEnableCodeLineNumber
+  checkEnableCodeLineNumber,
 } from 'tona-utils'
 
 // Set code theme

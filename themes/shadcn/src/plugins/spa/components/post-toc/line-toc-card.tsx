@@ -42,7 +42,7 @@ export function LineTocCard({
       >
         {toc.map((heading, index) => (
           <MemoedItem
-            variant='line'
+            variant="line"
             heading={heading}
             key={heading.anchorId}
             rootDepth={rootDepth}

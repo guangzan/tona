@@ -12,7 +12,7 @@ export function FollowButton() {
   })()
 
   const icon = (() => {
-    if (isPending) return <Loader2 size={18} className='animate-spin' />
+    if (isPending) return <Loader2 size={18} className="animate-spin" />
     if (isFollowed) return null
     return <PlusIcon size={18} />
   })()
@@ -21,8 +21,8 @@ export function FollowButton() {
     <Button
       onClick={onToggleFollow}
       disabled={isPending}
-      className='absolute top-1 right-1 rounded-full shadow-none md:top-2 md:right-2'
-      size='sm'
+      className="absolute top-1 right-1 rounded-full shadow-none md:top-2 md:right-2"
+      size="sm"
       variant={isFollowed ? 'outline' : 'default'}
     >
       {icon}

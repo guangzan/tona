@@ -27,8 +27,8 @@ export const CircleProgress = ({
         cx={size / 2}
         cy={size / 2}
         r={radius}
-        strokeLinecap='round'
-        fill='none'
+        strokeLinecap="round"
+        fill="none"
         stroke={backgroundColor}
         strokeWidth={strokeWidth}
       />
@@ -36,13 +36,13 @@ export const CircleProgress = ({
         cx={size / 2}
         cy={size / 2}
         r={radius}
-        strokeLinecap='round'
-        fill='none'
+        strokeLinecap="round"
+        fill="none"
         stroke={strokeColor}
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}
         strokeDashoffset={offset}
-        className='duration-75'
+        className="duration-75"
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
         style={{ transition: 'stroke-dashoffset 0.3s' }}
       />

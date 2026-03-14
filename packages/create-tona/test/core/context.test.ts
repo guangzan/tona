@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vite-plus/test'
 import { ProjectContextImpl } from '../../src/core/context.js'
 import type { CliArgs } from '../../src/types.js'
 

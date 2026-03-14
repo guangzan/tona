@@ -44,7 +44,7 @@ export const TocItem = memo((props: Props) => {
 
   return (
     <button
-      type='button'
+      type="button"
       ref={$ref}
       data-index={index}
       className={cn(isTitleLine && 'relative flex w-full flex-col')}

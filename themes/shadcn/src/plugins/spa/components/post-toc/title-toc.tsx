@@ -32,7 +32,7 @@ export const TitleToc = ({
     >
       {toc.map((heading, index) => (
         <MemoedItem
-          variant='title-line'
+          variant="title-line"
           heading={heading}
           key={heading.anchorId}
           rootDepth={rootDepth}

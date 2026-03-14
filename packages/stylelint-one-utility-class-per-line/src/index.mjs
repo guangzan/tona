@@ -64,9 +64,7 @@ function rule() {
         hasMultipleLines &&
         parsed.some(
           (p, i) =>
-            i > 0 &&
-            p.classes.length > 0 &&
-            p.indent < MIN_CONTINUATION_INDENT
+            i > 0 && p.classes.length > 0 && p.indent < MIN_CONTINUATION_INDENT,
         )
 
       if (continuationIndentTooSmall) {

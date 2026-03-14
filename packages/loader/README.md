@@ -32,11 +32,11 @@
 <script>
   const opts = {
     theme: {
-      name: "geek",
+      name: 'geek',
     },
     // Additional configuration
-  };
-  $.tona(opts);
+  }
+  $.tona(opts)
 </script>
 ```
 
@@ -47,11 +47,11 @@
 <script>
   const opts = {
     theme: {
-      name: "https://blog-static.cnblogs.com/files/guangzan/reacg.js",
+      name: 'https://blog-static.cnblogs.com/files/guangzan/reacg.js',
     },
     // Additional configuration
-  };
-  $.tona(opts);
+  }
+  $.tona(opts)
 </script>
 ```
 
@@ -62,17 +62,17 @@ The loader accepts a configuration object that gets mounted to the window:
 ```javascript
 const opts = {
   theme: {
-    name: "geek",  // Theme name or URL
+    name: 'geek', // Theme name or URL
   },
   // Theme-specific options
   bodyBackground: {
     enable: true,
-    value: "#f5f5f5",
+    value: '#f5f5f5',
   },
   // ... other options
-};
+}
 
-$.tona(opts);
+$.tona(opts)
 ```
 
 ## How It Works

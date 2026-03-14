@@ -53,13 +53,13 @@ export function FlipSentences({
   }, [items.length, interval, onIndexChange])
 
   return (
-    <AnimatePresence mode='wait' initial={false}>
+    <AnimatePresence mode="wait" initial={false}>
       <Component
         key={currentIndex}
         className={cn('inline-block', className)}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        initial="initial"
+        animate="animate"
+        exit="exit"
         transition={transition}
         variants={variants}
       >

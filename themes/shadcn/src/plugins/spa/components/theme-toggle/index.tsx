@@ -73,30 +73,30 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className='relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-muted p-0.75'>
+    <div className="relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-muted p-0.75">
       <button
         onClick={() => setThemeAndSave('system')}
-        aria-label='跟随系统'
+        aria-label="跟随系统"
         className={themeToggleVariants({ active: theme === 'system' })}
-        type='button'
+        type="button"
       >
-        <Monitor className='h-5 w-5' stroke-width={1} />
+        <Monitor className="h-5 w-5" stroke-width={1} />
       </button>
       <button
         onClick={() => setThemeAndSave('light')}
-        aria-label='浅色外观'
+        aria-label="浅色外观"
         className={themeToggleVariants({ active: theme === 'light' })}
-        type='button'
+        type="button"
       >
-        <Sun className='h-5 w-5' stroke-width={1} />
+        <Sun className="h-5 w-5" stroke-width={1} />
       </button>
       <button
         onClick={() => setThemeAndSave('dark')}
-        aria-label='深色外观'
+        aria-label="深色外观"
         className={themeToggleVariants({ active: theme === 'dark' })}
-        type='button'
+        type="button"
       >
-        <Moon className='h-5 w-5' stroke-width={1} />
+        <Moon className="h-5 w-5" stroke-width={1} />
       </button>
     </div>
   )

@@ -31,9 +31,9 @@ export function VoteButton() {
   }
 
   return (
-    <Button onClick={handleClick} disabled={isPending} variant='outline'>
+    <Button onClick={handleClick} disabled={isPending} variant="outline">
       {isPending ? (
-        <Loader2 size={18} className='animate-spin' />
+        <Loader2 size={18} className="animate-spin" />
       ) : (
         <ThumbsUp
           size={18}

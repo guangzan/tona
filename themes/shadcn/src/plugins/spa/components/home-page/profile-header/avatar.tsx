@@ -6,11 +6,11 @@ export function Avatar() {
 
   return (
     <img
-      className='!size-32 select-none rounded-full ring-1 ring-border ring-offset-2 ring-offset-background sm:size-40'
-      alt='avatar'
+      className="!size-32 select-none rounded-full ring-1 ring-border ring-offset-2 ring-offset-background sm:size-40"
+      alt="avatar"
       src={avatar}
-      fetchPriority='high'
-      decoding='sync'
+      fetchPriority="high"
+      decoding="sync"
     />
   )
 }

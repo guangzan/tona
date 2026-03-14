@@ -4,7 +4,6 @@ packages:
   - docs
 
 catalog:
-  '@biomejs/biome': ^2.4.6
   '@clack/prompts': ^1.1.0
   '@iconify-json/carbon': ^1.2.19
   '@preact/preset-vite': ^2.10.3
@@ -23,7 +22,6 @@ catalog:
   es-toolkit: ^1.45.1
   esno: ^4.8.0
   happy-dom: ^20.8.4
-  lefthook: ^2.1.4
   lint-staged: ^16.3.3
   lucide: ^0.577.0
   lucide-preact: ^0.577.0
@@ -42,28 +40,37 @@ catalog:
   tailwindcss: ^4.2.1
   taze: ^19.10.0
   terser: ^5.46.0
-  tsdown: latest
   tw-animate-css: ^1.4.0
   typescript: ^5.9.3
   unocss: ^66.6.6
   unplugin-vue-components: ^31.0.0
-  vite: ^8.0.0
+  vite: npm:@voidzero-dev/vite-plus-core@latest
   vite-bundle-analyzer: latest
   vite-plugin-html: ^3.2.2
   vite-plugin-pwa: ^1.2.0
   vite-plugin-singlefile: ^2.3.0
   vite-plugin-svgr: ^4.5.0
-  vitest: ^4.1.0
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
   vue: ^3.5.30
   ogl: ^1.0.11
   motion: ^12.36.0
   '@tailwindcss/typography': ^0.5.19
   zx: ^8.8.5
-  gradient-string: "^3.0.0"
+  gradient-string: '^3.0.0'
+  vite-plus: latest
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
   - esbuild
-  - lefthook
   - simple-git-hooks
+overrides:
+  vite: 'catalog:'
+  vitest: 'catalog:'
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: '*'
+    vitest: '*'

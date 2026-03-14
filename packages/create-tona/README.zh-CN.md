@@ -46,6 +46,7 @@ create-tona [project-name] [options]
 ```
 
 **选项：**
+
 - `-t, --template <template>` - 指定模板 (minimal, preact)
 - `-p, --package-manager <pm>` - 指定包管理器 (npm, yarn, pnpm)
 - `-h, --help` - 显示帮助
@@ -57,6 +58,7 @@ create-tona [project-name] [options]
 一个极简的 TypeScript 启动模板，包含基础的 Tona 设置。
 
 **特性：**
+
 - TypeScript 支持
 - Vite 构建工具
 - 基础插件示例
@@ -66,6 +68,7 @@ create-tona [project-name] [options]
 基于 Preact 的模板，用于构建现代化响应式主题。
 
 **特性：**
+
 - Preact 用于 UI 组件
 - SPA 路由支持
 - UI 组件库

@@ -15,5 +15,5 @@ export function CommentInput() {
     }
   }, [])
 
-  return <div ref={containerRef} className='custom-comment-input' />
+  return <div ref={containerRef} className="custom-comment-input" />
 }

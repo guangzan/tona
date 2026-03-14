@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { describe, it } from 'vitest'
+import { describe, it } from 'vite-plus/test'
 
 import {
   applyIndentation,
@@ -55,7 +55,7 @@ describe('indentClassNames', () => {
 
     const result = indentClassNames({ ...rule })
     const expectedParams = ['text-xl', '   font-bold', '   text-center'].join(
-      '\n'
+      '\n',
     )
 
     assert.deepEqual(result, {

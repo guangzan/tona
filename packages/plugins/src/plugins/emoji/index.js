@@ -34,9 +34,7 @@ const defaultEmojiList = [
  * 创建按钮
  */
 function createEmojiButton(buttonIcon) {
-  return `<span class="qaq-btn" title="表情">${
-    buttonIcon.length ? buttonIcon : '🍺'
-  }</span>`
+  return `<span class="qaq-btn" title="表情">${buttonIcon.length ? buttonIcon : '🍺'}</span>`
 }
 
 /**

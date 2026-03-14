@@ -1,23 +1,24 @@
 {
   "name": "create-tona",
-  "description": "A modern, clean Tona theme with TypeScript starter template.",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "A modern, clean Tona theme with TypeScript starter template.",
   "type": "module",
   "scripts": {
-    "dev": "tsdown --watch",
-    "build": "tsdown"
+    "dev": "vp pack --watch",
+    "build": "vp pack"
+  },
+  "dependencies": {
+    "cross-spawn": "catalog:",
+    "gradient-string": "catalog:",
+    "mri": "catalog:"
   },
   "devDependencies": {
     "@types/cross-spawn": "catalog:",
     "@types/node": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
+    "vite-plus": "catalog:",
     "vitest": "catalog:"
-  },
-  "dependencies": {
-    "cross-spawn": "catalog:",
-    "gradient-string": "catalog:",
-    "mri": "catalog:"
   }
 }

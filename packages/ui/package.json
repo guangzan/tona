@@ -2,34 +2,31 @@
   "name": "tona-ui",
   "version": "1.0.21",
   "description": "UI components for Tona",
-  "author": {
-    "name": "guangzan",
-    "url": "https://www.cnblogs.com/guangzan",
-    "email": "guangzan1999@outlook.com"
+  "keywords": [
+    "components",
+    "react",
+    "ui",
+    "博客园"
+  ],
+  "homepage": "https://github.com/guangzan/tona/tree/main/packages/ui#readme",
+  "bugs": {
+    "url": "https://github.com/guangzan/tona/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/guangzan/tona/tree/main/packages/ui#readme",
+  "author": {
+    "name": "guangzan",
+    "email": "guangzan1999@outlook.com",
+    "url": "https://www.cnblogs.com/guangzan"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guangzan/tona.git",
     "directory": "packages/ui"
   },
-  "bugs": {
-    "url": "https://github.com/guangzan/tona/issues"
-  },
-  "keywords": [
-    "ui",
-    "components",
-    "react",
-    "博客园"
+  "files": [
+    "dist"
   ],
   "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
-    }
-  },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -41,16 +38,19 @@
       ]
     }
   },
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
-    "dev": "tsdown --watch",
-    "build": "tsdown"
+    "dev": "vp pack --watch",
+    "build": "vp pack"
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "tsdown": "catalog:",
+    "vite-plus": "catalog:",
     "vitest": "catalog:"
   },
   "peerDependencies": {

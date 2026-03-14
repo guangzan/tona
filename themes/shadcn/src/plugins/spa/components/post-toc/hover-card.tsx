@@ -39,21 +39,21 @@ export function HoverCard({
       )}
       onMouseLeave={onMouseLeave}
     >
-      <div className='flex justify-end p-1'>
+      <div className="flex justify-end p-1">
         <Button
-          variant='ghost'
-          size='icon-sm'
+          variant="ghost"
+          size="icon-sm"
           onClick={onPinToggle}
           aria-label={pinned ? '取消钉住' : '钉住'}
         >
           {pinned ? <PinOff /> : <Pin />}
         </Button>
       </div>
-      <ul className='scrollbar-none max-h-[calc(100vh-200px)] overflow-auto rounded-2xl border bg-background px-4 py-2'>
+      <ul className="scrollbar-none max-h-[calc(100vh-200px)] overflow-auto rounded-2xl border bg-background px-4 py-2">
         {toc.map((heading, index) => (
           <li
             key={heading.anchorId}
-            className='flex w-full items-center'
+            className="flex w-full items-center"
             style={{
               paddingLeft: `${(heading.depth - rootDepth) * 12}px`,
             }}
@@ -63,15 +63,15 @@ export function HoverCard({
                 'group flex w-full justify-between py-1 text-muted-foreground',
                 index === currentScrollRange[0] ? 'text-foreground' : '',
               )}
-              type='button'
+              type="button"
               onClick={() => {
                 onScrollToButtonClick(index, heading.$heading, heading.anchorId)
               }}
             >
-              <span className='max-w-prose select-none truncate duration-200 group-hover:text-foreground/80'>
+              <span className="max-w-prose select-none truncate duration-200 group-hover:text-foreground/80">
                 {heading.title}
               </span>
-              <span className='ml-4 select-none text-[8px] opacity-50'>
+              <span className="ml-4 select-none text-[8px] opacity-50">
                 H{heading.depth}
               </span>
             </button>
