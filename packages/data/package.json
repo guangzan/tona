@@ -18,7 +18,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "vp pack && node convert.js",
+    "build": "tsx scripts/build.ts",
     "dev": "vp pack --watch"
   },
   "devDependencies": {
