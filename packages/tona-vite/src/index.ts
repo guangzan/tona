@@ -2,12 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
-import type {
-  LibraryFormats,
-  Plugin,
-  UserConfig,
-  ViteDevServer,
-} from 'vite'
+import type { LibraryFormats, Plugin, UserConfig, ViteDevServer } from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -72,7 +67,8 @@ export default function tona(options: TonaPluginOptions = {}): Plugin {
           }
 
       const buildConfig = config.build ?? {}
-      const bundlerOptions = buildConfig.rolldownOptions ?? buildConfig.rollupOptions
+      const bundlerOptions =
+        buildConfig.rolldownOptions ?? buildConfig.rollupOptions
 
       return {
         build: {

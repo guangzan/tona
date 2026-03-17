@@ -87,10 +87,7 @@ async function startTheme(themeName: string): Promise<void> {
 
     child.stdout?.on('data', (data: string) => {
       // 检测 Vite+ 启动成功的标志
-      if (
-        !isReady &&
-        (data.includes('ready in') || data.includes('Local:'))
-      ) {
+      if (!isReady && (data.includes('ready in') || data.includes('Local:'))) {
         isReady = true
         s.stop(pc.green(`皮肤 ${themeName} 启动成功!`))
       }
