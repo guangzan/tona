@@ -19,7 +19,7 @@
   "devDependencies": {
     "@clack/prompts": "catalog:",
     "@tailwindcss/typography": "catalog:",
-    "@tsdown/css": "^0.21.2",
+    "@tsdown/css": "^0.21.4",
     "@types/node": "catalog:",
     "bumpp": "catalog:",
     "picocolors": "catalog:",
