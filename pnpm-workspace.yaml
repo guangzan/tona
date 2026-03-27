@@ -21,7 +21,7 @@ catalog:
   cross-spawn: ^7.0.6
   es-toolkit: ^1.45.1
   esno: ^4.8.0
-  happy-dom: ^20.8.4
+  happy-dom: ^20.8.8
   lint-staged: ^16.4.0
   lucide: ^0.577.0
   lucide-preact: ^0.577.0
