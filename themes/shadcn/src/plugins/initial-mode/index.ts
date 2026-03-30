@@ -1,7 +1,9 @@
 export const initialMode = () => {
   try {
     const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches
     const resolvedTheme =
       savedTheme === 'dark' || savedTheme === 'light'
         ? savedTheme

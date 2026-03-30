@@ -23,13 +23,7 @@ export function LineTocCard({
   onScrollTo,
 }: Props) {
   return (
-    <div
-      className={cn(
-        'fade-in-0',
-        'flex flex-col',
-        className,
-      )}
-    >
+    <div className={cn('fade-in-0', 'flex flex-col', className)}>
       <div
         className={cn(
           'flex flex-col items-end',
