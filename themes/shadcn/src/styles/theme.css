@@ -337,8 +337,8 @@
   }
 
   ::selection {
-    @apply bg-selection
-      text-selection-foreground;
+    @apply !bg-selection
+      !text-selection-foreground;
   }
 
   /* Temporarily disabled scroll-smooth (added/changed in Next.js 16) because it prevents the page from scrolling fully to the top during client-side navigation. Re-enable once the upstream behavior is fixed or when navigation/transition handling is adjusted. */
