@@ -54,7 +54,9 @@
     }
 
     .footer-icp {
+      font-size: 12px;
       text-align: center;
+      color: var(--geek-color-7);
     }
   }
 
@@ -132,9 +134,7 @@
 
   #sideBar,
   #left-side {
-    // display: none;
     grid-area: none;
-    // margin: 0;
   }
 
   #left-side {
