@@ -1,0 +1,931 @@
+@use './common/tools.scss' as *;
+@use './mixins.scss' as *;
+
+*::selection {
+  background: var(--theme-primary-4);
+  color: inherit;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--geek-color-2);
+  color: var(--geek-color-10);
+  font-size: 1em;
+  line-height: 1.5;
+  font-family:
+    UbuntuMono, 'Varela Round', 'PingFang SC', 'Microsoft YaHei', Helvetica,
+    Arial, Menlo, Monaco, monospace, sans-serif;
+  overflow: hidden;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: 14vw 1fr 1fr 19vw;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    'left main main right'
+    'left main main right'
+    'left main main right';
+  height: 100vh;
+}
+
+.forFlow {
+  z-index: 2;
+}
+
+#header {
+  display: none !important;
+}
+
+#main {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 40px 1fr 30px;
+  grid-template-columns: 1fr;
+}
+
+#mainContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40vh 1fr;
+  padding: 20px;
+  background-color: var(--geek-color-2);
+  overflow: auto;
+}
+
+.dayTitle {
+  display: none;
+}
+
+.postTitl2,
+.entrylistPosttitle {
+  width: 100%;
+}
+
+.entrylistPostSummary,
+.postCon {
+  color: var(--geek-color-9);
+  font-size: 14px;
+}
+
+.entrylistItem {
+  padding: 20px;
+}
+
+#sideBar,
+#left-side {
+  overflow: auto;
+}
+
+// rightside start
+
+#sideBar {
+  grid-area: right;
+  background-color: var(--geek-color-1);
+  border-radius: 0 4px 0 0;
+}
+
+#sideBarMain {
+  padding-bottom: 20px;
+}
+
+#sidebar_news,
+#sidebar_search {
+  display: none !important;
+}
+
+.sidebar-block {
+  padding: 20px 20px 0;
+
+  h3 {
+    color: var(--geek-color-10);
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: normal;
+  }
+
+  ul {
+    li {
+      padding: 4px 0px;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary);
+        transition: all 0.2s;
+      }
+    }
+  }
+}
+
+#sidebar_shortcut,
+#sidebar_toptags {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0 2px 2px 0;
+      padding: 4px 12px;
+      background-color: var(--geek-color-2);
+      border: 1px solid var(--geek-color-3);
+      font-size: 12px;
+      border-radius: 2px;
+
+      &:hover {
+        color: inherit;
+        background-color: var(--geek-color-3);
+      }
+    }
+  }
+}
+
+.recent_comment_body {
+  background-color: var(--geek-color-2);
+  border: 1px solid var(--geek-color-3);
+  border-radius: 4px;
+}
+
+#sidebar_recentposts ul li,
+.recent_comment_title {
+  @include text-over();
+}
+
+#sidebar_recentcomments {
+  .recent_comment_body {
+    padding: 12px;
+
+    &:hover {
+      color: inherit;
+      transition: all 0.2s;
+    }
+  }
+}
+
+// rightside end
+
+#left-side {
+  grid-area: left;
+  border-right: 1px solid var(--border-sidebar-block);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--geek-color-1);
+  flex-shrink: 0;
+  border-radius: 4px 0 0 0;
+}
+
+#footer {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--geek-color-1);
+  color: var(--geek-color-9);
+  font-size: 13px;
+
+  #poweredby {
+    margin-left: 12px;
+  }
+}
+
+#post_detail {
+  margin-top: 20px;
+  padding: 16px 16px 0;
+  animation: content-in 0.5s ease-in 0s;
+  border-radius: 4px;
+  background-color: var(--geek-color-1);
+  overflow: hidden;
+
+  #topics .postDesc {
+    margin: 0 0 20px;
+    padding: 0;
+    color: var(--geek-color-9);
+    text-align: center;
+    font-size: 13px;
+    text-transform: capitalize;
+
+    a {
+      text-transform: none;
+    }
+  }
+
+  .postTitle {
+    font-size: 30px;
+  }
+}
+
+// 分页器start
+
+.pager {
+  display: flex;
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  padding: 8px 0;
+  margin: 24px 0 0;
+  font-size: 14px;
+  text-align: center;
+  background-color: var(--geek-color-1);
+  color: var(--geek-color-9);
+  border-radius: 4px;
+
+  a,
+  span.current {
+    margin: 0 10px;
+    padding: 0 12px;
+    border-radius: 4px;
+    background-color: var(--geek-color-2);
+    border: 1px solid var(--geek-color-3);
+
+    &:hover {
+      transition: all 0.2s;
+      border-color: var(--color-primary);
+    }
+  }
+
+  a {
+    color: var(--geek-color-10);
+  }
+
+  span.current {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+}
+
+h1.PostListTitle + .pager,
+#homepage_top_pager {
+  display: none;
+}
+
+#homepage_bottom_pager {
+  margin: 8px 0;
+}
+
+.topicListFooter {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin: 0;
+}
+
+#nav_next_page {
+  margin: 0 0 12px;
+  text-align: center;
+
+  a {
+    padding: 8px 0;
+    border-radius: 4px;
+    width: 100%;
+    background-color: var(--geek-color-1);
+    display: block;
+    border: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      transition: all 0.2s;
+    }
+  }
+}
+
+// 分页器 end
+
+// 当前标签页,随笔分类
+#taglist_title,
+.custom-gallery h3,
+.entrylistTitle,
+.PostListTitle {
+  margin: 20px 0 0;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: var(--geek-color-1);
+  text-align: center;
+}
+
+.PostListTitle {
+  margin-bottom: 16px;
+}
+
+.entrylistDescription,
+.postSeparator {
+  display: none;
+}
+
+.entrylistTitle {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+#myposts {
+  margin-left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+
+  .PostList {
+    padding: 8px;
+    margin: 0;
+    background-color: var(--geek-color-1);
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+
+    .postTitl2 {
+      color: var(--geek-color-10);
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .postDesc2 {
+      margin-bottom: 0;
+      padding-top: 0;
+      color: var(--geek-color-8);
+    }
+
+    .postText2 {
+      display: none;
+    }
+  }
+}
+
+#taglist_main {
+  margin-top: 0;
+
+  background-color: var(--geek-color-1);
+
+  #taglist_title_wrap {
+    border-radius: 4px;
+    padding: 0 !important;
+  }
+
+  #taglist {
+    padding: 20px;
+
+    table,
+    tbody,
+    tr,
+    td {
+      display: block;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 8px;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+
+    td {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 6px 18px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: var(--geek-color-2);
+        border: 1px solid var(--geek-color-3);
+        font-size: 13px;
+      }
+
+      span {
+        position: absolute;
+        right: 4px;
+        top: 0;
+      }
+    }
+  }
+}
+
+// 文章结尾按钮
+#blog_post_info_block {
+  @include center(h);
+  flex-direction: column;
+  margin: 0;
+}
+
+#BlogPostCategory {
+  margin-bottom: 6px;
+  font-size: 16px;
+  order: 1;
+}
+
+#EntryTag {
+  margin-bottom: 6px;
+  font-size: 16px;
+  order: 2;
+}
+
+#blog_post_info {
+  order: 3;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 20px 0;
+}
+
+#author_profile {
+  @include center();
+  margin: 0 10.8px 0 0;
+  padding: 0;
+  width: auto;
+  order: -1;
+
+  #author_profile_info {
+    display: none;
+  }
+
+  #author_profile_follow {
+    display: none;
+  }
+}
+
+#green_channel {
+  @include center();
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  border: none;
+
+  a,
+  span {
+    background: none;
+    box-shadow: none;
+    font-weight: normal;
+    text-shadow: none;
+    padding: 0 12px;
+  }
+
+  #green_channel_follow,
+  #green_channel_favorite {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--geek-color-1);
+    border: 1px solid var(--geek-color-4) !important;
+    color: var(--geek-color-10) !important;
+
+    &:hover {
+      background-color: var(--geek-color-2);
+      background-image: none;
+      transition: background-color 0.2s;
+    }
+  }
+
+  #green_channel_follow:before {
+    content: '\f004';
+    margin-right: 4px;
+    font-weight: 500;
+  }
+
+  #green_channel_favorite:before {
+    content: '\f005';
+    margin-right: 4px;
+    font-weight: 500;
+  }
+
+  #green_channel_digg,
+  #green_channel_weibo,
+  #green_channel_wechat {
+    display: none;
+  }
+}
+
+#div_digg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  .diggit,
+  .buryit {
+    width: auto;
+    height: auto;
+    margin: 0;
+    background: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--geek-color-1);
+    border: 1px solid var(--geek-color-4) !important;
+    white-space: nowrap;
+
+    span {
+      color: var(--geek-color-10);
+    }
+
+    .diggnum,
+    .burynum {
+      line-height: 1em !important;
+    }
+
+    &:hover {
+      background-color: var(--geek-color-2);
+      transition: background-color 0.2s;
+    }
+  }
+
+  .diggit {
+    margin-right: 10px;
+
+    &::before {
+      content: '\f164';
+      font-weight: 500;
+    }
+  }
+
+  .buryit {
+    &::before {
+      content: '\f165';
+      font-weight: 500;
+    }
+  }
+
+  .diggword {
+    display: none;
+  }
+}
+
+#blog-comments-placeholder br,
+#comment_pager_top {
+  display: none;
+}
+
+// 评论列表
+#blog-comments-placeholder {
+  border-radius: 4px;
+  background-color: var(--geek-color-1);
+  overflow: hidden;
+
+  .feedback_area_title {
+    padding: 8px 10px;
+    border: 1px solid var(--geek-color-3);
+    background-color: var(--geek-color-2);
+    border-radius: 2px 2px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+
+    &::before {
+      content: '\f086';
+      margin-right: 4px;
+      font-weight: normal;
+    }
+  }
+
+  .feedbackItem {
+    border-left: 1px solid var(--geek-color-3);
+    border-right: 1px solid var(--geek-color-3);
+    padding: 17.982px 10px;
+
+    &:nth-last-child(2) {
+      border-bottom: 1px solid var(--geek-color-3);
+    }
+  }
+
+  .custom-comments-author {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+
+    .louzhu {
+      display: none;
+    }
+
+    .blog_comment_body {
+      background-color: var(--geek-color-2) !important;
+      color: var(--geek-color-9);
+      margin-right: 10px;
+      margin-left: 0;
+
+      a:nth-child(1) {
+        border-bottom: none;
+      }
+    }
+
+    .blog_comment_body::before {
+      display: none;
+    }
+
+    .blog_comment_body::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -14px;
+      top: 6px;
+      width: 6px;
+      height: 0;
+      border-left: solid 12px var(--geek-color-2);
+      border-top: solid 8px rgba(0, 0, 0, 0);
+      border-bottom: solid 8px rgba(0, 0, 0, 0);
+    }
+
+    .feedbackManage {
+      order: 0;
+    }
+
+    .layer {
+      margin-left: 6px;
+      order: 3 !important;
+    }
+
+    .comment_vote {
+      order: -3;
+    }
+
+    .comment_date {
+      order: -1 !important;
+    }
+
+    .feedbackManage {
+      order: -2 !important;
+    }
+
+    .feedbackCon {
+      flex-direction: row-reverse;
+      max-width: 100%;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  br {
+    display: none;
+  }
+
+  .layer {
+    padding: 0 6px;
+    background-color: var(--geek-color-2);
+    color: var(--geek-color-9);
+    border-radius: 4px;
+    margin-right: 6px;
+    order: 0;
+    font-size: 12px;
+  }
+
+  .comment_date {
+    margin: 0 6px;
+    order: 2;
+    font-size: 14px;
+  }
+}
+
+.feedbackListSubtitle {
+  @include center();
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  font-size: 0;
+
+  .comment_actions a:last-child {
+    margin-right: 8px;
+  }
+
+  color: var(--geek-color-8);
+
+  & > a:last-of-type {
+    margin-left: 8px;
+    color: var(--color-primary);
+    order: 1;
+    font-size: 14px;
+  }
+
+  .feedbackManage {
+    order: 3;
+    font-size: 14px;
+  }
+
+  .comment_vote {
+    order: 4;
+    font-size: 14px;
+
+    a {
+      padding-left: 8px;
+    }
+  }
+}
+
+.feedbackCon {
+  @include center();
+  margin-top: 5px;
+  align-items: flex-start;
+
+  .blog_comment_body {
+    position: relative;
+    margin: 16px 0 0 10px;
+    max-width: 72%;
+    border-radius: 4px;
+    color: var(--geek-color-9);
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 6px 10px;
+    background-color: var(--geek-color-2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -24.84px;
+      top: 6px;
+      width: 12.258px;
+      height: 0;
+      border-right: solid 12px var(--geek-color-1);
+      border-top: solid 3.24px rgba(0, 0, 0, 0);
+      border-bottom: solid 8px rgba(0, 0, 0, 0);
+    }
+  }
+
+  .avatar {
+    border-radius: 50%;
+    transform: scale(0.8);
+  }
+}
+
+// 发表评论
+#comment_form {
+  padding-top: 24px;
+  padding-bottom: 32px;
+  background-color: var(--geek-color-1);
+  overflow: hidden;
+
+  #divCommentShow,
+  #ad_text_under_commentbox,
+  #comment_nav,
+  .commentbox_footer {
+    display: none;
+  }
+
+  #comment_form_container {
+    position: relative;
+    border: 1px solid var(--geek-color-3);
+    border-radius: 4px;
+
+    & > p:nth-of-type(3),
+    & > a:first-of-type {
+      display: none;
+    }
+
+    & > p:last-of-type {
+      color: var(--geek-color-5);
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    #commentform_title {
+      background: none;
+      margin-bottom: 0;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--geek-color-3);
+      background-color: var(--geek-color-2);
+      border-radius: 2px 2px 0 0;
+      font-size: 12px;
+      font-weight: 700;
+
+      &::before {
+        content: '\f4ad';
+        font-weight: normal;
+        margin-right: 4px;
+      }
+    }
+
+    #tip_comment {
+      display: none;
+    }
+
+    .comment_textarea {
+      width: 100%;
+      border-color: var(--text-9);
+      background: none;
+      border: none;
+
+      .commentbox_title {
+        border-bottom-color: var(--geek-color-3);
+      }
+
+      .commentbox_tab.active {
+        border-color: var(--color-primary);
+      }
+
+      .commentbox_title_left {
+        display: none;
+      }
+
+      .commentbox_title_right {
+        .comment_svg {
+          fill: var(--geek-color-6);
+        }
+
+        .comment_svg_stroke {
+          stroke: var(--geek-color-6);
+        }
+      }
+
+      #tbCommentBody {
+        margin-bottom: 10px !important;
+        height: 81px;
+        min-height: 170px;
+        background: none;
+        font-size: 16px;
+        border-bottom: 1px dashed var(--geek-color-3);
+        color: var(--geek-color-10);
+
+        &::placeholder {
+          color: var(--geek-color-8);
+        }
+      }
+    }
+
+    #commentbox_opt {
+      & > a {
+        display: none;
+      }
+
+      #btn_comment_submit {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 75.6px;
+        height: 32px;
+        @include btn(primary);
+      }
+    }
+
+    #tip_comment2 {
+      display: none;
+    }
+  }
+}
+
+#ad_t2 {
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: var(--geek-color-8);
+  border-radius: 4px;
+
+  br {
+    display: none;
+  }
+
+  a {
+    border-radius: 4px;
+    margin-right: 0;
+    padding: 4px 0;
+    @include text-over();
+    background-color: var(--geek-color-2);
+
+    &:not(:nth-child(1)) {
+      margin-top: 5px;
+    }
+  }
+}
+
+#top_nav,
+#commentform_title a,
+#bannerbar,
+#under_post_kb,
+#under_post_news,
+#cnblogs_c1,
+#cnblogs_c2 {
+  display: none;
+}
+
+/* 历史上的今天 */
+#HistoryToday {
+  display: none;
+}
+
+// 评论输入框下方导航栏
+.under-comment-nav,
+.under-comment-box-nav {
+  display: none;
+}
+
+.blogpost-body-html pre.codeblock {
+  background: none;
+}
+
+#blog-comments-placeholder,
+#comment_form {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.clear {
+  display: none;
+}
