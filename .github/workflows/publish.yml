@@ -35,6 +35,18 @@ jobs:
       - name: Build packages
         run: pnpm build:pkg
 
+      - name: Build themes
+        run: |
+          pnpm --dir themes/geek build
+          pnpm --dir themes/reacg build
+          pnpm --dir themes/shadcn build
+
+      - name: Package theme assets
+        run: |
+          zip -j geek.zip themes/geek/dist/*
+          zip -j reacg.zip themes/reacg/dist/*
+          zip -j shadcn.zip themes/shadcn/dist/*
+
       - name: Publish to npm
         run: npm i -g npm@^11.5.2 && pnpm run publish-ci ${{ github.ref_name }}
 
@@ -42,3 +54,8 @@ jobs:
         run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload theme assets
+        run: gh release upload ${{ github.ref_name }} geek.zip reacg.zip shadcn.zip --clobber
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
