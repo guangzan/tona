@@ -9,12 +9,7 @@ import svgr from 'vite-plugin-svgr'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-export default defineConfig(({ mode }) => ({
-  define: {
-    'process.env.NODE_ENV': JSON.stringify(
-      mode === 'production' ? 'production' : 'development',
-    ),
-  },
+export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -22,50 +17,14 @@ export default defineConfig(({ mode }) => ({
     dedupe: ['preact', 'preact/hooks', 'preact/compat'],
   },
   plugins: [
-    preact({
-      devToolsInProd: false,
-    }),
     tona({
       themeName: 'shadcn',
     }),
+    preact(),
     tailwindcss(),
+    svgr(),
     analyzer({
       enabled: false,
     }),
-    svgr(),
   ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        charset: false,
-      },
-    },
-  },
-  server: {
-    open: true,
-    port: 8081,
-  },
-  build: {
-    copyPublicDir: false,
-    minify: 'terser',
-    cssCodeSplit: false,
-    emptyOutDir: true,
-    terserOptions: {
-      format: {
-        comments: false,
-      },
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
-    lib: {
-      formats: ['iife'],
-      entry: resolve(__dirname, 'src/main.ts'),
-      name: 'shadcn',
-      fileName: () => 'shadcn.js',
-    },
-    outDir: './dist',
-  },
-  logLevel: 'warn',
-}))
+})

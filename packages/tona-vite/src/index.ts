@@ -55,14 +55,14 @@ export default function tona(options: TonaPluginOptions = {}): Plugin {
             formats: existingLib.formats || (['iife'] as LibraryFormats[]),
             entry: existingLib.entry || resolvedEntryPath,
             name: existingLib.name || themeName,
-            fileName: existingLib.fileName || (() => `${themeName}.min.js`),
+            fileName: existingLib.fileName || (() => `${themeName}.[hash].js`),
             cssFileName: existingLib.cssFileName || `${themeName}.min`,
           }
           : {
             formats: ['iife'] as LibraryFormats[],
             entry: resolvedEntryPath,
             name: themeName,
-            fileName: () => `${themeName}.min.js`,
+            fileName: () => `${themeName}.[hash].js`,
             cssFileName: `${themeName}.min`,
           }
 
@@ -71,6 +71,14 @@ export default function tona(options: TonaPluginOptions = {}): Plugin {
         buildConfig.rolldownOptions ?? buildConfig.rollupOptions
 
       return {
+        css: {
+          preprocessorOptions: {
+            scss: {
+              ...config.css?.preprocessorOptions?.scss,
+              charset: config.css?.preprocessorOptions?.scss?.charset ?? false,
+            },
+          },
+        },
         build: {
           cssCodeSplit: buildConfig.cssCodeSplit ?? false,
           lib: libConfig,
