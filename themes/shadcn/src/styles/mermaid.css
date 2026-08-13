@@ -1,0 +1,93 @@
+/*
+ * Mermaid Override (see docs/monorail/CONTEXT.md — Mermaid Override)
+ *
+ * 博客园渲染的 mermaid 为内联 SVG + 带 #mermaid-xxx ID 作用域的 <style>（ID 级选择器），
+ * 主题侧以 !important + 主题 CSS 变量覆盖；变量在 .dark 下自动切换，无需额外暗色规则。
+ * 覆盖目标以真实随笔元素（flowchart-v2）中 mermaid 注入的 style 为基线。
+ */
+
+/* 容器外壳：与正文代码块 .custom-markdown pre（rounded-lg px-4 py-3.5）同款 */
+.custom-markdown .mermaid {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+}
+
+/* 根规则：mermaid 内联 style 在 #mermaid-xxx 上设置的字体/字号/文本色 */
+.custom-markdown .mermaid svg {
+  fill: var(--foreground) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 14px !important;
+}
+
+/* 节点/簇标签文字 */
+.custom-markdown .mermaid .label {
+  color: var(--foreground) !important;
+}
+
+.custom-markdown .mermaid .label text,
+.custom-markdown .mermaid .cluster-label text,
+.custom-markdown .mermaid .cluster text,
+.custom-markdown .mermaid .cluster span,
+.custom-markdown .mermaid span {
+  color: var(--foreground) !important;
+  fill: var(--foreground) !important;
+}
+
+/* 节点形状：中性灰块（--muted 底 + --border 边框），保持直角 */
+.custom-markdown .mermaid .node circle,
+.custom-markdown .mermaid .node ellipse,
+.custom-markdown .mermaid .node path,
+.custom-markdown .mermaid .node polygon,
+.custom-markdown .mermaid .node rect {
+  fill: var(--muted) !important;
+  stroke: var(--border) !important;
+  stroke-width: 1px !important;
+}
+
+/* 簇：同节点基调 */
+.custom-markdown .mermaid .cluster rect {
+  fill: var(--muted) !important;
+  stroke: var(--border) !important;
+  stroke-width: 1px !important;
+}
+
+/* 连线：--muted-foreground 弱化 */
+.custom-markdown .mermaid .edgePath .path,
+.custom-markdown .mermaid .flowchart-link {
+  fill: none !important;
+  stroke: var(--muted-foreground) !important;
+}
+
+/* 箭头/标记 */
+.custom-markdown .mermaid .arrowheadPath,
+.custom-markdown .mermaid .marker {
+  fill: var(--muted-foreground) !important;
+  stroke: var(--muted-foreground) !important;
+}
+
+/* 边标签：--background 半透明底 */
+.custom-markdown .mermaid .edgeLabel,
+.custom-markdown .mermaid .edgeLabel p,
+.custom-markdown .mermaid .labelBkg {
+  background-color: color-mix(in oklab, var(--background) 80%, transparent) !important;
+}
+
+.custom-markdown .mermaid .edgeLabel rect,
+.custom-markdown .mermaid .icon-shape .label rect,
+.custom-markdown .mermaid .image-shape .label rect {
+  background-color: color-mix(in oklab, var(--background) 80%, transparent) !important;
+  fill: color-mix(in oklab, var(--background) 80%, transparent) !important;
+}
+
+/* 图表标题 */
+.custom-markdown .mermaid .flowchartTitleText {
+  fill: var(--foreground) !important;
+}
+
+/* 渲染错误提示色 */
+.custom-markdown .mermaid .error-icon,
+.custom-markdown .mermaid .error-text {
+  fill: var(--destructive) !important;
+  stroke: var(--destructive) !important;
+}
