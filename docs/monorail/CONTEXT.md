@@ -68,6 +68,10 @@ plugins 包内插件样式的可配置 CSS 变量，命名 `--<插件slug>-<keba
 
 monorepo 包的统一入口规则：所有包（含 plugins）`exports` 一律指向 `dist/` 产物，无源码分发包；纯 JS/CSS 包同样产物分发。plugins 的 dist 为扁平布局（`dist/<plugin>/index.css`，不保留 `src/plugins/` 前缀）。对应 ADR-004 与 effort `docs/monorail/plugins-dist-contract/`。
 
+## Mermaid Override
+
+主题以 CSS 覆盖博客园渲染的 mermaid 内联样式的机制：博客园输出的 mermaid 是内联 SVG + 带 `#mermaid-xxx` ID 作用域的 `<style>`（ID 级选择器，如 `#mermaid-xxx .node rect`），主题侧需以 `!important`（或等效高特异性）+ 主题 CSS 变量覆盖，变量在 `.dark` 下自动切换实现暗色适配。纯样式覆盖，不干预渲染流程。对应 effort 见 `docs/monorail/shadcn-mermaid-style/`。
+
 ## Plugin CSS Subpath
 
 插件 CSS 的裸包名引用 `tona-plugins/<plugin>/index.css`（如 `@import 'tona-plugins/catalog/index.css'`），经 `exports` 通配 `"./*": "./dist/*"` 映射到 `dist/<plugin>/index.css`。替代原 tona-vite 内置 `@tona-plugins` alias（已移除）；残留旧引用映射到不存在的路径，显式报错。对应 ADR-004。
