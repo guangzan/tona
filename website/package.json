@@ -1,0 +1,19 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tona 官方文档站（Rspress）",
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview",
+    "check:links": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "@rspress/core": "2.0.19"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}

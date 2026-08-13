@@ -1,0 +1,78 @@
+---
+pageType: home
+
+hero:
+  name: Tona
+  text: 专为博客园设计的现代化皮肤开发框架
+  tagline: 模块化核心运行时 · 类型安全的配置管理 · 30+ 开箱即用插件 · 五套内置主题
+  actions:
+    - theme: brand
+      text: 快速开始
+      link: /guide/quick-start
+    - theme: alt
+      text: 插件目录
+      link: /plugins/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/guangzan/tona
+features:
+  - title: 核心运行时
+    details: createTheme 创建主题实例，defineOptions 提供类型安全的配置管理，插件系统支持任意组合与扩展，运行时开销极小。
+    icon: 🚀
+  - title: Vite 工具链
+    details: tona-vite 插件提供开发服务器、热更新、动态脚本注入与共享资源服务，一键产出 IIFE 分发产物。
+    icon: ⚡
+  - title: 插件生态
+    details: 30+ 个开箱即用插件，覆盖暗色模式、代码高亮、目录、打赏、音乐播放器、Live2D 等常见需求，可自由组合。
+    icon: 🧩
+  - title: 脚手架 CLI
+    details: create-tona 交互式创建项目，内置 minimal / preact 模板，自动识别 npm、yarn、pnpm 包管理器。
+    icon: 🛠️
+  - title: 内置主题
+    details: 仓库自带 geek、simple、view、reacg、shadcn 五套主题，既是成品皮肤，也是最佳实践参考。
+    icon: 🎨
+  - title: TypeScript 优先
+    details: 全链路 TypeScript，完整的类型定义贯穿核心、插件与配置，编辑器内即可获得智能提示。
+    icon: 📘
+---
+
+## 快速体验
+
+```bash
+# 创建一个新的 Tona 主题项目
+pnpm create tona
+
+# 进入项目并安装依赖
+cd my-tona-theme
+pnpm install
+
+# 本地开发（支持热更新）
+pnpm dev
+
+# 构建分发产物
+pnpm build
+```
+
+## 一个最小的主题
+
+```ts
+import { createTheme } from 'tona'
+import { background, darkMode, codeHighlight } from 'tona-plugins'
+
+const theme = createTheme()
+
+theme.use(background)
+theme.use(darkMode)
+theme.use(codeHighlight)
+```
+
+## 文档导航
+
+- **[指南](/guide/)** — 快速开始与核心概念：`createTheme`、`defineOptions`、插件系统、配置
+- **[API 参考](/api/)** — 核心 API、选项类型与 Vite 插件参考
+- **[插件目录](/plugins/)** — 全部 31 个内置插件的说明与配置项
+- **[内置主题](/themes/)** — geek、simple、view、reacg、shadcn 五套主题
+- **[包结构](/monorepo/packages)** — Monorepo 中各包的分工与开发命令
+- **[FAQ](/faq)**、**[贡献指南](/contributing)**、**[更新日志](/changelog)**
+
+> Tona 为博客园（CNBlogs）皮肤开发提供了一整套工具链。通过 `createTheme` 与类型安全的 `defineOptions`，你可以快速创建美观、功能丰富的博客皮肤。环境要求：Node.js >= 22.18，pnpm >= 10。
