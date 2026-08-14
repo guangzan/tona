@@ -150,6 +150,7 @@ const sections = [
   ['主题-shadcn', 'docs/themes/shadcn.md'],
   ['主题-simple', 'docs/themes/simple.md'],
   ['主题-view', 'docs/themes/view.md'],
+  ['安装皮肤', 'docs/install/index.md'],
   ['Monorepo 包结构', 'docs/monorepo/packages.md'],
   ['FAQ', 'docs/faq.md'],
   ['贡献指南', 'docs/contributing.md'],
