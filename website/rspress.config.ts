@@ -33,6 +33,22 @@ export default defineConfig({
       { text: '安装皮肤', link: '/install/', activeMatch: '/install/' },
     ],
     sidebar: {
+      // 安装皮肤：面向使用者的导航（安装总览、主题选择、常见问题）。
+      // key 不带尾斜杠，同时匹配 /install 与 /install/ 两种路径形态
+      '/install': [
+        { sectionHeaderText: '安装皮肤' },
+        { text: '安装总览', link: '/install/' },
+        { sectionHeaderText: '内置主题' },
+        { text: '主题概览', link: '/themes/' },
+        { text: 'geek', link: '/themes/geek' },
+        { text: 'reacg', link: '/themes/reacg' },
+        { text: 'shadcn', link: '/themes/shadcn' },
+        { text: 'simple', link: '/themes/simple' },
+        { text: 'view', link: '/themes/view' },
+        { sectionHeaderText: 'FAQ' },
+        { text: '常见问题', link: '/faq' },
+      ],
+      // 开发皮肤：面向主题开发者的导航（其余全部页面）
       '/': [
         { sectionHeaderText: '指南' },
         { text: '总览', link: '/guide/' },
@@ -41,8 +57,6 @@ export default defineConfig({
         { text: 'defineOptions', link: '/guide/concepts/define-options' },
         { text: '插件系统', link: '/guide/concepts/plugin-system' },
         { text: '配置', link: '/guide/concepts/configuration' },
-        { sectionHeaderText: '安装皮肤' },
-        { text: '安装总览', link: '/install/' },
         { sectionHeaderText: 'API 参考' },
         { text: '总览', link: '/api/' },
         { text: '核心 API（tona）', link: '/api/core' },
