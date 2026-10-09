@@ -1,5 +1,5 @@
 ---
-name: dev-themes
+name: tona-theme
 description: '修改 /themes 下的代码时使用'
 ---
 
