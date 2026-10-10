@@ -4,9 +4,6 @@ import {
   catalog,
   clickEffects,
   codeCopy,
-  codeHighlight,
-  codeLang,
-  codeLinenumbers,
   colorMode,
   commentsAvatars,
   createBackTopButton,
@@ -42,9 +39,6 @@ Object.values(
 createTheme()
   .use(clickEffects, { enable: false })
   .use(codeCopy, { enable: true })
-  .use(codeHighlight, { enable: true })
-  .use(codeLang, { enable: true })
-  .use(codeLinenumbers, { enable: true })
   .use(commentsAvatars, { enable: true })
   .use(colorMode, { enable: true, color: '#2F63FF' })
   .use(emoji, { enable: true })

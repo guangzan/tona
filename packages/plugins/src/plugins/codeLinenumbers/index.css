@@ -20,11 +20,16 @@
   display: flex;
 }
 
-#cnblogs_post_body pre ul.awes-linenumber {
-  margin-top: 0;
-}
-
-#cnblogs_post_body pre .awes-linenumber {
+/* 行号 <ul> 的对齐是特异性之争：博客园 bundle 有
+   `#mainContent .cnblogs-markdown ul { margin:22px 0; padding:0 0 0 28px }`
+   （1 id + 2 class + 1 元素），与插件原先的
+   `#cnblogs_post_body pre .awes-linenumber`（1 id + 2 class + 2 元素）相比
+   在 class 层更高，且 bundle 先加载，会把 padding-top 归零。
+   代码文本位于 code 自身的 padding-top 之下，
+   于是行号整体上移一整个 padding（实测恒定 -16px），即「行号未对齐」。
+   故此处把选择器提升到严格高于 bundle 的形态，保证 padding 生效。 */
+#cnblogs_post_body pre ul.awes-linenumber,
+#mainContent .cnblogs-markdown pre ul.awes-linenumber {
   margin: 0;
   padding: 16px 16px 8px 16px;
 }
