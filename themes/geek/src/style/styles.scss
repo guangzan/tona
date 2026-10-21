@@ -219,6 +219,15 @@ body {
   }
 }
 
+// 博客园合集组件自带配色变量，深色模式下跟随主题
+:root[theme='dark'] {
+  --cnblogs-current-collection-bg-color: var(--geek-color-2);
+  --cnblogs-current-collection-highlight-color: var(--geek-color-3);
+  --cnblogs-current-collection-hover-color: var(--geek-color-3);
+  --cnblogs-current-collection-active-color: var(--geek-color-4);
+  --cnblogs-current-collection-color: var(--geek-color-10);
+}
+
 // 分页器start
 
 .pager {
