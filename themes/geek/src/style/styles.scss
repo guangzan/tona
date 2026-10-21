@@ -226,6 +226,22 @@ body {
   --cnblogs-current-collection-hover-color: var(--geek-color-3);
   --cnblogs-current-collection-active-color: var(--geek-color-4);
   --cnblogs-current-collection-color: var(--geek-color-10);
+
+  // 折叠箭头和图钉是博客园写死的黑色 SVG，深色模式下反色
+  // 取 0.9 而不是 1，避免构建压缩后丢掉 invert 参数
+  .current-collection .icon-arrow::before,
+  .current-collection .icon-pin::before {
+    filter: invert(0.9);
+  }
+}
+
+// 合集列表：当前文章使用链接色，其余文章使用正文色
+#mainContent .current-collection-links > .current-collection-item {
+  color: var(--geek-color-10);
+}
+
+#mainContent .current-collection-links > .current-collection-item.current {
+  color: #47a1f6;
 }
 
 // 分页器start
