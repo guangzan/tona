@@ -282,6 +282,18 @@ body {
   border-radius: 6px;
 }
 
+.current-collection-title .icon-button.clickable:hover,
+.current-collection-title .icon-button.clickable:focus-visible {
+  background: var(--geek-color-3);
+}
+
+:root[theme='dark'] .current-collection-title .icon-button.clickable:hover,
+:root[theme='dark']
+  .current-collection-title
+  .icon-button.clickable:focus-visible {
+  background: var(--geek-color-4);
+}
+
 .current-collection-title-arrow,
 .current-collection.collapsed .current-collection-title-arrow {
   transform: none;
@@ -311,12 +323,9 @@ body {
 }
 
 .current-collection-links > .current-collection-item {
-  padding: 5px 8px;
-  font-size: 13px;
+  padding: 8px;
   border-radius: 4px;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .current-collection-links > .current-collection-item.current {
@@ -434,6 +443,13 @@ body {
 
 .cnblogs-current-collection-pinned-navigator .current-collection-links {
   max-height: none;
+}
+
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item {
+  padding: 5px 8px;
+  font-size: 13px;
 }
 
 // 分页器start
