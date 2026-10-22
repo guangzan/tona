@@ -298,7 +298,7 @@ body {
 }
 
 .current-collection-links > .current-collection-item {
-  padding: 8px;
+  padding: 6px 8px;
   border-radius: 4px;
   transition:
     background-color 0.15s ease,
@@ -403,7 +403,13 @@ body {
 }
 
 .cnblogs-current-collection-pinned-navigator .wb-close:hover {
-  background-color: var(--cnblogs-current-collection-hover-color);
+  background-color: var(--geek-color-3);
+}
+
+:root[theme='dark']
+  .cnblogs-current-collection-pinned-navigator
+  .wb-close:hover {
+  background-color: var(--geek-color-4);
 }
 
 .cnblogs-current-collection-pinned-navigator .wb-title {
