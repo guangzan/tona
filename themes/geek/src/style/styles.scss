@@ -222,17 +222,21 @@ body {
 // 博客园合集组件自带配色变量，浅色和深色模式都跟随主题
 :root {
   --cnblogs-current-collection-bg-color: var(--geek-color-1);
-  --cnblogs-current-collection-highlight-color: var(--geek-color-2);
-  --cnblogs-current-collection-hover-color: var(--geek-color-2);
-  --cnblogs-current-collection-active-color: var(--geek-color-3);
+  --cnblogs-current-collection-highlight-color: var(
+    --geek-color-link-selected-bg
+  );
+  --cnblogs-current-collection-hover-color: var(--geek-color-link-hover-bg);
+  --cnblogs-current-collection-active-color: var(--geek-color-link-selected-bg);
   --cnblogs-current-collection-color: var(--geek-color-10);
 }
 
 :root[theme='dark'] {
   --cnblogs-current-collection-bg-color: var(--geek-color-2);
-  --cnblogs-current-collection-highlight-color: var(--geek-color-3);
-  --cnblogs-current-collection-hover-color: var(--geek-color-3);
-  --cnblogs-current-collection-active-color: var(--geek-color-4);
+  --cnblogs-current-collection-highlight-color: var(
+    --geek-color-link-selected-bg
+  );
+  --cnblogs-current-collection-hover-color: var(--geek-color-link-hover-bg);
+  --cnblogs-current-collection-active-color: var(--geek-color-link-selected-bg);
   --cnblogs-current-collection-color: var(--geek-color-10);
 
   // 折叠箭头和图钉是博客园写死的黑色 SVG，深色模式下反色
@@ -245,7 +249,6 @@ body {
 
 .current-collection {
   max-width: 100%;
-  margin: 0 0 24px;
   border: 1px solid var(--geek-color-3);
   border-radius: 8px;
   overflow: hidden;
@@ -307,7 +310,7 @@ body {
 }
 
 .current-collection-links > .current-collection-item.current {
-  background: var(--cnblogs-current-collection-highlight-color);
+  background: var(--geek-color-link-selected-bg);
 }
 
 .current-collection-item-title {
@@ -340,6 +343,22 @@ body {
   .current-collection-links
   > .current-collection-item.current {
   color: var(--geek-color-link);
+}
+
+#mainContent
+  .current-collection-links
+  > .current-collection-item.current-collection-link:hover,
+#mainContent
+  .current-collection-links
+  > .current-collection-item.current-collection-link:focus-visible,
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item.current-collection-link:hover,
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item.current-collection-link:focus-visible {
+  color: var(--geek-color-link);
+  background: var(--geek-color-link-hover-bg);
 }
 
 #mainContent .current-collection .current-collection-title .title-link,
