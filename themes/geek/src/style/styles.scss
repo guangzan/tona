@@ -246,7 +246,7 @@ body {
 .current-collection {
   max-width: 100%;
   border: 1px solid var(--geek-color-3);
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -282,6 +282,19 @@ body {
   border-radius: 6px;
 }
 
+.current-collection-title-arrow,
+.current-collection.collapsed .current-collection-title-arrow {
+  transform: none;
+}
+
+.current-collection-title-arrow::before {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current-collection.collapsed .current-collection-title-arrow::before {
+  transform: rotate(-90deg);
+}
+
 @media (max-width: 767px) {
   .current-collection-title .icon-pin {
     display: none;
@@ -298,7 +311,8 @@ body {
 }
 
 .current-collection-links > .current-collection-item {
-  padding: 6px 8px;
+  padding: 5px 8px;
+  font-size: 13px;
   border-radius: 4px;
   transition:
     background-color 0.15s ease,
@@ -364,7 +378,7 @@ body {
 
 .cnblogs-current-collection-pinned-navigator {
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .cnblogs-current-collection-pinned-navigator .wb-header {
