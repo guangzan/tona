@@ -219,6 +219,239 @@ body {
   }
 }
 
+// 博客园合集组件自带配色变量，浅色和深色模式都跟随主题
+:root {
+  --cnblogs-current-collection-bg-color: var(--geek-color-1);
+  --cnblogs-current-collection-highlight-color: var(--geek-color-3);
+  --cnblogs-current-collection-hover-color: var(--geek-color-2);
+  --cnblogs-current-collection-active-color: var(--geek-color-3);
+  --cnblogs-current-collection-color: var(--geek-color-10);
+}
+
+:root[theme='dark'] {
+  --cnblogs-current-collection-bg-color: var(--geek-color-2);
+  --cnblogs-current-collection-highlight-color: var(--geek-color-4);
+  --cnblogs-current-collection-hover-color: var(--geek-color-3);
+  --cnblogs-current-collection-active-color: var(--geek-color-4);
+  --cnblogs-current-collection-color: var(--geek-color-10);
+
+  // 折叠箭头和图钉是博客园写死的黑色 SVG，深色模式下反色
+  // 取 0.9 而不是 1，避免构建压缩后丢掉 invert 参数
+  .current-collection .icon-arrow::before,
+  .current-collection .icon-pin::before {
+    filter: invert(0.9);
+  }
+}
+
+.current-collection {
+  max-width: 100%;
+  border: 1px solid var(--geek-color-3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.current-collection-title {
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.current-collection-title .title-link {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  color: var(--geek-color-10);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.current-collection-title .title-link.clickable:hover,
+.current-collection-title .title-link.clickable:active {
+  background: transparent;
+}
+
+.current-collection-title .current-collection-title-buttons {
+  flex: 0 0 auto;
+  gap: 4px;
+}
+
+.current-collection-title .icon-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.current-collection-title .icon-button.clickable:hover,
+.current-collection-title .icon-button.clickable:focus-visible {
+  background: var(--geek-color-3);
+}
+
+:root[theme='dark'] .current-collection-title .icon-button.clickable:hover,
+:root[theme='dark']
+  .current-collection-title
+  .icon-button.clickable:focus-visible {
+  background: var(--geek-color-4);
+}
+
+.current-collection-title-arrow,
+.current-collection.collapsed .current-collection-title-arrow {
+  transform: none;
+}
+
+.current-collection-title-arrow::before {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current-collection.collapsed .current-collection-title-arrow::before {
+  transform: rotate(-90deg);
+}
+
+@media (max-width: 767px) {
+  .current-collection-title .icon-pin {
+    display: none;
+  }
+}
+
+.current-collection-links {
+  padding: 4px 8px 8px;
+}
+
+.current-collection.collapsed .current-collection-links {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.current-collection-links > .current-collection-item {
+  padding: 8px;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.current-collection-links > .current-collection-item.current {
+  background: var(--cnblogs-current-collection-highlight-color);
+}
+
+.current-collection-item-title {
+  line-height: 1.5;
+}
+
+.current-collection-publish-date {
+  margin-left: 12px;
+  color: var(--geek-color-10);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+// 底部“收起”与标题栏箭头功能重复，保留节点供 toggleCollapse 查询
+.current-collection-footer {
+  display: none;
+}
+
+// 合集标题与普通列表项使用正文色，仅当前文章使用链接色
+#mainContent .current-collection-links > .current-collection-item,
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item {
+  color: var(--geek-color-10);
+}
+
+#mainContent .current-collection-links > .current-collection-item.current,
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item.current {
+  color: var(--geek-color-link);
+}
+
+#mainContent
+  .current-collection-links
+  > .current-collection-item.current-collection-link:hover,
+#mainContent
+  .current-collection-links
+  > .current-collection-item.current-collection-link:focus-visible,
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item.current-collection-link:hover,
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item.current-collection-link:focus-visible {
+  color: var(--geek-color-link);
+  background: var(--cnblogs-current-collection-hover-color);
+}
+
+#mainContent .current-collection .current-collection-title .title-link,
+.cnblogs-current-collection-pinned-navigator .wb-title {
+  color: var(--geek-color-10);
+}
+
+.cnblogs-current-collection-pinned-navigator {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.cnblogs-current-collection-pinned-navigator .wb-header {
+  box-shadow: inset 0 -1px 0 var(--geek-color-3);
+}
+
+.cnblogs-current-collection-pinned-navigator .wb-header .wb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 35px;
+  padding-right: 6px;
+  box-sizing: border-box;
+  filter: none;
+}
+
+.cnblogs-current-collection-pinned-navigator .wb-close {
+  position: relative;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  background-image: none;
+  border-radius: 4px;
+}
+
+.cnblogs-current-collection-pinned-navigator .wb-close::before {
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+  margin: auto;
+  background: currentColor;
+  content: '';
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 18 18'%3E%3Cpath d='m1.613.21.094.083L8 6.585 14.293.293l.094-.083a1 1 0 0 1 1.403 1.403l-.083.094L9.415 8l6.292 6.293a1 1 0 0 1-1.32 1.497l-.094-.083L8 9.415l-6.293 6.292-.094.083A1 1 0 0 1 .21 14.387l.083-.094L6.585 8 .293 1.707A1 1 0 0 1 1.613.21z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.cnblogs-current-collection-pinned-navigator .wb-close:hover {
+  background-color: var(--geek-color-3);
+}
+
+:root[theme='dark']
+  .cnblogs-current-collection-pinned-navigator
+  .wb-close:hover {
+  background-color: var(--geek-color-4);
+}
+
+.cnblogs-current-collection-pinned-navigator .wb-title {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cnblogs-current-collection-pinned-navigator .current-collection-links {
+  max-height: none;
+}
+
+.cnblogs-current-collection-pinned-navigator
+  .current-collection-links
+  > .current-collection-item {
+  padding: 5px 8px;
+  font-size: 13px;
+}
+
 // 分页器start
 
 .pager {
