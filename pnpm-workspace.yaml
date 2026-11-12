@@ -71,6 +71,7 @@ onlyBuiltDependencies:
 overrides:
   vite: 'catalog:'
   vitest: 'catalog:'
+  'postcss-selector-parser@6': '6.1.5'
 peerDependencyRules:
   allowAny:
     - vite
