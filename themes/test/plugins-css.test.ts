@@ -113,9 +113,12 @@ const expectedOverrides: Record<string, Record<string, string>> = {
   },
 }
 
-/** 原 plugins.scss 的 @use 插件数（geek 16 / reacg 26 / simple 14 / view 11） */
+/**
+ * 插件 CSS 引入数（geek 13 / reacg 26 / simple 14 / view 11）
+ * geek 已移除 codeHighlight / codeLinenumbers / codeLang，代码高亮交给博客园原生
+ */
 const expectedImportCounts: Record<string, number> = {
-  geek: 16,
+  geek: 13,
   reacg: 26,
   simple: 14,
   view: 11,

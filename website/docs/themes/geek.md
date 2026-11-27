@@ -50,7 +50,7 @@ themes/geek/src/
 
 ## 插件使用
 
-geek 在入口中组合了 `codeHighlight`、`codeLinenumbers`、`codeCopy`、`codeLang` 等代码类插件，以及目录、表情、图片预览、音乐播放器、Live2D、工具栏等交互插件，是观察**插件组合方式**的最佳示例。
+geek 的代码高亮交给博客园原生能力，仅保留 `codeCopy` 负责复制按钮；入口还组合了目录、表情、图片预览、音乐播放器、Live2D、工具栏等交互插件，是观察**插件组合方式**的最佳示例。
 
 ## 开发
 
